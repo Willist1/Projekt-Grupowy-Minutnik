@@ -15,6 +15,7 @@
 #include "display.h"
 #include "i2c.h"
 #include "PCF8574.h"
+#include "encoder.h"
 
 ISR(INT0_vect)
 {
@@ -40,12 +41,33 @@ int main()
 	PCF8574_Init();
 	PCF8574_INTInit();
 	
-	PCF8574_INT = false;
-	
 	sei();
 	
-	volatile uint8_t x = 0xff;
+	LEDDIGITS[0]= 0;
+	LEDDIGITS[1]= 0;
+	uint8_t setValue = 0;
 	
+	while(1)
+	{
+		if (PCF8574_INT) {
+			_delay_ms(1);			// debouncing
+			PCF8574_ReadState();
+			ATOMIC_BLOCK (ATOMIC_FORCEON) {
+				switch(Read2StepEncoder())
+				{
+					case -1 :	if(setValue>0) setValue-=1; break;
+					case 0  :	break;
+					case 1  :	if(setValue<99) setValue+=1; break;
+				};
+				LEDDIGITS[0]= (uint8_t)(setValue/10);
+				LEDDIGITS[1]= (uint8_t)(setValue%10);
+				PCF8574_INT = false;	// clear internal INT flag
+			};
+		}
+	}
+
+#ifdef stateDisplay
+	volatile uint8_t x = 0xff;
 	while(1)
 	{
 		if (PCF8574_INT) {
@@ -58,8 +80,9 @@ int main()
 			};
 		}
 	}
+#endif
 
-#if 0
+#ifdef brightness
 	LEDDIGITS[0]=1;
 	LEDDIGITS[1]=2;
 	

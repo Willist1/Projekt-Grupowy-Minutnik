@@ -17,10 +17,11 @@
 #define PCF8574_READ PCF8574ADDR | 0x01
 
 volatile bool PCF8574_INT;
+volatile uint8_t PCF8574_PinState;
 
 void PCF8574_Init();
 void PCF8574_INTInit();
-uint8_t PCF8574_ReadState();
+void PCF8574_ReadState();
 void PCF8574_WriteState(uint8_t state);
 
 #endif /* PCF8574_H_ */
