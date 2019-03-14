@@ -183,6 +183,12 @@
     <Compile Include="PCF8574.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="pwrFail.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="pwrFail.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="uart.c">
       <SubType>compile</SubType>
     </Compile>

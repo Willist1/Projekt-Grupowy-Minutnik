@@ -17,6 +17,8 @@
 #include "PCF8574.h"
 #include "encoder.h"
 #include "buzzer.h"
+#include "pwrFail.h"
+
 
 ISR(INT0_vect)
 {
@@ -52,6 +54,7 @@ ISR(TIMER2_OVF_vect)
 	ticks++;
 	if (!(ticks % 1000)) toggle ^= 0x01;
 }
+
 
 int main()
 {
