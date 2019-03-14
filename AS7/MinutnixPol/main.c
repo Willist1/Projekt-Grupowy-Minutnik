@@ -16,6 +16,7 @@
 #include "i2c.h"
 #include "PCF8574.h"
 #include "encoder.h"
+#include "buzzer.h"
 
 ISR(INT0_vect)
 {
@@ -33,6 +34,25 @@ void IO_Init() {
 	PORTC &= 0xFC; // ustaw stan niski na wyjsciach sterujacych PC0-PC1
 }
 
+void SysTickInit()
+{
+	//ASSR |= _BV(AS2);		// TIM2 tacted asynchronously
+	TCNT2 = 0x00;			// counter set to 0
+	//TCCR2B = _BV(CS22) | _BV(CS20); // Prescaler 128 (interrupt every 1s)
+	TCCR2B = _BV(CS22);		// Preskaler CLKIO/64  (16 MHz / 256 / 64 = 1 kHz)
+	while(ASSR & 0x1F);		// Wait for TIM2 update (busy flags must be cleared)
+	TIMSK2 |= _BV(TOIE2);	// Unblock TIM2 overflow interrupt
+}
+
+volatile uint32_t ticks = 0;
+volatile uint8_t toggle = 0;
+
+ISR(TIMER2_OVF_vect)
+{
+	ticks++;
+	if (!(ticks % 1000)) toggle ^= 0x01;
+}
+
 int main()
 {
 	IO_Init();
@@ -40,6 +60,8 @@ int main()
 	Timer0InitWithDimmer();
 	PCF8574_Init();
 	PCF8574_INTInit();
+	buzzerInit ();
+	SysTickInit();
 	
 	sei();
 	
@@ -61,9 +83,12 @@ int main()
 				};
 				LEDDIGITS[0]= (uint8_t)(setValue/10);
 				LEDDIGITS[1]= (uint8_t)(setValue%10);
+				buzzerSetVolume(setValue);
 				PCF8574_INT = false;	// clear internal INT flag
 			};
 		}
+		if (toggle) buzzerSetVolume(setValue);
+		else buzzerSetVolume(0);
 	}
 
 #ifdef stateDisplay

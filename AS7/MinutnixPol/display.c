@@ -31,13 +31,13 @@ ISR(TIMER0_OVF_vect)
 
 ISR(TIMER0_COMPA_vect)
 {
-	PORTC &= 0xFC;	//Wylacz wszystkie wyùswietlacze
+	PORTC &= 0xFC;	// Wylacz wszystkie wyùswietlacze
 }
 
 void Timer0Init()
 {
-	TCCR0B=_BV(CS01 | CS00);	//Preskaler CLKIO/64  (przy 8MHz przelaczanie 488 Hz - powinno byc 600 Hz okolo)
-	TIMSK0|=_BV(TOIE0);	//Odblokuj przerwanie nadmiaru timera 0
+	TCCR0B=_BV(CS01 | CS00);	// Preskaler CLKIO/64  (przy 8MHz przelaczanie 488 Hz - powinno byc 600 Hz okolo)
+	TIMSK0|=_BV(TOIE0);			// Odblokuj przerwanie nadmiaru timera 0
 }
 
 void Timer0InitWithDimmer()
