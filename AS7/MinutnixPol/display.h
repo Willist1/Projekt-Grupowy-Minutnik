@@ -35,5 +35,6 @@ volatile uint8_t LEDDIGITS[LEDDISPNO];	// Tablica zawierajaca dane do wyswietlan
 
 void Timer0Init();
 void Timer0InitWithDimmer();
+void displaySetBrightness(uint8_t percentage);
 
 #endif /* DISPLAY_H_ */

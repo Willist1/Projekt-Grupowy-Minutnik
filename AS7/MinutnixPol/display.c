@@ -15,7 +15,9 @@ static inline void ShowOnLED(uint8_t val)
 	uint8_t tmp=0xFF;
 	// if((val & 0x7F)<11) tmp=DIGITS[val & 0x7F];  //Odczytaj kod znaku
 	if((val & 0x7F) <= 0xF) tmp=DIGITS[val & 0x7F];  //Odczytaj kod znaku
-	if(val & DP) tmp&=~DP;      //Sterowanie kropka dziesietna na LED
+	// if(val & DP) tmp&=~DP;      //Sterowanie kropka dziesietna na LED
+	if(val & DP) PORTC |= 0x04; //Sterowanie kropka dziesietna na LED
+	else PORTC &= 0xFB;
 	LEDPORT=tmp;
 }
 
@@ -45,4 +47,8 @@ void Timer0InitWithDimmer()
 	TIMSK0|=_BV(OCIE0A);	// Wlacz przerwanie Compare Match A
 	OCR0A = MAX_BRIGHTNESS_VAL;
 	Timer0Init();
+}
+
+void displaySetBrightness(uint8_t percentage) {
+	OCR0A = percentage;
 }

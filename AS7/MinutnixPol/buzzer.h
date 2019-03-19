@@ -10,6 +10,8 @@
 #define BUZZER_H_
 
 void buzzerInit();
+void buzzerOn();
+void buzzerOff();
 void buzzerSetVolume(uint8_t percentage);
 
 #endif /* BUZZER_H_ */

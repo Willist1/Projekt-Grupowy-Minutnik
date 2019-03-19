@@ -10,11 +10,6 @@
 
 int8_t enc_delta;
 
-#define SigAPin 5
-#define SigBPin 4
-#define SigAMask (uint8_t)(1 << SigAPin)
-#define SigBMask (uint8_t)(1 << SigBPin)
-
 void ReadEncoder()
 {
 	static int8_t last;
