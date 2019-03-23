@@ -2,7 +2,7 @@
  *  main.c
  *
  *  Created: 2019-03-09 15:34
- *  Authors: Kluczek, Wegrzyn, Kowalczyk
+ *  Authors: Kluczek, Wegrzyn, Jopek
  */ 
 
 
@@ -21,19 +21,6 @@
 #include "buzzer.h"
 #include "pwrFail.h"
 
-void IO_Init() {
-	
-	// piny PD0-PD1 oraz PD3-PD7 portu D sa wyjsciem (sygnaly ustawiajace wskazywana liczbe)
-	// pin PD2 portu D jest wejsciem (sygnal external interrupt od ekspandera)
-	LEDDDR = 0b11111011;
-	PORTD |= _BV(PORTD2);	// wlacz pull-up na pinie PD2
-
-	DDRC = 0x03;   // wyjscia PC0-PC1 steruja wyswietlana cyfra
-	PORTC &= 0xFC; // ustaw stan niski na wyjsciach sterujacych PC0-PC1
-	
-	DDRC |= 0x04;  // wyjscie PC2 steruje kropka
-	PORTC &= 0xFB; // ustaw stan niski na wyjsciu PC2
-}
 
 void sysTickInit()
 {
@@ -60,11 +47,8 @@ ISR(TIMER2_OVF_vect)	// System clock
 
 int main()
 {
-	IO_Init();
-	
-	Timer0InitWithDimmer();
+	displayInit();
 	PCF8574_Init();
-	PCF8574_INTInit();
 	buzzerInit ();
 	sysTickInit();
 	
@@ -278,9 +262,19 @@ int main()
 				}
 				if (NVData.totalSeconds == 0) {
 					ATOMIC_BLOCK (ATOMIC_FORCEON) {
-						buzzerOn();				// Perform end beep
-						LEDDIGITS[0] |= DP;		// Light up dots
-						LEDDIGITS[1] |= DP;
+						buzzerOn();		// Perform end beep
+						if (toggle) {	// Blink
+							ATOMIC_BLOCK (ATOMIC_FORCEON) {
+								LEDDIGITS[0]= 0;
+								LEDDIGITS[1]= 0;
+							};
+						}
+						else {
+							ATOMIC_BLOCK (ATOMIC_FORCEON) {
+								LEDDIGITS[0]= BLANK_DISPLAY;
+								LEDDIGITS[1]= BLANK_DISPLAY;
+							};
+						}
 					};
 				} else if (NVData.totalSeconds == NVData.config.warnVal*60) {								// Start warn beep
 					ATOMIC_BLOCK (ATOMIC_FORCEON) { buzzerOn(); };

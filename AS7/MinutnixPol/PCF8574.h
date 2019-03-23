@@ -50,7 +50,6 @@ volatile uint8_t PCF8574_PinState;
 volatile uint8_t PCF8574_PrevPinState;
 
 void PCF8574_Init();
-void PCF8574_INTInit();
 void PCF8574_ReadState();
 void PCF8574_WriteState(uint8_t state);
 BUTTON PCF8574_ReadButtonPress();

@@ -18,6 +18,14 @@ ISR(INT0_vect)
 	PCF8574_INT = true;
 }
 
+static void PCF8574_INTInit() {
+	DDRD &= ~_BV(DDD2);			// set PD2 as input (INT signal from PCF8574 expander)
+	PORTD |= _BV(PORTD2);		// set pull-up on pin PD2
+	EICRA |= _BV(ISC01);		// the falling edge of INT0 generates an interrupt request
+	EIMSK |= _BV(INT0);			// INT0 external interrupt request enable
+	PCF8574_INT = false;		// interrupt flag set to false by default
+}
+
 void PCF8574_Init() {
 	I2C_Init();
 	I2C_StartSelectWait(PCF8574_WRITE);
@@ -25,13 +33,7 @@ void PCF8574_Init() {
 	I2C_Stop();
 	PCF8574_PinState = 0xFF;		// pin state map set to 0xFF by default
 	PCF8574_PrevPinState = 0xFF;
-}
-
-void PCF8574_INTInit() {
-	
-	EICRA |= _BV(ISC01);		// the falling edge of INT0 generates an interrupt request
-	EIMSK |= _BV(INT0);			// INT0 external interrupt request enable
-	PCF8574_INT = false;		// interrupt flag set to false by default
+	PCF8574_INTInit();
 }
 
 void PCF8574_ReadState() {
