@@ -9,7 +9,7 @@
 #ifndef PWRFAIL_H_
 #define PWRFAIL_H_
 
-void AC_init();
-void Data_init();
+void AnalogCompInit();
+void NVDataInit();
 
 #endif /* PWRFAIL_H_ */

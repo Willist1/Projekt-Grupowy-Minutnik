@@ -5,12 +5,18 @@
  *  Author: stefan
  */ 
 
-#include "PCF8574.h"
-#include "i2c.h"
 #include <stdint.h>
 #include <avr/io.h>
 #include <stdbool.h>
+#include <avr/interrupt.h>
+#include "PCF8574.h"
+#include "i2c.h"
 #include "display.h"
+
+ISR(INT0_vect)
+{
+	PCF8574_INT = true;
+}
 
 void PCF8574_Init() {
 	I2C_Init();

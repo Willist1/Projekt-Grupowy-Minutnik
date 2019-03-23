@@ -11,6 +11,8 @@
 #include <util/delay.h>
 #include <util/atomic.h>
 #include <stdbool.h>
+#include <stdio.h>
+#include "main.h"
 #include "uart.h"
 #include "display.h"
 #include "i2c.h"
@@ -18,14 +20,6 @@
 #include "encoder.h"
 #include "buzzer.h"
 #include "pwrFail.h"
-
-#include <stdio.h>
-
-
-ISR(INT0_vect)
-{
-	PCF8574_INT = true;
-}
 
 void IO_Init() {
 	
@@ -51,45 +45,18 @@ void sysTickInit()
 	TIMSK2 |= _BV(TOIE2);	// Unblock TIM2 overflow interrupt
 }
 
-typedef enum {
-	sIdle = 0,
-	sSetting,
-	sRunning
-} tSTATE;
-
-typedef struct {
-	uint8_t cntVal;
-	uint8_t warnVal;
-	uint8_t brightVal;
-	uint8_t volumeVal;
-} tCONFIG;
-
 tSTATE currentState = sIdle;
-volatile tCONFIG config;
-volatile uint16_t totalSeconds;
-
 volatile uint32_t ticks = 0;
 volatile uint8_t toggle = 0;
 
-ISR(TIMER2_OVF_vect)
+ISR(TIMER2_OVF_vect)	// System clock
 {
 	ticks++;
 	if (!(ticks % 500)) toggle ^= 0x01;
 	if (!(ticks % 1000) && (currentState == sRunning)) {
-		if(totalSeconds > 0) totalSeconds--;
+		if(NVData.totalSeconds > 0) NVData.totalSeconds--;
 	}
 }
-
-#define CNT_MAX_VAL 99
-#define CNT_MIN_VAL 1
-#define WARN_MAX_VAL 15
-#define WARN_MIN_VAL 0
-#define BRIGHT_MAX_VAL 10
-#define BRIGHT_MIN_VAL 1
-#define VOL_MAX_VAL 10
-#define VOL_MIN_VAL 0
-
-#define WARN_BEEP_DURATION_SECONDS 2
 
 int main()
 {
@@ -109,13 +76,13 @@ int main()
 	LEDDIGITS[1]= 0;
 	BUTTON memorizedButton = BUTTON_NONE;
 	BUTTON pressedButton = BUTTON_NONE;
-	config.cntVal = 45;
-	config.warnVal = 10;
-	config.brightVal = 7;
-	config.volumeVal = 6;
-	displaySetBrightness(10*config.brightVal);
-	buzzerSetVolume(10*config.volumeVal);
-	totalSeconds = config.cntVal*60;
+	NVData.config.cntVal = 45;
+	NVData.config.warnVal = 10;
+	NVData.config.brightVal = 7;
+	NVData.config.volumeVal = 6;
+	displaySetBrightness(10*NVData.config.brightVal);
+	buzzerSetVolume(10*NVData.config.volumeVal);
+	NVData.totalSeconds = NVData.config.cntVal*60;
 	uint8_t setVal = 0;
 	uint8_t valMax = 0;
 	uint8_t valMin = 0;
@@ -160,20 +127,20 @@ int main()
 						switch(pressedButton)
 						{
 							case setCnt:
-								setVal = config.cntVal;
+								setVal = NVData.config.cntVal;
 								break;
 							case setWarning:
-								setVal = config.warnVal;
+								setVal = NVData.config.warnVal;
 								break;
 							case setBrightness:
-								setVal = config.brightVal;
+								setVal = NVData.config.brightVal;
 								break;
 							case setVolume:
-								setVal = config.volumeVal;
+								setVal = NVData.config.volumeVal;
 								buzzerOn();
 								break;
 							case Stop:
-								totalSeconds = config.cntVal*60;
+								NVData.totalSeconds = NVData.config.cntVal*60;
 								break;
 							default:
 								break;
@@ -200,17 +167,17 @@ int main()
 							switch(pressedButton)
 							{
 								case setCnt:
-									config.cntVal = setVal;
-									totalSeconds = config.cntVal*60;
+									NVData.config.cntVal = setVal;
+									NVData.totalSeconds = NVData.config.cntVal*60;
 									break;
 								case setWarning:
-									config.warnVal = setVal;
+									NVData.config.warnVal = setVal;
 									break;
 								case setBrightness:
-									config.brightVal = setVal;
+									NVData.config.brightVal = setVal;
 									break;
 								case setVolume:
-									config.volumeVal = setVal;
+									NVData.config.volumeVal = setVal;
 									buzzerOff();
 									break;
 								default:
@@ -219,7 +186,7 @@ int main()
 						} else if ((memorizedButton == Play) && (pressedButton == Stop)) { // handle special case
 							currentState = sIdle;
 							memorizedButton = BUTTON_NONE;
-							totalSeconds = config.cntVal*60;
+							NVData.totalSeconds = NVData.config.cntVal*60;
 							buzzerOff();
 							LEDDIGITS[0] &= ~DP;	// Turn off dots
 							LEDDIGITS[1] &= ~DP;
@@ -266,15 +233,15 @@ int main()
 		switch(currentState)
 		{
 			case sIdle:
-				if (totalSeconds >= 60) {
+				if (NVData.totalSeconds >= 60) {
 					ATOMIC_BLOCK (ATOMIC_FORCEON) {
-						LEDDIGITS[0]= (uint8_t)((totalSeconds/60)/10);
-						LEDDIGITS[1]= (uint8_t)((totalSeconds/60)%10);
+						LEDDIGITS[0]= (uint8_t)((NVData.totalSeconds/60)/10);
+						LEDDIGITS[1]= (uint8_t)((NVData.totalSeconds/60)%10);
 					};
 					} else {
 					ATOMIC_BLOCK (ATOMIC_FORCEON) {
-						LEDDIGITS[0]= (uint8_t)((totalSeconds)/10);
-						LEDDIGITS[1]= (uint8_t)((totalSeconds)%10);
+						LEDDIGITS[0]= (uint8_t)((NVData.totalSeconds)/10);
+						LEDDIGITS[1]= (uint8_t)((NVData.totalSeconds)%10);
 					};
 				}
 				break;
@@ -298,26 +265,26 @@ int main()
 				}
 				break;
 			case sRunning:
-				if (totalSeconds >= 60) {											// display minutes when >= 60 sec
+				if (NVData.totalSeconds >= 60) {									// display minutes when >= 60 sec
 					ATOMIC_BLOCK (ATOMIC_FORCEON) {
-						LEDDIGITS[0]= (uint8_t)((totalSeconds/60)/10);
-						LEDDIGITS[1]= (uint8_t)((totalSeconds/60)%10);
+						LEDDIGITS[0]= (uint8_t)((NVData.totalSeconds/60)/10);
+						LEDDIGITS[1]= (uint8_t)((NVData.totalSeconds/60)%10);
 					};
 				} else {															// display seconds when < 60 sec
 					ATOMIC_BLOCK (ATOMIC_FORCEON) {
-						LEDDIGITS[0]= (uint8_t)((totalSeconds)/10);
-						LEDDIGITS[1]= (uint8_t)((totalSeconds)%10);
+						LEDDIGITS[0]= (uint8_t)((NVData.totalSeconds)/10);
+						LEDDIGITS[1]= (uint8_t)((NVData.totalSeconds)%10);
 					};
 				}
-				if (totalSeconds == 0) {
+				if (NVData.totalSeconds == 0) {
 					ATOMIC_BLOCK (ATOMIC_FORCEON) {
 						buzzerOn();				// Perform end beep
 						LEDDIGITS[0] |= DP;		// Light up dots
 						LEDDIGITS[1] |= DP;
 					};
-				} else if (totalSeconds == config.warnVal*60) {						// Start warn beep
+				} else if (NVData.totalSeconds == NVData.config.warnVal*60) {								// Start warn beep
 					ATOMIC_BLOCK (ATOMIC_FORCEON) { buzzerOn(); };
-				} else if (totalSeconds == config.warnVal*60 - WARN_BEEP_DURATION_SECONDS) {	// End warn beep
+				} else if (NVData.totalSeconds == NVData.config.warnVal*60 - WARN_BEEP_DURATION_SECONDS) {	// End warn beep
 					ATOMIC_BLOCK (ATOMIC_FORCEON) { buzzerOff(); };
 				}
 				break;
@@ -326,66 +293,5 @@ int main()
 		}
 		
 	}
-	
-	
-	
-	
-#ifdef encoderRead
-	while(1)
-	{
-		if (PCF8574_INT) {
-			_delay_ms(1);			// debouncing
-			PCF8574_ReadState();
-			ATOMIC_BLOCK (ATOMIC_FORCEON) {
-				switch(Read2StepEncoder())
-				{
-					case -1 :	if(setVal>0) setVal-=1; break;
-					case 0  :	break;
-					case 1  :	if(setVal<99) setVal+=1; break;
-				};
-				LEDDIGITS[0]= (uint8_t)(setVal/10);
-				LEDDIGITS[1]= (uint8_t)(setVal%10);
-				buzzerSetVolume(setVal);
-				PCF8574_INT = false;	// clear internal INT flag
-			};
-		}
-		if (toggle) buzzerSetVolume(setVal);
-		else buzzerSetVolume(0);
-	}
-#endif
-
-#ifdef stateDisplay
-	volatile uint8_t x = 0xff;
-	while(1)
-	{
-		if (PCF8574_INT) {
-			_delay_ms(1);  // debouncing
-			x = PCF8574_ReadState();
-			ATOMIC_BLOCK (ATOMIC_FORCEON) {
-				LEDDIGITS[0]= (uint8_t)((x & 0xF0) >> 4);
-				LEDDIGITS[1]= (uint8_t)(x & 0x0F);
-				PCF8574_INT = false;
-			};
-		}
-	}
-#endif
-
-#ifdef brightness
-	LEDDIGITS[0]=1;
-	LEDDIGITS[1]=2;
-	
-	uint8_t i = 0;
-	while(1)
-	{
-		for(i = 0; i < MAX_BRIGHTNESS_VAL; i++) {
-			ATOMIC_BLOCK (ATOMIC_FORCEON) {OCR0A=i;}
-			_delay_ms(20);
-		}
-		for(i = MAX_BRIGHTNESS_VAL; i > 0; i--) {
-			ATOMIC_BLOCK (ATOMIC_FORCEON) {OCR0A=i;}
-			_delay_ms(20);
-		}
-	};
-#endif
 
 }

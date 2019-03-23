@@ -8,38 +8,36 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include <avr/eeprom.h>
+#include "main.h"
 
-typedef struct
-{
-	int Dane;
-	int Temperatura;
-	int PID_P;
-} DaneStrona;
-
-EEMEM DaneStrona DaneEEPROM; // = {.Dane=0xaabb, .Temperatura=0xac, .PID_P=0x10}; Dane w EEPROM
-
-DaneStrona DaneSRAM; // Kopia danych w SRAM
+// Data in EEPROM (declaration requires initialization)
+EEMEM tNVData EEPROMData = {.config.cntVal=0xaa, .config.warnVal=0xbb, .config.brightVal=0xcc, .config.volumeVal=0xdd, .totalSeconds=0xffff};
 
 ISR(ANALOG_COMP_vect, ISR_NAKED)
 {
-	// Wylacz zbedne generatory i zmniejsz FCLK
-	// Dodatkowo warto wszystkie piny ustawiæ jako wejscia
-	// Rozpoczynamy zapis zmiennych do EEPROM
-
-	eeprom_update_block(&DaneSRAM, &DaneEEPROM, sizeof(DaneStrona)); // Skopiuj dane do EEPROM
+	// Turn off redundant generators and reduce FCLK
+	// (NOT POSSIBLE)
 	
-	while(1); // Juz nic wiecej nie robimy
+	// Set all pins as inputs
+	DDRB = 0x00;
+	DDRC = 0x00;
+	DDRD = 0x00;
+
+	// Write non-volatile data to EEPROM
+	eeprom_update_block((void*)&NVData, (void*)&EEPROMData, sizeof(tNVData)); // Copy data to EEPROM
+	
+	while(1); // Nothing left to do...
 }
 
-void AC_init()
+void AnalogCompInit()
 {
-	DIDR1 =_BV(AIN1D) | _BV(AIN0D);   // Wylacz porty cyfrowe zwiazane z wejsciami komparatora
-	ACSR =_BV(ACIE) | _BV(ACIS1);   // Wlacz komparator i przerwanie komparatora zwiazane ze zboczem opadajacym
+	DIDR1 =_BV(AIN1D) | _BV(AIN0D);   // Turn off digital ports used as comparator inputs
+	ACSR =_BV(ACIE) | _BV(ACIS1);     // Turn on comparator and its interrupt caused by falling edge
 }
 
-void Data_init()
+void NVDataInit()
 {
-	eeprom_read_block(&DaneSRAM, &DaneEEPROM, sizeof(DaneStrona));  // Skopiuj dane z EEPROM do SRAM
+	eeprom_read_block((void*)&NVData, (void*)&EEPROMData, sizeof(tNVData));  // Copy data from EEPROM to SRAM
 }
 
 /*
