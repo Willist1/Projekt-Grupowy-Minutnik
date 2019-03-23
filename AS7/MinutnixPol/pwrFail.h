@@ -9,7 +9,9 @@
 #ifndef PWRFAIL_H_
 #define PWRFAIL_H_
 
-void AnalogCompInit();
+void pwrFailInit();
 void NVDataInit();
+
+void EEPROMwrite();
 
 #endif /* PWRFAIL_H_ */

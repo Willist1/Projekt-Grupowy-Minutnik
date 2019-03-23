@@ -21,7 +21,6 @@
 #include "buzzer.h"
 #include "pwrFail.h"
 
-
 void sysTickInit()
 {
 	//ASSR |= _BV(AS2);		// TIM2 tacted asynchronously
@@ -51,6 +50,7 @@ int main()
 	PCF8574_Init();
 	buzzerInit ();
 	sysTickInit();
+	pwrFailInit();
 	
 	//USART_init();
 	//static FILE usartout = FDEV_SETUP_STREAM (put, get, _FDEV_SETUP_RW);
@@ -60,16 +60,18 @@ int main()
 	LEDDIGITS[1]= 0;
 	BUTTON memorizedButton = BUTTON_NONE;
 	BUTTON pressedButton = BUTTON_NONE;
-	NVData.config.cntVal = 45;
-	NVData.config.warnVal = 10;
-	NVData.config.brightVal = 7;
-	NVData.config.volumeVal = 6;
-	displaySetBrightness(10*NVData.config.brightVal);
-	buzzerSetVolume(10*NVData.config.volumeVal);
-	NVData.totalSeconds = NVData.config.cntVal*60;
 	uint8_t setVal = 0;
 	uint8_t valMax = 0;
 	uint8_t valMin = 0;
+	
+	NVDataInit();
+	if (NVData.config.cntVal > CNT_MAX_VAL) NVData.config.cntVal = CNT_MAX_VAL;
+	if (NVData.config.warnVal > WARN_MAX_VAL) NVData.config.warnVal = WARN_MAX_VAL;
+	if (NVData.config.brightVal > BRIGHT_MAX_VAL) NVData.config.brightVal = BRIGHT_MAX_VAL;
+	if (NVData.config.volumeVal > VOL_MAX_VAL) NVData.config.volumeVal = VOL_MAX_VAL;
+	if (NVData.totalSeconds > NVData.config.cntVal*60) NVData.totalSeconds = NVData.config.cntVal*60;
+	displaySetBrightness(10*NVData.config.brightVal);
+	buzzerSetVolume(10*NVData.config.volumeVal);
 	
 	sei();
 	
@@ -254,6 +256,19 @@ int main()
 						LEDDIGITS[0]= (uint8_t)((NVData.totalSeconds/60)/10);
 						LEDDIGITS[1]= (uint8_t)((NVData.totalSeconds/60)%10);
 					};
+				} else if (NVData.totalSeconds == 0) {
+					if (toggle) {													// blink
+						ATOMIC_BLOCK (ATOMIC_FORCEON) {
+							LEDDIGITS[0]= 0;
+							LEDDIGITS[1]= 0;
+						};
+					}
+					else {
+						ATOMIC_BLOCK (ATOMIC_FORCEON) {
+							LEDDIGITS[0]= BLANK_DISPLAY;
+							LEDDIGITS[1]= BLANK_DISPLAY;
+						};
+					}
 				} else {															// display seconds when < 60 sec
 					ATOMIC_BLOCK (ATOMIC_FORCEON) {
 						LEDDIGITS[0]= (uint8_t)((NVData.totalSeconds)/10);
@@ -261,21 +276,7 @@ int main()
 					};
 				}
 				if (NVData.totalSeconds == 0) {
-					ATOMIC_BLOCK (ATOMIC_FORCEON) {
-						buzzerOn();		// Perform end beep
-						if (toggle) {	// Blink
-							ATOMIC_BLOCK (ATOMIC_FORCEON) {
-								LEDDIGITS[0]= 0;
-								LEDDIGITS[1]= 0;
-							};
-						}
-						else {
-							ATOMIC_BLOCK (ATOMIC_FORCEON) {
-								LEDDIGITS[0]= BLANK_DISPLAY;
-								LEDDIGITS[1]= BLANK_DISPLAY;
-							};
-						}
-					};
+					buzzerOn();	// Perform continuous end beep
 				} else if (NVData.totalSeconds == NVData.config.warnVal*60) {								// Start warn beep
 					ATOMIC_BLOCK (ATOMIC_FORCEON) { buzzerOn(); };
 				} else if (NVData.totalSeconds == NVData.config.warnVal*60 - WARN_BEEP_DURATION_SECONDS) {	// End warn beep
@@ -284,8 +285,8 @@ int main()
 				break;
 			default:
 				break;
+				
 		}
-		
 	}
 
 }

@@ -40,5 +40,6 @@ typedef struct
 } tNVData;
 
 volatile tNVData NVData; // Non-volatile config data copy in SRAM
+extern volatile uint32_t ticks;
 
 #endif /* MAIN_H_ */
