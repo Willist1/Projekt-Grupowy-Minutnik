@@ -23,7 +23,7 @@
 #include "buzzer.h"
 #include "pwrFail.h"
 
-#define MAX_NO_ACTIVITY_TICKS 5000	// 30 sec
+#define MAX_NO_ACTIVITY_TICKS 30000	// 30 sec
 
 tSTATE currentState = sIdle;
 volatile uint32_t ticks = 0;
