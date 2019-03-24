@@ -23,6 +23,9 @@ ISR(ANALOG_COMP_vect)//, ISR_NAKED)
 		// Turn off redundant generators and reduce FCLK
 		// (NOT POSSIBLE)
 		
+		// set PD4-5 low (turn off displays)
+		PORTD &= 0xCF;
+		
 		// Set all pins as inputs
 		DDRB = 0x00;
 		DDRC = 0x00;

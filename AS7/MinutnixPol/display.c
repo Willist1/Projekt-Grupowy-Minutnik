@@ -33,7 +33,7 @@ ISR(TIMER0_OVF_vect)
 
 ISR(TIMER0_COMPA_vect)
 {
-	PORTC &= 0xFC;	// Wylacz wszystkie wyùswietlacze
+	PORTD &= 0xCF;	// set PD4-5 low (turn off displays)
 }
 
 static void Timer0Init()
