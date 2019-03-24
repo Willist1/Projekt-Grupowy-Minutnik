@@ -24,5 +24,7 @@ volatile uint8_t LEDDIGITS[LEDDISPNO];	// Table with data to display
 
 void displayInit();
 void displaySetBrightness(uint8_t percentage);
+void displayOff();
+void displayOn();
 
 #endif /* DISPLAY_H_ */

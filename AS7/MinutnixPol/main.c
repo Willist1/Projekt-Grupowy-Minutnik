@@ -8,6 +8,8 @@
 
 #include <avr/io.h>
 #include <avr/interrupt.h>
+#include <avr/sleep.h>
+#include <avr/wdt.h>
 #include <util/delay.h>
 #include <util/atomic.h>
 #include <stdbool.h>
@@ -21,6 +23,13 @@
 #include "buzzer.h"
 #include "pwrFail.h"
 
+#define MAX_NO_ACTIVITY_TICKS 30000	// 30 sec
+
+tSTATE currentState = sIdle;
+volatile uint32_t ticks = 0;
+volatile uint8_t toggle = 0;
+uint32_t lastActivityTime = 0;
+
 void sysTickInit()
 {
 	//ASSR |= _BV(AS2);		// TIM2 tacted asynchronously
@@ -31,9 +40,15 @@ void sysTickInit()
 	TIMSK2 |= _BV(TOIE2);	// Unblock TIM2 overflow interrupt
 }
 
-tSTATE currentState = sIdle;
-volatile uint32_t ticks = 0;
-volatile uint8_t toggle = 0;
+void sysTickOn()
+{
+	TIMSK2 |= _BV(TOIE2);	// Unblock TIM2 overflow interrupt
+}
+
+void sysTickOff()
+{
+	TIMSK2 &= ~_BV(TOIE2);	// Block TIM2 overflow interrupt
+}
 
 ISR(TIMER2_OVF_vect)	// System clock
 {
@@ -44,8 +59,18 @@ ISR(TIMER2_OVF_vect)	// System clock
 	}
 }
 
+void wdtInit() {
+	wdt_reset();
+	WDTCSR = _BV(WDCE) | _BV(WDE);
+}
+
 int main()
 {
+	set_sleep_mode(SLEEP_MODE_IDLE);	// CPU clock turned off, peripherals operating normally
+	
+	wdtInit();
+	wdt_enable(WDTO_1S);				// enable watchdog
+	
 	displayInit();
 	PCF8574_Init();
 	buzzerInit ();
@@ -82,6 +107,8 @@ int main()
 			_delay_ms(1);			// debouncing
 			PCF8574_ReadState();
 			ATOMIC_BLOCK (ATOMIC_FORCEON) {
+				
+				lastActivityTime = ticks;							// set last activity timestamp
 				
 				// READ BUTTONPRESS
 				pressedButton = PCF8574_ReadButtonPress();
@@ -287,6 +314,28 @@ int main()
 				break;
 				
 		}
+		
+		// SLEEP MODE CHECK
+		if ((ticks - lastActivityTime > MAX_NO_ACTIVITY_TICKS) && (currentState != sRunning)) {
+			ATOMIC_BLOCK (ATOMIC_FORCEON) {		// turn off all interrupt sources except INT0
+				displayOff();
+				sysTickOff();
+				displaySetBrightness(10*NVData.config.brightVal);	// ignore temporary config (sSettings)
+				buzzerSetVolume(10*NVData.config.volumeVal);
+				buzzerOff();
+			};
+			sleep_mode();
+			ATOMIC_BLOCK (ATOMIC_FORCEON) {		// restore all turned off interrupt sources
+				displayOn();
+				sysTickOn();
+				currentState = sIdle;			// enforce idle state
+				memorizedButton = BUTTON_NONE;	// no memorized button
+				lastActivityTime = ticks;		// activity timestamp
+				PCF8574_INT = false;			// ignore wake-up cause (button press / encoder movement)
+			};
+		}
+		
+		wdt_reset();	// reset watchdog
 	}
 
 }

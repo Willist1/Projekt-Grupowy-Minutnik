@@ -58,6 +58,19 @@ void displayInit()
 	Timer0Init();
 }
 
+void displayOff()
+{
+	PORTD &= 0xCF;					// set PD4-5 low (turn off displays)
+	TIMSK0 &= ~_BV(OCIE0A);			// Turn off Timer0 Compare Match A interrupt
+	TIMSK0 &= ~_BV(TOIE0);			// Turn off Timer0 Overflow interrupt
+}
+
+void displayOn()
+{
+	TIMSK0 |=_BV(OCIE0A);			// Turn on Timer0 Compare Match A interrupt
+	TIMSK0 |=_BV(TOIE0);			// Turn on Timer0 Overflow interrupt
+}
+
 void displaySetBrightness(uint8_t percentage) {
 	OCR0A = percentage;
 }
