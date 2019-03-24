@@ -23,7 +23,7 @@
 #include "buzzer.h"
 #include "pwrFail.h"
 
-#define MAX_NO_ACTIVITY_TICKS 30000	// 30 sec
+#define MAX_NO_ACTIVITY_TICKS 5000	// 30 sec
 
 tSTATE currentState = sIdle;
 volatile uint32_t ticks = 0;
@@ -60,16 +60,25 @@ ISR(TIMER2_OVF_vect)	// System clock
 }
 
 void wdtInit() {
+	MCUSR &= ~_BV(WDRF);	// Clear watchdog system reset flag
 	wdt_reset();
 	WDTCSR = _BV(WDCE) | _BV(WDE);
+	wdt_enable(WDTO_1S);
 }
+
+void wdtDeinit() {
+	MCUSR &= ~_BV(WDRF);
+	wdt_reset();
+	wdt_disable();
+}
+
+
 
 int main()
 {
 	set_sleep_mode(SLEEP_MODE_IDLE);	// CPU clock turned off, peripherals operating normally
 	
 	wdtInit();
-	wdt_enable(WDTO_1S);				// enable watchdog
 	
 	displayInit();
 	PCF8574_Init();
@@ -323,11 +332,13 @@ int main()
 				displaySetBrightness(10*NVData.config.brightVal);	// ignore temporary config (sSettings)
 				buzzerSetVolume(10*NVData.config.volumeVal);
 				buzzerOff();
+				wdtDeinit();
 			};
 			sleep_mode();
 			ATOMIC_BLOCK (ATOMIC_FORCEON) {		// restore all turned off interrupt sources
 				displayOn();
 				sysTickOn();
+				wdtInit();
 				currentState = sIdle;			// enforce idle state
 				memorizedButton = BUTTON_NONE;	// no memorized button
 				lastActivityTime = ticks;		// activity timestamp
