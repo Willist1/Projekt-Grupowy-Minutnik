@@ -27,7 +27,8 @@
 
 tSTATE currentState = sIdle;
 volatile uint32_t ticks = 0;
-volatile uint8_t toggle = 0;
+volatile uint8_t toggle_250ms = 0;
+volatile uint8_t toggle_500ms = 0;
 uint32_t lastActivityTime = 0;
 
 void sysTickInit()
@@ -53,7 +54,10 @@ void sysTickOff()
 ISR(TIMER2_OVF_vect)	// System clock
 {
 	ticks++;
-	if (!(ticks % 500)) toggle ^= 0x01;
+	if (!(ticks % 250)) {
+		if(toggle_250ms) toggle_500ms ^= 0x01;
+		toggle_250ms ^= 0x01;
+	}
 	if (!(ticks % 1000) && (currentState == sRunning)) {
 		if(NVData.totalSeconds > 0) NVData.totalSeconds--;
 	}
@@ -272,7 +276,7 @@ int main()
 					LEDDIGITS[0]= (uint8_t)(setVal/10);
 					LEDDIGITS[1]= (uint8_t)(setVal%10);
 					
-					if (toggle) LEDDIGITS[1] |= DP;
+					if (toggle_250ms) LEDDIGITS[1] |= DP;
 					else LEDDIGITS[1] &= ~DP;
 				};
 				switch (memorizedButton) {
@@ -293,7 +297,7 @@ int main()
 						LEDDIGITS[1]= (uint8_t)((NVData.totalSeconds/60)%10);
 					};
 				} else if (NVData.totalSeconds == 0) {
-					if (toggle) {													// blink
+					if (toggle_500ms) {													// digits blink
 						ATOMIC_BLOCK (ATOMIC_FORCEON) {
 							LEDDIGITS[0]= 0;
 							LEDDIGITS[1]= 0;
@@ -311,6 +315,7 @@ int main()
 						LEDDIGITS[1]= (uint8_t)((NVData.totalSeconds)%10);
 					};
 				}
+				
 				if (NVData.totalSeconds == 0) {
 					buzzerOn();	// Perform continuous end beep
 				} else if (NVData.totalSeconds == NVData.config.warnVal*60) {								// Start warn beep
@@ -318,6 +323,10 @@ int main()
 				} else if (NVData.totalSeconds == NVData.config.warnVal*60 - WARN_BEEP_DURATION_SECONDS) {	// End warn beep
 					ATOMIC_BLOCK (ATOMIC_FORCEON) { buzzerOff(); };
 				}
+				
+				if (toggle_500ms) LEDDIGITS[1] |= DP;										// dot blink
+				else LEDDIGITS[1] &= ~DP;
+				
 				break;
 			default:
 				break;
@@ -333,6 +342,7 @@ int main()
 				buzzerSetVolume(10*NVData.config.volumeVal);
 				buzzerOff();
 				wdtDeinit();
+				EEPROMwrite();
 			};
 			sleep_mode();
 			ATOMIC_BLOCK (ATOMIC_FORCEON) {		// restore all turned off interrupt sources
