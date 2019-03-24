@@ -38,7 +38,7 @@ ISR(ANALOG_COMP_vect)//, ISR_NAKED)
 	}
 }
 
-void EEPROMwrite() {
+void EEPROMupdate() {
 	eeprom_update_block((void*)&NVData, (void*)&EEPROMData, sizeof(tNVData)); // Copy data to EEPROM
 }
 

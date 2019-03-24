@@ -12,6 +12,6 @@
 void pwrFailInit();
 void NVDataInit();
 
-void EEPROMwrite();
+void EEPROMupdate();
 
 #endif /* PWRFAIL_H_ */
