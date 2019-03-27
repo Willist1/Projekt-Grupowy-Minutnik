@@ -27,7 +27,6 @@
 
 tSTATE currentState = sIdle;
 volatile uint32_t ticks = 0;
-volatile uint8_t toggle_250ms = 0;
 volatile uint8_t toggle_500ms = 0;
 uint32_t lastActivityTime = 0;
 
@@ -54,9 +53,8 @@ void sysTickOff()
 ISR(TIMER2_OVF_vect)	// System clock
 {
 	ticks++;
-	if (!(ticks % 250)) {
-		if(toggle_250ms) toggle_500ms ^= 0x01;
-		toggle_250ms ^= 0x01;
+	if (!(ticks % 500)) {
+		toggle_500ms ^= 0x01;
 	}
 	if (!(ticks % 1000) && (currentState == sRunning)) {
 		if(NVData.totalSeconds > 0) NVData.totalSeconds--;
@@ -185,6 +183,7 @@ int main()
 								case Play:
 									currentState = sIdle;
 									memorizedButton = BUTTON_NONE;
+									LEDDIGITS[1] &= ~DP;	// turn off dot
 									break;
 								default:
 									break;
@@ -274,11 +273,9 @@ int main()
 			case sSetting:
 				ATOMIC_BLOCK (ATOMIC_FORCEON) {
 					LEDDIGITS[0]= (uint8_t)(setVal/10);
-					LEDDIGITS[1]= (uint8_t)(setVal%10);
-					
-					if (toggle_250ms) LEDDIGITS[1] |= DP;
-					else LEDDIGITS[1] &= ~DP;
+					LEDDIGITS[1]= (uint8_t)((setVal%10) | DP);	// turn on dot
 				};
+				
 				switch (memorizedButton) {
 					case setBrightness:
 						ATOMIC_BLOCK (ATOMIC_FORCEON) { displaySetBrightness(10*setVal); };
@@ -295,24 +292,29 @@ int main()
 					ATOMIC_BLOCK (ATOMIC_FORCEON) {
 						LEDDIGITS[0]= (uint8_t)((NVData.totalSeconds/60)/10);
 						LEDDIGITS[1]= (uint8_t)((NVData.totalSeconds/60)%10);
+						if (toggle_500ms) LEDDIGITS[1] |= DP;						// dot blink
+						else LEDDIGITS[1] &= ~DP;
 					};
 				} else if (NVData.totalSeconds == 0) {
-					if (toggle_500ms) {													// digits blink
+					if (toggle_500ms) {												// digits blink
 						ATOMIC_BLOCK (ATOMIC_FORCEON) {
-							LEDDIGITS[0]= 0;
-							LEDDIGITS[1]= 0;
+							LEDDIGITS[0]= BLANK_DISPLAY;
+							LEDDIGITS[1]= BLANK_DISPLAY;
+							LEDDIGITS[1] &= ~DP;
 						};
 					}
 					else {
 						ATOMIC_BLOCK (ATOMIC_FORCEON) {
-							LEDDIGITS[0]= BLANK_DISPLAY;
-							LEDDIGITS[1]= BLANK_DISPLAY;
+							LEDDIGITS[0]= 0;
+							LEDDIGITS[1]= DP;
 						};
 					}
 				} else {															// display seconds when < 60 sec
 					ATOMIC_BLOCK (ATOMIC_FORCEON) {
 						LEDDIGITS[0]= (uint8_t)((NVData.totalSeconds)/10);
 						LEDDIGITS[1]= (uint8_t)((NVData.totalSeconds)%10);
+						if (toggle_500ms) LEDDIGITS[1] |= DP;						// dot blink
+						else LEDDIGITS[1] &= ~DP;
 					};
 				}
 				
@@ -324,9 +326,6 @@ int main()
 					ATOMIC_BLOCK (ATOMIC_FORCEON) { buzzerOff(); };
 				}
 				
-				if (toggle_500ms) LEDDIGITS[1] |= DP;										// dot blink
-				else LEDDIGITS[1] &= ~DP;
-				
 				break;
 			default:
 				break;
@@ -337,12 +336,13 @@ int main()
 		if ((ticks - lastActivityTime > MAX_NO_ACTIVITY_TICKS) && (currentState != sRunning)) {
 			ATOMIC_BLOCK (ATOMIC_FORCEON) {		// turn off all interrupt sources except INT0
 				displayOff();
+				LEDDIGITS[1] &= ~DP;			// turn off dot
 				sysTickOff();
 				displaySetBrightness(10*NVData.config.brightVal);	// ignore temporary config (sSettings)
 				buzzerSetVolume(10*NVData.config.volumeVal);
 				buzzerOff();
 				wdtDeinit();
-				EEPROMwrite();
+				EEPROMupdate();	// only writes to EEPROM when config changed in relation to last record
 			};
 			sleep_mode();
 			ATOMIC_BLOCK (ATOMIC_FORCEON) {		// restore all turned off interrupt sources
