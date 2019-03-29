@@ -8,34 +8,34 @@
 </settings>
 <grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
-<layer number="1" name="Top" color="4" fill="1" visible="yes" active="no"/>
-<layer number="2" name="Route2" color="16" fill="1" visible="yes" active="no"/>
-<layer number="3" name="Route3" color="17" fill="1" visible="yes" active="no"/>
-<layer number="4" name="Route4" color="18" fill="1" visible="yes" active="no"/>
-<layer number="5" name="Route5" color="19" fill="1" visible="yes" active="no"/>
-<layer number="6" name="Route6" color="25" fill="1" visible="yes" active="no"/>
-<layer number="7" name="Route7" color="26" fill="1" visible="yes" active="no"/>
-<layer number="8" name="Route8" color="27" fill="1" visible="yes" active="no"/>
-<layer number="9" name="Route9" color="28" fill="1" visible="yes" active="no"/>
-<layer number="10" name="Route10" color="29" fill="1" visible="yes" active="no"/>
-<layer number="11" name="Route11" color="30" fill="1" visible="yes" active="no"/>
-<layer number="12" name="Route12" color="20" fill="1" visible="yes" active="no"/>
-<layer number="13" name="Route13" color="21" fill="1" visible="yes" active="no"/>
-<layer number="14" name="Route14" color="22" fill="1" visible="yes" active="no"/>
-<layer number="15" name="Route15" color="23" fill="1" visible="yes" active="no"/>
-<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="no"/>
-<layer number="17" name="Pads" color="2" fill="1" visible="yes" active="no"/>
-<layer number="18" name="Vias" color="2" fill="1" visible="yes" active="no"/>
-<layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="no"/>
-<layer number="20" name="Dimension" color="24" fill="1" visible="yes" active="no"/>
-<layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="no"/>
-<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="no"/>
-<layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="no"/>
-<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="no"/>
-<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="no"/>
-<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="no"/>
-<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="no"/>
-<layer number="28" name="bValues" color="7" fill="1" visible="yes" active="no"/>
+<layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
+<layer number="2" name="Route2" color="16" fill="1" visible="no" active="no"/>
+<layer number="3" name="Route3" color="17" fill="1" visible="no" active="no"/>
+<layer number="4" name="Route4" color="18" fill="1" visible="no" active="no"/>
+<layer number="5" name="Route5" color="19" fill="1" visible="no" active="no"/>
+<layer number="6" name="Route6" color="25" fill="1" visible="no" active="no"/>
+<layer number="7" name="Route7" color="26" fill="1" visible="no" active="no"/>
+<layer number="8" name="Route8" color="27" fill="1" visible="no" active="no"/>
+<layer number="9" name="Route9" color="28" fill="1" visible="no" active="no"/>
+<layer number="10" name="Route10" color="29" fill="1" visible="no" active="no"/>
+<layer number="11" name="Route11" color="30" fill="1" visible="no" active="no"/>
+<layer number="12" name="Route12" color="20" fill="1" visible="no" active="no"/>
+<layer number="13" name="Route13" color="21" fill="1" visible="no" active="no"/>
+<layer number="14" name="Route14" color="22" fill="1" visible="no" active="no"/>
+<layer number="15" name="Route15" color="23" fill="1" visible="no" active="no"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="no" active="no"/>
+<layer number="17" name="Pads" color="2" fill="1" visible="no" active="no"/>
+<layer number="18" name="Vias" color="2" fill="1" visible="no" active="no"/>
+<layer number="19" name="Unrouted" color="6" fill="1" visible="no" active="no"/>
+<layer number="20" name="Dimension" color="24" fill="1" visible="no" active="no"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="no" active="no"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="no" active="no"/>
+<layer number="23" name="tOrigins" color="15" fill="1" visible="no" active="no"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="no"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="no" active="no"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="no" active="no"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="no" active="no"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="no" active="no"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="no"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="no" active="no"/>
 <layer number="31" name="tCream" color="7" fill="4" visible="no" active="no"/>
@@ -44,8 +44,8 @@
 <layer number="34" name="bFinish" color="6" fill="6" visible="no" active="no"/>
 <layer number="35" name="tGlue" color="7" fill="4" visible="no" active="no"/>
 <layer number="36" name="bGlue" color="7" fill="5" visible="no" active="no"/>
-<layer number="37" name="tTest" color="7" fill="1" visible="yes" active="no"/>
-<layer number="38" name="bTest" color="7" fill="1" visible="yes" active="no"/>
+<layer number="37" name="tTest" color="7" fill="1" visible="no" active="no"/>
+<layer number="38" name="bTest" color="7" fill="1" visible="no" active="no"/>
 <layer number="39" name="tKeepout" color="4" fill="11" visible="no" active="no"/>
 <layer number="40" name="bKeepout" color="1" fill="11" visible="no" active="no"/>
 <layer number="41" name="tRestrict" color="4" fill="10" visible="no" active="no"/>
@@ -53,12 +53,12 @@
 <layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="no"/>
 <layer number="44" name="Drills" color="7" fill="1" visible="no" active="no"/>
 <layer number="45" name="Holes" color="7" fill="1" visible="no" active="no"/>
-<layer number="46" name="Milling" color="3" fill="1" visible="yes" active="no"/>
-<layer number="47" name="Measures" color="7" fill="1" visible="yes" active="no"/>
-<layer number="48" name="Document" color="7" fill="1" visible="yes" active="no"/>
-<layer number="49" name="Reference" color="7" fill="1" visible="yes" active="no"/>
-<layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="no"/>
-<layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="no"/>
+<layer number="46" name="Milling" color="3" fill="1" visible="no" active="no"/>
+<layer number="47" name="Measures" color="7" fill="1" visible="no" active="no"/>
+<layer number="48" name="Document" color="7" fill="1" visible="no" active="no"/>
+<layer number="49" name="Reference" color="7" fill="1" visible="no" active="no"/>
+<layer number="51" name="tDocu" color="7" fill="1" visible="no" active="no"/>
+<layer number="52" name="bDocu" color="7" fill="1" visible="no" active="no"/>
 <layer number="88" name="SimResults" color="9" fill="1" visible="yes" active="yes"/>
 <layer number="89" name="SimProbes" color="9" fill="1" visible="yes" active="yes"/>
 <layer number="90" name="Modules" color="5" fill="1" visible="yes" active="yes"/>
@@ -17209,22 +17209,22 @@ http://www.instructables.com/id/DIY-Lithium-ion-Battery-Charger/step4/TP4056-bas
 </classes>
 <parts>
 <part name="IC1" library="atmel" library_urn="urn:adsk.eagle:library:105" deviceset="MEGA8" device="-AI" package3d_urn="urn:adsk.eagle:package:4313/1"/>
-<part name="Q1" library="crystal" library_urn="urn:adsk.eagle:library:204" deviceset="CRYSTAL" device="TC26V" package3d_urn="urn:adsk.eagle:package:12088/1"/>
-<part name="C1" library="capacitor-wima" library_urn="urn:adsk.eagle:library:116" deviceset="C" device="2.5/2" package3d_urn="urn:adsk.eagle:package:5415/1"/>
-<part name="C2" library="capacitor-wima" library_urn="urn:adsk.eagle:library:116" deviceset="C" device="2.5/2" package3d_urn="urn:adsk.eagle:package:5415/1"/>
-<part name="IDCEKSP" library="con-harting-ml" library_urn="urn:adsk.eagle:library:149" deviceset="ML6" device="" package3d_urn="urn:adsk.eagle:package:6988/1"/>
+<part name="Q1" library="crystal" library_urn="urn:adsk.eagle:library:204" deviceset="CRYSTAL" device="TC26V" package3d_urn="urn:adsk.eagle:package:12088/1" value="32.768kHz"/>
+<part name="C1" library="capacitor-wima" library_urn="urn:adsk.eagle:library:116" deviceset="C" device="2.5/2" package3d_urn="urn:adsk.eagle:package:5415/1" value="22pF"/>
+<part name="C2" library="capacitor-wima" library_urn="urn:adsk.eagle:library:116" deviceset="C" device="2.5/2" package3d_urn="urn:adsk.eagle:package:5415/1" value="22pF"/>
+<part name="EKSP" library="con-harting-ml" library_urn="urn:adsk.eagle:library:149" deviceset="ML6" device="" package3d_urn="urn:adsk.eagle:package:6988/1"/>
 <part name="USBASP" library="con-harting-ml" library_urn="urn:adsk.eagle:library:149" deviceset="ML6" device="" package3d_urn="urn:adsk.eagle:package:6988/1"/>
 <part name="SUPPLY2" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY5" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="VCC" device=""/>
 <part name="SUPPLY7" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="VCC" device=""/>
 <part name="SUPPLY3" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="C3" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="CPOL-EU" device="140CLH-1010" package3d_urn="urn:adsk.eagle:package:23391/1" value="100uF"/>
+<part name="C3" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="CPOL-EU" device="140CLH-1010" package3d_urn="urn:adsk.eagle:package:23391/1" value="470uF"/>
 <part name="SUPPLY1" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="VCC" device=""/>
 <part name="SUPPLY4" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="R0" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="01005" package3d_urn="urn:adsk.eagle:package:26133/1" value="4.7k"/>
 <part name="SUPPLY8" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="VCC" device=""/>
-<part name="IC2" library="74xx-eu" library_urn="urn:adsk.eagle:library:85" deviceset="74*47" device="N" package3d_urn="urn:adsk.eagle:package:922/2" technology="LS"/>
-<part name="IC3" library="74xx-eu" library_urn="urn:adsk.eagle:library:85" deviceset="74*47" device="N" package3d_urn="urn:adsk.eagle:package:922/2" technology="LS"/>
+<part name="DRIVER1" library="74xx-eu" library_urn="urn:adsk.eagle:library:85" deviceset="74*47" device="N" package3d_urn="urn:adsk.eagle:package:922/2" technology="LS"/>
+<part name="DRIVER2" library="74xx-eu" library_urn="urn:adsk.eagle:library:85" deviceset="74*47" device="N" package3d_urn="urn:adsk.eagle:package:922/2" technology="LS"/>
 <part name="SUPPLY6" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY9" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY10" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="VCC" device=""/>
@@ -17246,17 +17246,18 @@ http://www.instructables.com/id/DIY-Lithium-ion-Battery-Charger/step4/TP4056-bas
 <part name="J_REG_9V_1" library="PololuVreg" deviceset="9V_VOLTAGE_REGULATOR" device=""/>
 <part name="SUPPLY12" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY13" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="VCC" device=""/>
-<part name="SHOTTKY" library="s2x_10" deviceset="S2*" device="" technology="A"/>
-<part name="JP1" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X4" device="" package3d_urn="urn:adsk.eagle:package:22407/2"/>
+<part name="SHOTTKYDIODE" library="s2x_10" deviceset="S2*" device="" technology="A"/>
+<part name="UART" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X4" device="" package3d_urn="urn:adsk.eagle:package:22407/2"/>
 <part name="SUPPLY14" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="VCC" device=""/>
 <part name="SUPPLY15" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="C4" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="CPOL-EU" device="140CLH-1010" package3d_urn="urn:adsk.eagle:package:23391/1"/>
+<part name="C4" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="CPOL-EU" device="140CLH-1010" package3d_urn="urn:adsk.eagle:package:23391/1" value="100uF"/>
 <part name="SUPPLY16" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="VCC" device=""/>
 <part name="U$3" library="diy-modules" deviceset="BATTERY-CHARGER-LI-PROT" device=""/>
 <part name="SUPPLY17" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="VCC" device=""/>
 <part name="SUPPLY18" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="U$1" library="BigLED7Segm" deviceset="LED-7-SEGM-56MM" device=""/>
-<part name="U$2" library="BigLED7Segm" deviceset="LED-7-SEGM-56MM" device=""/>
+<part name="LSDIGIT" library="BigLED7Segm" deviceset="LED-7-SEGM-56MM" device=""/>
+<part name="MSDIGIT" library="BigLED7Segm" deviceset="LED-7-SEGM-56MM" device=""/>
+<part name="R15" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="01005" package3d_urn="urn:adsk.eagle:package:26133/1" value="50"/>
 </parts>
 <sheets>
 <sheet>
@@ -17268,20 +17269,20 @@ http://www.instructables.com/id/DIY-Lithium-ion-Battery-Charger/step4/TP4056-bas
 <attribute name="VALUE" x="12.7" y="80.01" size="1.778" layer="96"/>
 </instance>
 <instance part="Q1" gate="G$1" x="2.54" y="55.88" smashed="yes" rot="R90">
-<attribute name="NAME" x="1.524" y="58.42" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="5.08" y="58.42" size="1.778" layer="96" rot="R90"/>
+<attribute name="NAME" x="-1.016" y="53.34" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="10.16" y="50.8" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="C1" gate="G$1" x="-7.62" y="58.42" smashed="yes" rot="R90">
-<attribute name="NAME" x="-8.001" y="59.944" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="-2.921" y="59.944" size="1.778" layer="96" rot="R90"/>
+<attribute name="NAME" x="-11.684" y="63.119" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="-11.684" y="60.579" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="C2" gate="G$1" x="-7.62" y="53.34" smashed="yes" rot="R90">
-<attribute name="NAME" x="-8.001" y="54.864" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="-2.921" y="54.864" size="1.778" layer="96" rot="R90"/>
+<attribute name="NAME" x="-11.684" y="55.499" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="-11.684" y="52.959" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="IDCEKSP" gate="1" x="45.72" y="99.06" smashed="yes">
-<attribute name="VALUE" x="41.91" y="91.44" size="1.778" layer="96"/>
-<attribute name="NAME" x="39.37" y="89.662" size="1.778" layer="95"/>
+<instance part="EKSP" gate="1" x="45.72" y="91.44" smashed="yes">
+<attribute name="VALUE" x="41.91" y="83.82" size="1.778" layer="96"/>
+<attribute name="NAME" x="44.45" y="99.822" size="1.778" layer="95"/>
 </instance>
 <instance part="USBASP" gate="1" x="71.12" y="5.08" smashed="yes" rot="MR0">
 <attribute name="VALUE" x="74.93" y="-2.54" size="1.778" layer="96" rot="MR0"/>
@@ -17303,11 +17304,11 @@ http://www.instructables.com/id/DIY-Lithium-ion-Battery-Charger/step4/TP4056-bas
 <attribute name="NAME" x="-1.143" y="40.1574" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="-1.143" y="45.2374" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="SUPPLY1" gate="G$1" x="35.56" y="96.52" smashed="yes" rot="R90">
-<attribute name="VALUE" x="32.385" y="94.615" size="1.778" layer="96" rot="R90"/>
+<instance part="SUPPLY1" gate="G$1" x="35.56" y="88.9" smashed="yes" rot="R90">
+<attribute name="VALUE" x="32.385" y="86.995" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="SUPPLY4" gate="GND" x="35.56" y="101.6" smashed="yes" rot="MR90">
-<attribute name="VALUE" x="32.385" y="99.695" size="1.778" layer="96" rot="MR90"/>
+<instance part="SUPPLY4" gate="GND" x="35.56" y="93.98" smashed="yes" rot="MR90">
+<attribute name="VALUE" x="32.385" y="92.075" size="1.778" layer="96" rot="MR90"/>
 </instance>
 <instance part="R0" gate="G$1" x="5.08" y="81.28" smashed="yes" rot="R90">
 <attribute name="NAME" x="1.0414" y="80.01" size="1.778" layer="95" rot="R90"/>
@@ -17316,135 +17317,139 @@ http://www.instructables.com/id/DIY-Lithium-ion-Battery-Charger/step4/TP4056-bas
 <instance part="SUPPLY8" gate="G$1" x="5.08" y="88.9" smashed="yes">
 <attribute name="VALUE" x="3.175" y="92.075" size="1.778" layer="96"/>
 </instance>
-<instance part="IC2" gate="G$1" x="101.6" y="68.58" smashed="yes">
-<attribute name="NAME" x="93.98" y="79.375" size="1.778" layer="95"/>
-<attribute name="VALUE" x="93.98" y="55.88" size="1.778" layer="96"/>
+<instance part="DRIVER1" gate="G$1" x="104.14" y="68.58" smashed="yes">
+<attribute name="NAME" x="96.52" y="79.375" size="1.778" layer="95"/>
+<attribute name="VALUE" x="96.52" y="55.88" size="1.778" layer="96"/>
 </instance>
-<instance part="IC3" gate="G$1" x="101.6" y="43.18" smashed="yes">
-<attribute name="NAME" x="93.98" y="53.975" size="1.778" layer="95"/>
-<attribute name="VALUE" x="93.98" y="30.48" size="1.778" layer="96"/>
+<instance part="DRIVER2" gate="G$1" x="104.14" y="43.18" smashed="yes">
+<attribute name="NAME" x="96.52" y="53.975" size="1.778" layer="95"/>
+<attribute name="VALUE" x="96.52" y="30.48" size="1.778" layer="96"/>
 </instance>
-<instance part="IC2" gate="G$2" x="101.6" y="83.82" smashed="yes" rot="R90">
-<attribute name="NAME" x="99.695" y="88.265" size="1.778" layer="95"/>
+<instance part="DRIVER1" gate="G$2" x="104.14" y="83.82" smashed="yes" rot="R90">
+<attribute name="NAME" x="102.235" y="88.265" size="1.778" layer="95"/>
 </instance>
-<instance part="IC3" gate="G$2" x="101.6" y="25.4" smashed="yes" rot="R90">
-<attribute name="NAME" x="104.775" y="22.225" size="1.778" layer="95" rot="R180"/>
+<instance part="DRIVER2" gate="G$2" x="104.14" y="25.4" smashed="yes" rot="R90">
+<attribute name="NAME" x="112.395" y="22.225" size="1.778" layer="95" rot="R180"/>
 </instance>
-<instance part="SUPPLY6" gate="GND" x="111.76" y="25.4" smashed="yes" rot="MR270">
-<attribute name="VALUE" x="109.855" y="23.495" size="1.778" layer="96" rot="MR180"/>
+<instance part="SUPPLY6" gate="GND" x="114.3" y="25.4" smashed="yes" rot="MR270">
+<attribute name="VALUE" x="117.475" y="26.035" size="1.778" layer="96" rot="MR180"/>
 </instance>
-<instance part="SUPPLY9" gate="GND" x="111.76" y="83.82" smashed="yes" rot="MR270">
-<attribute name="VALUE" x="109.855" y="81.915" size="1.778" layer="96" rot="MR180"/>
+<instance part="SUPPLY9" gate="GND" x="114.3" y="83.82" smashed="yes" rot="MR270">
+<attribute name="VALUE" x="117.475" y="84.455" size="1.778" layer="96" rot="MR180"/>
 </instance>
-<instance part="SUPPLY10" gate="G$1" x="91.44" y="83.82" smashed="yes" rot="R90">
-<attribute name="VALUE" x="93.345" y="76.835" size="1.778" layer="96" rot="R90"/>
+<instance part="SUPPLY10" gate="G$1" x="93.98" y="83.82" smashed="yes" rot="R90">
+<attribute name="VALUE" x="90.805" y="85.725" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="SUPPLY11" gate="G$1" x="91.44" y="25.4" smashed="yes" rot="R90">
-<attribute name="VALUE" x="93.345" y="18.415" size="1.778" layer="96" rot="R90"/>
+<instance part="SUPPLY11" gate="G$1" x="93.98" y="25.4" smashed="yes" rot="R90">
+<attribute name="VALUE" x="88.265" y="27.305" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="R1" gate="G$1" x="119.38" y="76.2" smashed="yes" rot="R180">
-<attribute name="NAME" x="120.65" y="72.1614" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="120.65" y="74.422" size="1.778" layer="96" rot="R180"/>
+<instance part="R1" gate="G$1" x="121.92" y="76.2" smashed="yes" rot="R180">
+<attribute name="NAME" x="123.19" y="72.1614" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="123.19" y="79.502" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="R2" gate="G$1" x="119.38" y="73.66" smashed="yes" rot="R180">
-<attribute name="NAME" x="120.65" y="69.6214" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="120.65" y="71.882" size="1.778" layer="96" rot="R180"/>
+<instance part="R2" gate="G$1" x="121.92" y="73.66" smashed="yes" rot="R180">
+<attribute name="NAME" x="123.19" y="69.6214" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="123.19" y="71.882" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="R3" gate="G$1" x="119.38" y="71.12" smashed="yes" rot="R180">
-<attribute name="NAME" x="120.65" y="67.0814" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="120.65" y="69.342" size="1.778" layer="96" rot="R180"/>
+<instance part="R3" gate="G$1" x="121.92" y="71.12" smashed="yes" rot="R180">
+<attribute name="NAME" x="123.19" y="67.0814" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="123.19" y="69.342" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="R4" gate="G$1" x="119.38" y="68.58" smashed="yes" rot="R180">
-<attribute name="NAME" x="120.65" y="64.5414" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="120.65" y="66.802" size="1.778" layer="96" rot="R180"/>
+<instance part="R4" gate="G$1" x="121.92" y="68.58" smashed="yes" rot="R180">
+<attribute name="NAME" x="123.19" y="64.5414" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="123.19" y="66.802" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="R5" gate="G$1" x="119.38" y="66.04" smashed="yes" rot="R180">
-<attribute name="NAME" x="120.65" y="62.0014" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="120.65" y="64.262" size="1.778" layer="96" rot="R180"/>
+<instance part="R5" gate="G$1" x="121.92" y="66.04" smashed="yes" rot="R180">
+<attribute name="NAME" x="123.19" y="62.0014" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="123.19" y="64.262" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="R6" gate="G$1" x="119.38" y="63.5" smashed="yes" rot="R180">
-<attribute name="NAME" x="120.65" y="59.4614" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="120.65" y="61.722" size="1.778" layer="96" rot="R180"/>
+<instance part="R6" gate="G$1" x="121.92" y="63.5" smashed="yes" rot="R180">
+<attribute name="NAME" x="123.19" y="59.4614" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="123.19" y="61.722" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="R7" gate="G$1" x="119.38" y="60.96" smashed="yes" rot="R180">
-<attribute name="NAME" x="120.65" y="56.9214" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="120.65" y="59.182" size="1.778" layer="96" rot="R180"/>
+<instance part="R7" gate="G$1" x="121.92" y="60.96" smashed="yes" rot="R180">
+<attribute name="NAME" x="123.19" y="56.9214" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="123.19" y="59.182" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="R8" gate="G$1" x="119.38" y="50.8" smashed="yes" rot="R180">
-<attribute name="NAME" x="120.65" y="46.7614" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="120.65" y="49.022" size="1.778" layer="96" rot="R180"/>
+<instance part="R8" gate="G$1" x="121.92" y="50.8" smashed="yes" rot="R180">
+<attribute name="NAME" x="123.19" y="46.7614" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="123.19" y="54.102" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="R9" gate="G$1" x="119.38" y="48.26" smashed="yes" rot="R180">
-<attribute name="NAME" x="120.65" y="44.2214" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="120.65" y="46.482" size="1.778" layer="96" rot="R180"/>
+<instance part="R9" gate="G$1" x="121.92" y="48.26" smashed="yes" rot="R180">
+<attribute name="NAME" x="123.19" y="44.2214" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="123.19" y="46.482" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="R10" gate="G$1" x="119.38" y="45.72" smashed="yes" rot="R180">
-<attribute name="NAME" x="120.65" y="41.6814" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="120.65" y="43.942" size="1.778" layer="96" rot="R180"/>
+<instance part="R10" gate="G$1" x="121.92" y="45.72" smashed="yes" rot="R180">
+<attribute name="NAME" x="123.19" y="41.6814" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="123.19" y="43.942" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="R11" gate="G$1" x="119.38" y="43.18" smashed="yes" rot="R180">
-<attribute name="NAME" x="120.65" y="39.1414" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="120.65" y="41.402" size="1.778" layer="96" rot="R180"/>
+<instance part="R11" gate="G$1" x="121.92" y="43.18" smashed="yes" rot="R180">
+<attribute name="NAME" x="123.19" y="39.1414" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="123.19" y="41.402" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="R12" gate="G$1" x="119.38" y="40.64" smashed="yes" rot="R180">
-<attribute name="NAME" x="120.65" y="36.6014" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="120.65" y="38.862" size="1.778" layer="96" rot="R180"/>
+<instance part="R12" gate="G$1" x="121.92" y="40.64" smashed="yes" rot="R180">
+<attribute name="NAME" x="123.19" y="36.6014" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="123.19" y="38.862" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="R13" gate="G$1" x="119.38" y="38.1" smashed="yes" rot="R180">
-<attribute name="NAME" x="120.65" y="34.0614" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="120.65" y="36.322" size="1.778" layer="96" rot="R180"/>
+<instance part="R13" gate="G$1" x="121.92" y="38.1" smashed="yes" rot="R180">
+<attribute name="NAME" x="123.19" y="34.0614" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="123.19" y="36.322" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="R14" gate="G$1" x="119.38" y="35.56" smashed="yes" rot="R180">
-<attribute name="NAME" x="120.65" y="31.5214" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="120.65" y="33.782" size="1.778" layer="96" rot="R180"/>
+<instance part="R14" gate="G$1" x="121.92" y="35.56" smashed="yes" rot="R180">
+<attribute name="NAME" x="123.19" y="31.5214" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="123.19" y="33.782" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="J_REG_9V_1" gate="J_REG_9V" x="175.26" y="53.34" smashed="yes" rot="MR0">
-<attribute name="NAME" x="185.42" y="56.642" size="1.778" layer="94" ratio="12" rot="MR0"/>
+<instance part="J_REG_9V_1" gate="J_REG_9V" x="177.8" y="53.34" smashed="yes" rot="MR0">
+<attribute name="NAME" x="187.96" y="56.642" size="1.778" layer="94" ratio="12" rot="MR0"/>
 </instance>
-<instance part="SUPPLY12" gate="GND" x="175.26" y="38.1" smashed="yes" rot="MR0">
-<attribute name="VALUE" x="173.355" y="40.005" size="1.778" layer="96" rot="MR270"/>
+<instance part="SUPPLY12" gate="GND" x="177.8" y="38.1" smashed="yes" rot="MR0">
+<attribute name="VALUE" x="175.895" y="40.005" size="1.778" layer="96" rot="MR270"/>
 </instance>
-<instance part="SUPPLY13" gate="G$1" x="193.04" y="53.34" smashed="yes" rot="MR90">
-<attribute name="VALUE" x="193.675" y="46.355" size="1.778" layer="96" rot="MR90"/>
+<instance part="SUPPLY13" gate="G$1" x="195.58" y="53.34" smashed="yes" rot="MR90">
+<attribute name="VALUE" x="196.215" y="46.355" size="1.778" layer="96" rot="MR90"/>
 </instance>
-<instance part="SHOTTKY" gate="G$1" x="5.08" y="33.02" smashed="yes" rot="R90">
-<attribute name="NAME" x="2.0574" y="25.4" size="1.778" layer="95" rot="R90"/>
+<instance part="SHOTTKYDIODE" gate="G$1" x="5.08" y="33.02" smashed="yes" rot="R90">
+<attribute name="NAME" x="2.54" y="32.5374" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="7.3914" y="35.56" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="JP1" gate="A" x="78.74" y="58.42" smashed="yes">
-<attribute name="NAME" x="72.39" y="66.675" size="1.778" layer="95"/>
-<attribute name="VALUE" x="72.39" y="50.8" size="1.778" layer="96"/>
+<instance part="UART" gate="A" x="86.36" y="58.42" smashed="yes">
+<attribute name="NAME" x="80.01" y="66.675" size="1.778" layer="95"/>
+<attribute name="VALUE" x="80.01" y="50.8" size="1.778" layer="96"/>
 </instance>
-<instance part="SUPPLY14" gate="G$1" x="68.58" y="63.5" smashed="yes" rot="R90">
-<attribute name="VALUE" x="70.485" y="66.675" size="1.778" layer="96" rot="R180"/>
+<instance part="SUPPLY14" gate="G$1" x="76.2" y="63.5" smashed="yes" rot="R90">
+<attribute name="VALUE" x="78.105" y="66.675" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="SUPPLY15" gate="GND" x="68.58" y="60.96" smashed="yes" rot="MR90">
-<attribute name="VALUE" x="70.485" y="57.785" size="1.778" layer="96" rot="MR0"/>
+<instance part="SUPPLY15" gate="GND" x="76.2" y="60.96" smashed="yes" rot="MR90">
+<attribute name="VALUE" x="78.105" y="57.785" size="1.778" layer="96" rot="MR0"/>
 </instance>
 <instance part="C4" gate="G$1" x="-5.08" y="66.04" smashed="yes" rot="R270">
-<attribute name="NAME" x="-4.5974" y="64.897" size="1.778" layer="95" rot="R270"/>
-<attribute name="VALUE" x="-9.6774" y="64.897" size="1.778" layer="96" rot="R270"/>
+<attribute name="NAME" x="-14.097" y="69.0626" size="1.778" layer="95"/>
+<attribute name="VALUE" x="-11.303" y="68.0974" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="SUPPLY16" gate="G$1" x="2.54" y="63.5" smashed="yes" rot="R180">
-<attribute name="VALUE" x="4.445" y="60.325" size="1.778" layer="96" rot="R180"/>
+<attribute name="VALUE" x="9.525" y="62.865" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="U$3" gate="G$1" x="190.5" y="88.9" smashed="yes" rot="MR0">
-<attribute name="NAME" x="203.2" y="104.14" size="1.778" layer="95" rot="MR0"/>
-<attribute name="VALUE" x="203.2" y="101.6" size="1.778" layer="96" rot="MR0"/>
+<instance part="U$3" gate="G$1" x="149.86" y="7.62" smashed="yes" rot="MR0">
+<attribute name="NAME" x="162.56" y="22.86" size="1.778" layer="95" rot="MR0"/>
+<attribute name="VALUE" x="162.56" y="20.32" size="1.778" layer="96" rot="MR0"/>
 </instance>
-<instance part="SUPPLY17" gate="G$1" x="172.72" y="96.52" smashed="yes" rot="R90">
-<attribute name="VALUE" x="172.085" y="89.535" size="1.778" layer="96" rot="R90"/>
+<instance part="SUPPLY17" gate="G$1" x="132.08" y="15.24" smashed="yes" rot="R90">
+<attribute name="VALUE" x="131.445" y="8.255" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="SUPPLY18" gate="GND" x="172.72" y="81.28" smashed="yes" rot="R270">
-<attribute name="VALUE" x="174.625" y="79.375" size="1.778" layer="96" rot="R180"/>
+<instance part="SUPPLY18" gate="GND" x="132.08" y="0" smashed="yes" rot="R270">
+<attribute name="VALUE" x="133.985" y="-1.905" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="U$1" gate="G$1" x="139.7" y="68.58" smashed="yes" rot="R270">
-<attribute name="NAME" x="134.62" y="78.105" size="1.778" layer="95"/>
-<attribute name="VALUE" x="134.62" y="57.15" size="1.778" layer="96"/>
+<instance part="LSDIGIT" gate="G$1" x="142.24" y="68.58" smashed="yes" rot="R270">
+<attribute name="NAME" x="137.16" y="78.105" size="1.778" layer="95"/>
+<attribute name="VALUE" x="137.16" y="57.15" size="1.778" layer="96"/>
 </instance>
-<instance part="U$2" gate="G$1" x="139.7" y="43.18" smashed="yes" rot="R270">
-<attribute name="NAME" x="134.62" y="52.705" size="1.778" layer="95"/>
-<attribute name="VALUE" x="134.62" y="31.75" size="1.778" layer="96"/>
+<instance part="MSDIGIT" gate="G$1" x="142.24" y="43.18" smashed="yes" rot="R270">
+<attribute name="NAME" x="137.16" y="52.705" size="1.778" layer="95"/>
+<attribute name="VALUE" x="137.16" y="31.75" size="1.778" layer="96"/>
+</instance>
+<instance part="R15" gate="G$1" x="157.48" y="83.82" smashed="yes" rot="MR90">
+<attribute name="NAME" x="151.3586" y="85.09" size="1.778" layer="95" rot="R270"/>
+<attribute name="VALUE" x="154.178" y="82.55" size="1.778" layer="96" rot="MR90"/>
 </instance>
 </instances>
 <busses>
@@ -17474,18 +17479,18 @@ http://www.instructables.com/id/DIY-Lithium-ion-Battery-Charger/step4/TP4056-bas
 <segment>
 <pinref part="IC1" gate="G$1" pin="PC4(ADC4/SDA)"/>
 <wire x1="55.88" y1="66.04" x2="58.42" y2="66.04" width="0.1524" layer="91"/>
-<wire x1="58.42" y1="66.04" x2="58.42" y2="96.52" width="0.1524" layer="91"/>
-<pinref part="IDCEKSP" gate="1" pin="1"/>
-<wire x1="53.34" y1="96.52" x2="58.42" y2="96.52" width="0.1524" layer="91"/>
+<wire x1="58.42" y1="66.04" x2="58.42" y2="88.9" width="0.1524" layer="91"/>
+<pinref part="EKSP" gate="1" pin="1"/>
+<wire x1="53.34" y1="88.9" x2="58.42" y2="88.9" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$14" class="0">
 <segment>
 <pinref part="IC1" gate="G$1" pin="PD2(INT0)"/>
 <wire x1="55.88" y1="48.26" x2="63.5" y2="48.26" width="0.1524" layer="91"/>
-<wire x1="63.5" y1="48.26" x2="63.5" y2="101.6" width="0.1524" layer="91"/>
-<pinref part="IDCEKSP" gate="1" pin="5"/>
-<wire x1="53.34" y1="101.6" x2="63.5" y2="101.6" width="0.1524" layer="91"/>
+<wire x1="63.5" y1="48.26" x2="63.5" y2="93.98" width="0.1524" layer="91"/>
+<pinref part="EKSP" gate="1" pin="5"/>
+<wire x1="53.34" y1="93.98" x2="63.5" y2="93.98" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -17520,15 +17525,15 @@ http://www.instructables.com/id/DIY-Lithium-ion-Battery-Charger/step4/TP4056-bas
 </segment>
 <segment>
 <pinref part="SUPPLY4" gate="GND" pin="GND"/>
-<pinref part="IDCEKSP" gate="1" pin="6"/>
+<pinref part="EKSP" gate="1" pin="6"/>
 </segment>
 <segment>
 <pinref part="SUPPLY6" gate="GND" pin="GND"/>
-<pinref part="IC3" gate="G$2" pin="GND"/>
+<pinref part="DRIVER2" gate="G$2" pin="GND"/>
 </segment>
 <segment>
 <pinref part="SUPPLY9" gate="GND" pin="GND"/>
-<pinref part="IC2" gate="G$2" pin="GND"/>
+<pinref part="DRIVER1" gate="G$2" pin="GND"/>
 </segment>
 <segment>
 <pinref part="SUPPLY12" gate="GND" pin="GND"/>
@@ -17536,8 +17541,8 @@ http://www.instructables.com/id/DIY-Lithium-ion-Battery-Charger/step4/TP4056-bas
 </segment>
 <segment>
 <pinref part="SUPPLY15" gate="GND" pin="GND"/>
-<pinref part="JP1" gate="A" pin="2"/>
-<wire x1="71.12" y1="60.96" x2="76.2" y2="60.96" width="0.1524" layer="91"/>
+<pinref part="UART" gate="A" pin="2"/>
+<wire x1="78.74" y1="60.96" x2="83.82" y2="60.96" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="SUPPLY18" gate="GND" pin="GND"/>
@@ -17551,7 +17556,7 @@ http://www.instructables.com/id/DIY-Lithium-ion-Battery-Charger/step4/TP4056-bas
 </segment>
 <segment>
 <pinref part="SUPPLY1" gate="G$1" pin="VCC"/>
-<pinref part="IDCEKSP" gate="1" pin="2"/>
+<pinref part="EKSP" gate="1" pin="2"/>
 </segment>
 <segment>
 <pinref part="SUPPLY8" gate="G$1" pin="VCC"/>
@@ -17559,11 +17564,11 @@ http://www.instructables.com/id/DIY-Lithium-ion-Battery-Charger/step4/TP4056-bas
 </segment>
 <segment>
 <pinref part="SUPPLY10" gate="G$1" pin="VCC"/>
-<pinref part="IC2" gate="G$2" pin="VCC"/>
+<pinref part="DRIVER1" gate="G$2" pin="VCC"/>
 </segment>
 <segment>
 <pinref part="SUPPLY11" gate="G$1" pin="VCC"/>
-<pinref part="IC3" gate="G$2" pin="VCC"/>
+<pinref part="DRIVER2" gate="G$2" pin="VCC"/>
 </segment>
 <segment>
 <pinref part="SUPPLY13" gate="G$1" pin="VCC"/>
@@ -17571,7 +17576,7 @@ http://www.instructables.com/id/DIY-Lithium-ion-Battery-Charger/step4/TP4056-bas
 </segment>
 <segment>
 <pinref part="SUPPLY5" gate="G$1" pin="VCC"/>
-<pinref part="SHOTTKY" gate="G$1" pin="A"/>
+<pinref part="SHOTTKYDIODE" gate="G$1" pin="A"/>
 <wire x1="5.08" y1="27.94" x2="5.08" y2="30.48" width="0.1524" layer="91"/>
 <pinref part="IC1" gate="G$1" pin="PD6(AIN0)"/>
 <wire x1="55.88" y1="38.1" x2="30.48" y2="38.1" width="0.1524" layer="91"/>
@@ -17581,8 +17586,8 @@ http://www.instructables.com/id/DIY-Lithium-ion-Battery-Charger/step4/TP4056-bas
 </segment>
 <segment>
 <pinref part="SUPPLY14" gate="G$1" pin="VCC"/>
-<pinref part="JP1" gate="A" pin="1"/>
-<wire x1="71.12" y1="63.5" x2="76.2" y2="63.5" width="0.1524" layer="91"/>
+<pinref part="UART" gate="A" pin="1"/>
+<wire x1="78.74" y1="63.5" x2="83.82" y2="63.5" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="C4" gate="G$1" pin="+"/>
@@ -17603,10 +17608,10 @@ http://www.instructables.com/id/DIY-Lithium-ion-Battery-Charger/step4/TP4056-bas
 <wire x1="63.5" y1="5.08" x2="55.88" y2="5.08" width="0.1524" layer="91"/>
 <pinref part="IC1" gate="G$1" pin="PB5(SCK)"/>
 <wire x1="55.88" y1="5.08" x2="55.88" y2="17.78" width="0.1524" layer="91"/>
-<pinref part="IC3" gate="G$1" pin="ID"/>
-<wire x1="88.9" y1="43.18" x2="73.66" y2="43.18" width="0.1524" layer="91"/>
-<wire x1="73.66" y1="43.18" x2="73.66" y2="17.78" width="0.1524" layer="91"/>
-<wire x1="73.66" y1="17.78" x2="55.88" y2="17.78" width="0.1524" layer="91"/>
+<pinref part="DRIVER2" gate="G$1" pin="ID"/>
+<wire x1="91.44" y1="43.18" x2="76.2" y2="43.18" width="0.1524" layer="91"/>
+<wire x1="76.2" y1="43.18" x2="76.2" y2="17.78" width="0.1524" layer="91"/>
+<wire x1="76.2" y1="17.78" x2="55.88" y2="17.78" width="0.1524" layer="91"/>
 <junction x="55.88" y="17.78"/>
 </segment>
 </net>
@@ -17631,8 +17636,8 @@ http://www.instructables.com/id/DIY-Lithium-ion-Battery-Charger/step4/TP4056-bas
 <wire x1="60.96" y1="15.24" x2="60.96" y2="22.86" width="0.1524" layer="91"/>
 <pinref part="IC1" gate="G$1" pin="PB3(MOSI/OC2)"/>
 <wire x1="60.96" y1="22.86" x2="55.88" y2="22.86" width="0.1524" layer="91"/>
-<pinref part="IC3" gate="G$1" pin="IB"/>
-<wire x1="88.9" y1="48.26" x2="68.58" y2="48.26" width="0.1524" layer="91"/>
+<pinref part="DRIVER2" gate="G$1" pin="IB"/>
+<wire x1="91.44" y1="48.26" x2="68.58" y2="48.26" width="0.1524" layer="91"/>
 <wire x1="68.58" y1="48.26" x2="68.58" y2="22.86" width="0.1524" layer="91"/>
 <wire x1="68.58" y1="22.86" x2="60.96" y2="22.86" width="0.1524" layer="91"/>
 <junction x="60.96" y="22.86"/>
@@ -17642,9 +17647,9 @@ http://www.instructables.com/id/DIY-Lithium-ion-Battery-Charger/step4/TP4056-bas
 <segment>
 <pinref part="IC1" gate="G$1" pin="PC5(ADC5/SCL)"/>
 <wire x1="55.88" y1="63.5" x2="60.96" y2="63.5" width="0.1524" layer="91"/>
-<wire x1="60.96" y1="63.5" x2="60.96" y2="99.06" width="0.1524" layer="91"/>
-<pinref part="IDCEKSP" gate="1" pin="3"/>
-<wire x1="53.34" y1="99.06" x2="60.96" y2="99.06" width="0.1524" layer="91"/>
+<wire x1="60.96" y1="63.5" x2="60.96" y2="91.44" width="0.1524" layer="91"/>
+<pinref part="EKSP" gate="1" pin="3"/>
+<wire x1="53.34" y1="91.44" x2="60.96" y2="91.44" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$24" class="0">
@@ -17654,144 +17659,144 @@ http://www.instructables.com/id/DIY-Lithium-ion-Battery-Charger/step4/TP4056-bas
 <pinref part="USBASP" gate="1" pin="1"/>
 <wire x1="63.5" y1="2.54" x2="58.42" y2="2.54" width="0.1524" layer="91"/>
 <wire x1="58.42" y1="2.54" x2="58.42" y2="20.32" width="0.1524" layer="91"/>
-<pinref part="IC3" gate="G$1" pin="IC"/>
-<wire x1="88.9" y1="45.72" x2="71.12" y2="45.72" width="0.1524" layer="91"/>
-<wire x1="71.12" y1="45.72" x2="71.12" y2="20.32" width="0.1524" layer="91"/>
-<wire x1="71.12" y1="20.32" x2="58.42" y2="20.32" width="0.1524" layer="91"/>
+<pinref part="DRIVER2" gate="G$1" pin="IC"/>
+<wire x1="91.44" y1="45.72" x2="73.66" y2="45.72" width="0.1524" layer="91"/>
+<wire x1="73.66" y1="45.72" x2="73.66" y2="20.32" width="0.1524" layer="91"/>
+<wire x1="73.66" y1="20.32" x2="58.42" y2="20.32" width="0.1524" layer="91"/>
 <junction x="58.42" y="20.32"/>
 </segment>
 </net>
 <net name="N$26" class="0">
 <segment>
 <pinref part="IC1" gate="G$1" pin="PC0(ADC0)"/>
-<pinref part="IC2" gate="G$1" pin="IA"/>
-<wire x1="55.88" y1="76.2" x2="88.9" y2="76.2" width="0.1524" layer="91"/>
+<pinref part="DRIVER1" gate="G$1" pin="IA"/>
+<wire x1="55.88" y1="76.2" x2="91.44" y2="76.2" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$27" class="0">
 <segment>
 <pinref part="IC1" gate="G$1" pin="PC1(ADC1)"/>
-<pinref part="IC2" gate="G$1" pin="IB"/>
-<wire x1="55.88" y1="73.66" x2="88.9" y2="73.66" width="0.1524" layer="91"/>
+<pinref part="DRIVER1" gate="G$1" pin="IB"/>
+<wire x1="55.88" y1="73.66" x2="91.44" y2="73.66" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$28" class="0">
 <segment>
 <pinref part="IC1" gate="G$1" pin="PC2(ADC2)"/>
-<pinref part="IC2" gate="G$1" pin="IC"/>
-<wire x1="55.88" y1="71.12" x2="88.9" y2="71.12" width="0.1524" layer="91"/>
+<pinref part="DRIVER1" gate="G$1" pin="IC"/>
+<wire x1="55.88" y1="71.12" x2="91.44" y2="71.12" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$29" class="0">
 <segment>
 <pinref part="IC1" gate="G$1" pin="PC3(ADC3)"/>
-<pinref part="IC2" gate="G$1" pin="ID"/>
-<wire x1="55.88" y1="68.58" x2="88.9" y2="68.58" width="0.1524" layer="91"/>
+<pinref part="DRIVER1" gate="G$1" pin="ID"/>
+<wire x1="55.88" y1="68.58" x2="91.44" y2="68.58" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$36" class="0">
 <segment>
-<wire x1="154.94" y1="38.1" x2="157.48" y2="38.1" width="0.1524" layer="91"/>
-<wire x1="157.48" y1="38.1" x2="157.48" y2="35.56" width="0.1524" layer="91"/>
-<wire x1="157.48" y1="35.56" x2="154.94" y2="35.56" width="0.1524" layer="91"/>
-<wire x1="154.94" y1="60.96" x2="157.48" y2="60.96" width="0.1524" layer="91"/>
-<wire x1="157.48" y1="60.96" x2="157.48" y2="63.5" width="0.1524" layer="91"/>
-<wire x1="157.48" y1="63.5" x2="154.94" y2="63.5" width="0.1524" layer="91"/>
-<pinref part="J_REG_9V_1" gate="J_REG_9V" pin="VOUT"/>
-<wire x1="157.48" y1="60.96" x2="160.02" y2="60.96" width="0.1524" layer="91"/>
-<wire x1="160.02" y1="60.96" x2="160.02" y2="53.34" width="0.1524" layer="91"/>
-<junction x="157.48" y="60.96"/>
 <wire x1="157.48" y1="38.1" x2="160.02" y2="38.1" width="0.1524" layer="91"/>
-<wire x1="160.02" y1="38.1" x2="160.02" y2="53.34" width="0.1524" layer="91"/>
-<junction x="157.48" y="38.1"/>
-<junction x="160.02" y="53.34"/>
-<pinref part="U$1" gate="G$1" pin="CA8"/>
-<pinref part="U$1" gate="G$1" pin="CA1"/>
-<pinref part="U$2" gate="G$1" pin="CA8"/>
-<pinref part="U$2" gate="G$1" pin="CA1"/>
+<wire x1="160.02" y1="38.1" x2="160.02" y2="35.56" width="0.1524" layer="91"/>
+<wire x1="160.02" y1="35.56" x2="157.48" y2="35.56" width="0.1524" layer="91"/>
+<wire x1="157.48" y1="60.96" x2="160.02" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="160.02" y1="60.96" x2="160.02" y2="63.5" width="0.1524" layer="91"/>
+<wire x1="160.02" y1="63.5" x2="157.48" y2="63.5" width="0.1524" layer="91"/>
+<pinref part="J_REG_9V_1" gate="J_REG_9V" pin="VOUT"/>
+<wire x1="160.02" y1="60.96" x2="162.56" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="162.56" y1="60.96" x2="162.56" y2="53.34" width="0.1524" layer="91"/>
+<junction x="160.02" y="60.96"/>
+<wire x1="160.02" y1="38.1" x2="162.56" y2="38.1" width="0.1524" layer="91"/>
+<wire x1="162.56" y1="38.1" x2="162.56" y2="53.34" width="0.1524" layer="91"/>
+<junction x="160.02" y="38.1"/>
+<junction x="162.56" y="53.34"/>
+<pinref part="LSDIGIT" gate="G$1" pin="CA8"/>
+<pinref part="LSDIGIT" gate="G$1" pin="CA1"/>
+<pinref part="MSDIGIT" gate="G$1" pin="CA8"/>
+<pinref part="MSDIGIT" gate="G$1" pin="CA1"/>
 </segment>
 </net>
 <net name="N$5" class="0">
 <segment>
-<pinref part="IC2" gate="G$1" pin="A"/>
+<pinref part="DRIVER1" gate="G$1" pin="A"/>
 <pinref part="R1" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="N$6" class="0">
 <segment>
-<pinref part="IC2" gate="G$1" pin="B"/>
+<pinref part="DRIVER1" gate="G$1" pin="B"/>
 <pinref part="R2" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="N$7" class="0">
 <segment>
-<pinref part="IC2" gate="G$1" pin="C"/>
+<pinref part="DRIVER1" gate="G$1" pin="C"/>
 <pinref part="R3" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="N$8" class="0">
 <segment>
-<pinref part="IC2" gate="G$1" pin="D"/>
+<pinref part="DRIVER1" gate="G$1" pin="D"/>
 <pinref part="R4" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="N$9" class="0">
 <segment>
-<pinref part="IC2" gate="G$1" pin="E"/>
+<pinref part="DRIVER1" gate="G$1" pin="E"/>
 <pinref part="R5" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="N$10" class="0">
 <segment>
-<pinref part="IC2" gate="G$1" pin="F"/>
+<pinref part="DRIVER1" gate="G$1" pin="F"/>
 <pinref part="R6" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="N$11" class="0">
 <segment>
-<pinref part="IC2" gate="G$1" pin="G"/>
+<pinref part="DRIVER1" gate="G$1" pin="G"/>
 <pinref part="R7" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="N$44" class="0">
 <segment>
-<pinref part="IC3" gate="G$1" pin="G"/>
+<pinref part="DRIVER2" gate="G$1" pin="G"/>
 <pinref part="R14" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="N$45" class="0">
 <segment>
-<pinref part="IC3" gate="G$1" pin="F"/>
+<pinref part="DRIVER2" gate="G$1" pin="F"/>
 <pinref part="R13" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="N$46" class="0">
 <segment>
-<pinref part="IC3" gate="G$1" pin="E"/>
+<pinref part="DRIVER2" gate="G$1" pin="E"/>
 <pinref part="R12" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="N$47" class="0">
 <segment>
-<pinref part="IC3" gate="G$1" pin="D"/>
+<pinref part="DRIVER2" gate="G$1" pin="D"/>
 <pinref part="R11" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="N$48" class="0">
 <segment>
-<pinref part="IC3" gate="G$1" pin="C"/>
+<pinref part="DRIVER2" gate="G$1" pin="C"/>
 <pinref part="R10" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="N$49" class="0">
 <segment>
-<pinref part="IC3" gate="G$1" pin="B"/>
+<pinref part="DRIVER2" gate="G$1" pin="B"/>
 <pinref part="R9" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="N$50" class="0">
 <segment>
-<pinref part="IC3" gate="G$1" pin="A"/>
+<pinref part="DRIVER2" gate="G$1" pin="A"/>
 <pinref part="R8" gate="G$1" pin="2"/>
 </segment>
 </net>
@@ -17805,7 +17810,7 @@ http://www.instructables.com/id/DIY-Lithium-ion-Battery-Charger/step4/TP4056-bas
 <junction x="5.08" y="38.1"/>
 <pinref part="C3" gate="G$1" pin="+"/>
 <wire x1="0" y1="38.1" x2="5.08" y2="38.1" width="0.1524" layer="91"/>
-<pinref part="SHOTTKY" gate="G$1" pin="C"/>
+<pinref part="SHOTTKYDIODE" gate="G$1" pin="C"/>
 <wire x1="5.08" y1="35.56" x2="5.08" y2="38.1" width="0.1524" layer="91"/>
 <pinref part="IC1" gate="G$1" pin="PD7(AIN1)"/>
 <wire x1="55.88" y1="35.56" x2="5.08" y2="35.56" width="0.1524" layer="91"/>
@@ -17817,28 +17822,28 @@ http://www.instructables.com/id/DIY-Lithium-ion-Battery-Charger/step4/TP4056-bas
 <pinref part="IC1" gate="G$1" pin="PB0(ICP)"/>
 <wire x1="55.88" y1="30.48" x2="66.04" y2="30.48" width="0.1524" layer="91"/>
 <wire x1="66.04" y1="30.48" x2="66.04" y2="50.8" width="0.1524" layer="91"/>
-<pinref part="IC3" gate="G$1" pin="IA"/>
-<wire x1="66.04" y1="50.8" x2="88.9" y2="50.8" width="0.1524" layer="91"/>
+<pinref part="DRIVER2" gate="G$1" pin="IA"/>
+<wire x1="66.04" y1="50.8" x2="91.44" y2="50.8" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$4" class="0">
 <segment>
 <pinref part="IC1" gate="G$1" pin="PB1(OC1A)"/>
-<wire x1="55.88" y1="27.94" x2="76.2" y2="27.94" width="0.1524" layer="91"/>
-<pinref part="IC2" gate="G$1" pin="BI/RBO"/>
-<wire x1="88.9" y1="66.04" x2="86.36" y2="66.04" width="0.1524" layer="91"/>
-<pinref part="IC3" gate="G$1" pin="BI/RBO"/>
-<wire x1="88.9" y1="40.64" x2="86.36" y2="40.64" width="0.1524" layer="91"/>
-<wire x1="86.36" y1="40.64" x2="86.36" y2="66.04" width="0.1524" layer="91"/>
-<wire x1="76.2" y1="27.94" x2="76.2" y2="40.64" width="0.1524" layer="91"/>
-<wire x1="76.2" y1="40.64" x2="86.36" y2="40.64" width="0.1524" layer="91"/>
-<junction x="86.36" y="40.64"/>
+<wire x1="55.88" y1="27.94" x2="78.74" y2="27.94" width="0.1524" layer="91"/>
+<pinref part="DRIVER1" gate="G$1" pin="BI/RBO"/>
+<wire x1="91.44" y1="66.04" x2="88.9" y2="66.04" width="0.1524" layer="91"/>
+<pinref part="DRIVER2" gate="G$1" pin="BI/RBO"/>
+<wire x1="91.44" y1="40.64" x2="88.9" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="88.9" y1="40.64" x2="88.9" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="78.74" y1="27.94" x2="78.74" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="78.74" y1="40.64" x2="88.9" y2="40.64" width="0.1524" layer="91"/>
+<junction x="88.9" y="40.64"/>
 </segment>
 </net>
 <net name="N$30" class="0">
 <segment>
-<pinref part="JP1" gate="A" pin="4"/>
-<wire x1="76.2" y1="55.88" x2="60.96" y2="55.88" width="0.1524" layer="91"/>
+<pinref part="UART" gate="A" pin="4"/>
+<wire x1="83.82" y1="55.88" x2="60.96" y2="55.88" width="0.1524" layer="91"/>
 <wire x1="60.96" y1="55.88" x2="60.96" y2="50.8" width="0.1524" layer="91"/>
 <pinref part="IC1" gate="G$1" pin="PD1(TXD)"/>
 <wire x1="60.96" y1="50.8" x2="55.88" y2="50.8" width="0.1524" layer="91"/>
@@ -17849,92 +17854,108 @@ http://www.instructables.com/id/DIY-Lithium-ion-Battery-Charger/step4/TP4056-bas
 <pinref part="IC1" gate="G$1" pin="PD0(RXD)"/>
 <wire x1="55.88" y1="53.34" x2="58.42" y2="53.34" width="0.1524" layer="91"/>
 <wire x1="58.42" y1="53.34" x2="58.42" y2="58.42" width="0.1524" layer="91"/>
-<pinref part="JP1" gate="A" pin="3"/>
-<wire x1="58.42" y1="58.42" x2="76.2" y2="58.42" width="0.1524" layer="91"/>
+<pinref part="UART" gate="A" pin="3"/>
+<wire x1="58.42" y1="58.42" x2="83.82" y2="58.42" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$13" class="0">
 <segment>
 <pinref part="R1" gate="G$1" pin="1"/>
-<pinref part="U$1" gate="G$1" pin="A"/>
+<pinref part="LSDIGIT" gate="G$1" pin="A"/>
 </segment>
 </net>
 <net name="N$15" class="0">
 <segment>
 <pinref part="R2" gate="G$1" pin="1"/>
-<pinref part="U$1" gate="G$1" pin="B"/>
+<pinref part="LSDIGIT" gate="G$1" pin="B"/>
 </segment>
 </net>
 <net name="N$16" class="0">
 <segment>
 <pinref part="R3" gate="G$1" pin="1"/>
-<pinref part="U$1" gate="G$1" pin="C"/>
+<pinref part="LSDIGIT" gate="G$1" pin="C"/>
 </segment>
 </net>
 <net name="N$17" class="0">
 <segment>
 <pinref part="R4" gate="G$1" pin="1"/>
-<pinref part="U$1" gate="G$1" pin="D"/>
+<pinref part="LSDIGIT" gate="G$1" pin="D"/>
 </segment>
 </net>
 <net name="N$18" class="0">
 <segment>
 <pinref part="R5" gate="G$1" pin="1"/>
-<pinref part="U$1" gate="G$1" pin="E"/>
+<pinref part="LSDIGIT" gate="G$1" pin="E"/>
 </segment>
 </net>
 <net name="N$19" class="0">
 <segment>
 <pinref part="R6" gate="G$1" pin="1"/>
-<pinref part="U$1" gate="G$1" pin="F"/>
+<pinref part="LSDIGIT" gate="G$1" pin="F"/>
 </segment>
 </net>
 <net name="N$25" class="0">
 <segment>
 <pinref part="R7" gate="G$1" pin="1"/>
-<pinref part="U$1" gate="G$1" pin="G"/>
+<pinref part="LSDIGIT" gate="G$1" pin="G"/>
 </segment>
 </net>
 <net name="N$34" class="0">
 <segment>
 <pinref part="R8" gate="G$1" pin="1"/>
-<pinref part="U$2" gate="G$1" pin="A"/>
+<pinref part="MSDIGIT" gate="G$1" pin="A"/>
 </segment>
 </net>
 <net name="N$37" class="0">
 <segment>
 <pinref part="R9" gate="G$1" pin="1"/>
-<pinref part="U$2" gate="G$1" pin="B"/>
+<pinref part="MSDIGIT" gate="G$1" pin="B"/>
 </segment>
 </net>
 <net name="N$38" class="0">
 <segment>
 <pinref part="R10" gate="G$1" pin="1"/>
-<pinref part="U$2" gate="G$1" pin="C"/>
+<pinref part="MSDIGIT" gate="G$1" pin="C"/>
 </segment>
 </net>
 <net name="N$39" class="0">
 <segment>
 <pinref part="R11" gate="G$1" pin="1"/>
-<pinref part="U$2" gate="G$1" pin="D"/>
+<pinref part="MSDIGIT" gate="G$1" pin="D"/>
 </segment>
 </net>
 <net name="N$40" class="0">
 <segment>
 <pinref part="R12" gate="G$1" pin="1"/>
-<pinref part="U$2" gate="G$1" pin="E"/>
+<pinref part="MSDIGIT" gate="G$1" pin="E"/>
 </segment>
 </net>
 <net name="N$41" class="0">
 <segment>
 <pinref part="R13" gate="G$1" pin="1"/>
-<pinref part="U$2" gate="G$1" pin="F"/>
+<pinref part="MSDIGIT" gate="G$1" pin="F"/>
 </segment>
 </net>
 <net name="N$42" class="0">
 <segment>
 <pinref part="R14" gate="G$1" pin="1"/>
-<pinref part="U$2" gate="G$1" pin="G"/>
+<pinref part="MSDIGIT" gate="G$1" pin="G"/>
+</segment>
+</net>
+<net name="N$32" class="0">
+<segment>
+<pinref part="LSDIGIT" gate="G$1" pin="DP"/>
+<pinref part="R15" gate="G$1" pin="1"/>
+<wire x1="157.48" y1="76.2" x2="157.48" y2="78.74" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$33" class="0">
+<segment>
+<pinref part="R15" gate="G$1" pin="2"/>
+<wire x1="157.48" y1="88.9" x2="71.12" y2="88.9" width="0.1524" layer="91"/>
+<wire x1="71.12" y1="88.9" x2="71.12" y2="40.64" width="0.1524" layer="91"/>
+<pinref part="IC1" gate="G$1" pin="PD5(T1)"/>
+<wire x1="71.12" y1="40.64" x2="55.88" y2="40.64" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
