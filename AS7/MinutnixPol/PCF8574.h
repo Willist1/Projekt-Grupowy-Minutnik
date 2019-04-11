@@ -12,7 +12,8 @@
 #include "i2c.h"
 #include <stdbool.h>
 
-#define PCF8574ADDR 0x40
+//#define PCF8574ADDR 0x40		// PCF8574N
+#define PCF8574ADDR 0x70		// PCF8574AP
 #define PCF8574_WRITE PCF8574ADDR
 #define PCF8574_READ PCF8574ADDR | 0x01
 
@@ -21,26 +22,14 @@
 #define SigAMask (uint8_t)(1 << SigAPin)
 #define SigBMask (uint8_t)(1 << SigBPin)
 #define encoderSigMask (uint8_t)(SigAMask | SigBMask)
-/*
-typedef enum {
-	setCnt = 0,
-	setWarning,
-	setBrightness,
-	setVolume,
-	Stop = 6,
-	Play,
-	BUTTON_CNT,
-	BUTTON_NONE
-} BUTTON;
-*/
 
 typedef enum {
 	setCnt = 0,
 	setWarning,
-	setVolume,
-	Play,
-	Stop = 6,
 	setBrightness,
+	setVolume,
+	Stop = 6,
+	Play,
 	BUTTON_CNT,
 	BUTTON_NONE
 } BUTTON;
