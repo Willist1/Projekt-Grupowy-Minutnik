@@ -6,71 +6,37 @@
  */ 
 
 #include "display.h"
+#include "TPIC6C596.h"
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include <stdint.h>
 
-static inline void ShowOnLED(uint8_t val)
-{
-	uint8_t tmp = 0x00;
-	if((val & 0x7F) <= 0xF) tmp = DIGITS[val & 0x7F];	// Read symbol code
-	
-	if(val & DP) PORTC |= 0x08;							// DP control
-	else PORTC &= 0xF7;
-	
-	PORTB = (PORTB &= 0xE4) | (tmp & 0x1B);
-	PORTC = (PORTC &= 0xF8) | ((tmp >> 5) & 0x07);
-}
-
-ISR(TIMER0_OVF_vect)
-{
-	static uint8_t LEDNO;
-	PORTD &= 0xCF;		// set PD4-5 low (turn off displays)
-	LEDNO=(LEDNO+1)%LEDDISPNO;
-	ShowOnLED(LEDDIGITS[LEDNO]);
-	PORTD = (PORTD &= 0xCF) | (1<<(LEDNO+4));	// Choose next display (either PB4 or PB5 set high)
-}
-
-ISR(TIMER0_COMPA_vect)
-{
-	PORTD &= 0xCF;	// set PD4-5 low (turn off displays)
-}
-
-static void Timer0Init()
-{
-	OCR0A   = MAX_BRIGHTNESS_VAL;	// Set max brightness as default
-	TIMSK0 |=_BV(OCIE0A);			// Turn on Timer0 Compare Match A interrupt
-	TCCR0B  =_BV(CS01 | CS00);		// Preskaler CLKIO/64  (for 8MHz switching freq 488 Hz - should be min 600 Hz)
-	TIMSK0 |=_BV(TOIE0);			// Turn on Timer0 Overflow interrupt
-}
-
-static void displayIOInit()
-{
-	DDRB |= 0x1B;	// set PB1-2 + PB3-4 as outputs (segment a-d)
-	DDRC |= 0x0F;	// set PC0-3 as outputs (segment e-g + DP)
-	DDRD |= 0x30;	// set PD4-5 as outputs (digit 1 & 2)
-	PORTD &= 0xCF;	// set PD4-5 low (turn off displays)
+void Timer1Init() {
+	TCCR1A |= _BV(WGM11) | _BV(WGM10);	// fast PWM mode 10-bit (max 0x3FF = 1024)
+	TCCR1B = _BV(WGM12) | _BV(CS11);	// prescaler 8 (16 MHz / 1024 / 8 = 2 kHz
 }
 
 void displayInit()
 {
-	displayIOInit();
-	Timer0Init();
+	DDRB &= ~_BV(PB2);		// pin OC1A set as input
+	Timer1Init();
+	TCCR1A |= _BV(COM1B1);	// low output state at compare match
+	OCR1B = 0x3FF;			// by default: 100% duty cycle
+	//OCR1B = 0x000;		// by default: 0% duty cycle
 }
 
 void displayOff()
 {
-	PORTD &= 0xCF;					// set PD4-5 low (turn off displays)
-	TIMSK0 &= ~_BV(OCIE0A);			// Turn off Timer0 Compare Match A interrupt
-	TIMSK0 &= ~_BV(TOIE0);			// Turn off Timer0 Overflow interrupt
+	OCR1B = 0x000;			// by default: 0% duty cycle
+	// TRY TPIC DEINIT
 }
 
 void displayOn()
 {
-	TIMSK0 |=_BV(OCIE0A);			// Turn on Timer0 Compare Match A interrupt
-	TIMSK0 |=_BV(TOIE0);			// Turn on Timer0 Overflow interrupt
+	OCR1B = 1000;
+	// TRY TPIC INIT
 }
 
 void displaySetBrightness(uint8_t percentage) {
-	OCR0A = percentage;
+	OCR1B = 1024-10*percentage;		// OE pin of shift register is inverted
 }

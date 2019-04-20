@@ -22,6 +22,7 @@
 #include "encoder.h"
 #include "buzzer.h"
 #include "pwrFail.h"
+#include "TPIC6C596.h"
 
 #define MAX_NO_ACTIVITY_TICKS 30000	// 30 sec
 
@@ -80,13 +81,14 @@ int main()
 {
 	set_sleep_mode(SLEEP_MODE_IDLE);	// CPU clock turned off, peripherals operating normally
 	
-	wdtInit();
+	//wdtInit();
 	
 	displayInit();
 	PCF8574_Init();
 	buzzerInit ();
 	sysTickInit();
 	pwrFailInit();
+	TPIC6C596Init();
 	
 	//USART_init();
 	//static FILE usartout = FDEV_SETUP_STREAM (put, get, _FDEV_SETUP_RW);
@@ -94,6 +96,8 @@ int main()
 	
 	LEDDIGITS[0]= 0;
 	LEDDIGITS[1]= 0;
+	LEDDIGITS[2]= 0;
+	LEDDIGITS[3]= 0;
 	BUTTON memorizedButton = BUTTON_NONE;
 	BUTTON pressedButton = BUTTON_NONE;
 	uint8_t setVal = 0;
@@ -110,6 +114,7 @@ int main()
 	buzzerSetVolume(10*NVData.config.volumeVal);
 	
 	sei();
+	SPDR = 0; // Initialize SPI interrupts by writing to SPI data register
 	
 	while(1)
 	{
@@ -138,6 +143,7 @@ int main()
 								memorizedButton = pressedButton;
 								break;
 							case Play:
+							displayOff();
 								currentState = sRunning;
 								memorizedButton = pressedButton;
 								break;
