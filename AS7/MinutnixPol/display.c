@@ -33,6 +33,7 @@ void displayOff()
 
 void displayOn()
 {
+	DDRB |= _BV(PB1);		// pin OC0B set as output
 	TCCR1A |= _BV(COM1A1);	// low output state at compare match
 }
 
