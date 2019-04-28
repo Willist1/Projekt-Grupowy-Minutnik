@@ -23,7 +23,7 @@
 #define WARN_BEEP_DURATION_SECONDS 2
 
 typedef enum {
-	sIdle = 0,
+	sPause = 0,
 	sSetting,
 	sRunning
 } tSTATE;

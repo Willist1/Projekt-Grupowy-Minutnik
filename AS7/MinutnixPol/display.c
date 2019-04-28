@@ -18,7 +18,7 @@ void Timer1Init() {
 
 void displayInit()
 {
-	DDRB &= ~_BV(PB1);		// pin OC1A set as input
+	//DDRB &= ~_BV(PB1);		// pin OC1A set as input
 	Timer1Init();
 	//TCCR1A |= _BV(COM1A1);	// low output state at compare match
 	OCR1A = 0x3FF;			// by default: 100% duty cycle (display turned off)

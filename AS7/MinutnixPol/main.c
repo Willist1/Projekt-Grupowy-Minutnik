@@ -26,7 +26,7 @@
 #include "TPIC6C596.h"
 #include "lightsensor.h"
 
-#define MAX_NO_ACTIVITY_TICKS 10000//300000	// 5 min
+#define MAX_NO_ACTIVITY_TICKS 300000	// 5 min
 
 tSTATE currentState = sSetting;
 volatile uint32_t ticks = 0;
@@ -112,6 +112,7 @@ uint8_t valMin = 0;
 
 int main()
 {
+	displayOff();
 	set_sleep_mode(SLEEP_MODE_IDLE);	// CPU clock turned off, peripherals operating normally
 	
 	wdtInit();
@@ -125,9 +126,9 @@ int main()
 	lightsensorInit();
 	displayInit();
 	
-	USART_init();
-	static FILE usartout = FDEV_SETUP_STREAM (put, get, _FDEV_SETUP_RW);
-	stdout = &usartout;
+	//USART_init();
+	//static FILE usartout = FDEV_SETUP_STREAM (put, get, _FDEV_SETUP_RW);
+	//stdout = &usartout;
 	
 	LEDDIGITS[0]= 0;
 	LEDDIGITS[1]= 0;
@@ -148,6 +149,7 @@ int main()
 	sei();
 	SPDR = 0;				// Initialize SPI interrupts by writing to SPI data register
 	while (SeqNum != 3);	// Wait for first SPI transfer to finish before enabling display
+	while (SeqNum != 0);
 	displayOn();
 	
 	while(1)
@@ -251,7 +253,7 @@ int main()
 								break;
 							case Play:
 								if (currentState == sRunning) {
-									currentState = sIdle;
+									currentState = sPause;
 								} else { // currentState == sIdle
 									currentState = sRunning;
 								}
