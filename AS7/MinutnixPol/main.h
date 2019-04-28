@@ -9,6 +9,8 @@
 #ifndef MAIN_H_
 #define MAIN_H_
 
+#include "PCF8574.h"
+
 #define CNT_MAX_VAL 99
 #define CNT_MIN_VAL 1
 #define WARN_MAX_VAL 15
@@ -21,7 +23,7 @@
 #define WARN_BEEP_DURATION_SECONDS 2
 
 typedef enum {
-	sIdle = 0,
+	sPause = 0,
 	sSetting,
 	sRunning
 } tSTATE;
@@ -41,5 +43,8 @@ typedef struct
 
 volatile tNVData NVData; // Non-volatile config data copy in SRAM
 extern volatile uint32_t ticks;
+
+extern BUTTON memorizedButton;
+extern uint8_t setVal;
 
 #endif /* MAIN_H_ */

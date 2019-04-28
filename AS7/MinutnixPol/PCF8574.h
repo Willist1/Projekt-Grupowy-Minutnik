@@ -17,19 +17,32 @@
 #define PCF8574_WRITE PCF8574ADDR
 #define PCF8574_READ PCF8574ADDR | 0x01
 
-#define SigAPin 5
-#define SigBPin 4
+//#define SigAPin 5
+//#define SigBPin 4
+#define SigAPin 6
+#define SigBPin 5
 #define SigAMask (uint8_t)(1 << SigAPin)
 #define SigBMask (uint8_t)(1 << SigBPin)
 #define encoderSigMask (uint8_t)(SigAMask | SigBMask)
 
+//typedef enum {
+	//setCnt = 0,
+	//setWarning,
+	//setBrightness,
+	//setVolume,
+	//Stop = 6,
+	//Play,
+	//BUTTON_CNT,
+	//BUTTON_NONE
+//} BUTTON;
+
 typedef enum {
 	setCnt = 0,
 	setWarning,
-	setBrightness,
 	setVolume,
-	Stop = 6,
+	Stop,
 	Play,
+	setBrightness = 7,	// to be removed
 	BUTTON_CNT,
 	BUTTON_NONE
 } BUTTON;

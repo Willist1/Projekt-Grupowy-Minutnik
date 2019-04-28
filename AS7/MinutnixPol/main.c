@@ -12,6 +12,7 @@
 #include <avr/wdt.h>
 #include <util/delay.h>
 #include <util/atomic.h>
+#include <avr/pgmspace.h>
 #include <stdbool.h>
 #include <stdio.h>
 #include "main.h"
@@ -23,10 +24,11 @@
 #include "buzzer.h"
 #include "pwrFail.h"
 #include "TPIC6C596.h"
+#include "lightsensor.h"
 
-#define MAX_NO_ACTIVITY_TICKS 30000	// 30 sec
+#define MAX_NO_ACTIVITY_TICKS 300000	// 5 min
 
-tSTATE currentState = sIdle;
+tSTATE currentState = sSetting;
 volatile uint32_t ticks = 0;
 volatile uint8_t toggle_500ms = 0;
 uint32_t lastActivityTime = 0;
@@ -75,20 +77,54 @@ void wdtDeinit() {
 	wdt_disable();
 }
 
+// index of brightnessTable is ADC reading (max 255) divided by 13
+// results range: 0-19 (20 values)
+#define ADC_READING_DIVISOR 13
+const uint8_t __attribute__((__progmem__)) brightnessTable[] = {
+	5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100
+};
 
+#define SETTINGS_LED_PORT PORTC
+#define LED_SET_CNT 1
+#define LED_SET_WARN 2
+#define LED_SET_VOL 3
+
+void settingsLEDInit() {
+	DDRC |= (_BV(LED_SET_CNT) | _BV(LED_SET_WARN) | _BV(LED_SET_VOL));	// LED pins as output
+	PORTC |= (_BV(LED_SET_CNT) | _BV(LED_SET_WARN) | _BV(LED_SET_VOL));	// Set all pins high (turn off LEDs)
+}
+
+void settingsLEDTurnOff() {
+	PORTC |= (_BV(LED_SET_CNT) | _BV(LED_SET_WARN) | _BV(LED_SET_VOL));	// Turn off all LEDs
+}
+
+void settingsLEDToggle(uint8_t LEDId) {
+	settingsLEDTurnOff();
+	if (LEDId >= LED_SET_CNT && LEDId <= LED_SET_VOL) PORTC &= ~_BV(LEDId);	// Turn given LED on
+}
+
+
+BUTTON pressedButton = BUTTON_NONE;
+BUTTON memorizedButton = setCnt;
+uint8_t setVal = 0;
+uint8_t valMax = 0;
+uint8_t valMin = 0;
 
 int main()
 {
+	displayOff();
 	set_sleep_mode(SLEEP_MODE_IDLE);	// CPU clock turned off, peripherals operating normally
 	
-	//wdtInit();
+	wdtInit();
 	
-	displayInit();
-	PCF8574_Init();
-	buzzerInit ();
 	sysTickInit();
-	pwrFailInit();
+	PCF8574_Init();
 	TPIC6C596Init();
+	buzzerInit ();
+	pwrFailInit();
+	settingsLEDInit();
+	lightsensorInit();
+	displayInit();
 	
 	//USART_init();
 	//static FILE usartout = FDEV_SETUP_STREAM (put, get, _FDEV_SETUP_RW);
@@ -98,11 +134,6 @@ int main()
 	LEDDIGITS[1]= 0;
 	LEDDIGITS[2]= 0;
 	LEDDIGITS[3]= 0;
-	BUTTON memorizedButton = BUTTON_NONE;
-	BUTTON pressedButton = BUTTON_NONE;
-	uint8_t setVal = 0;
-	uint8_t valMax = 0;
-	uint8_t valMin = 0;
 	
 	NVDataInit();
 	if (NVData.config.cntVal > CNT_MAX_VAL) NVData.config.cntVal = CNT_MAX_VAL;
@@ -112,9 +143,14 @@ int main()
 	if (NVData.totalSeconds > NVData.config.cntVal*60) NVData.totalSeconds = NVData.config.cntVal*60;
 	displaySetBrightness(10*NVData.config.brightVal);
 	buzzerSetVolume(10*NVData.config.volumeVal);
+	settingsLEDToggle(LED_SET_CNT);
+	setVal = NVData.config.cntVal;	// prepare user interaction
 	
 	sei();
-	SPDR = 0; // Initialize SPI interrupts by writing to SPI data register
+	SPDR = 0;				// Initialize SPI interrupts by writing to SPI data register
+	while (SeqNum != 3);	// Wait for first SPI transfer to finish before enabling display
+	while (SeqNum != 0);
+	displayOn();
 	
 	while(1)
 	{
@@ -131,71 +167,29 @@ int main()
 				
 				if (pressedButton != BUTTON_NONE) {					// button was pressed
 
-					if (memorizedButton == BUTTON_NONE) {			// button is not memorized
+					if (currentState == sSetting) {
 						
-						switch(pressedButton)
-						{
-							case setCnt:
-							case setWarning:
-							case setBrightness:
-							case setVolume:
-								currentState = sSetting;
-								memorizedButton = pressedButton;
-								break;
-							case Play:
-							displayOff();
-								currentState = sRunning;
-								memorizedButton = pressedButton;
-								break;
-							case Stop:
-								currentState = sIdle;
-								break;
-							default:
-								break;
-						}
-						
-						switch(pressedButton)
-						{
-							case setCnt:
-								setVal = NVData.config.cntVal;
-								break;
-							case setWarning:
-								setVal = NVData.config.warnVal;
-								break;
-							case setBrightness:
-								setVal = NVData.config.brightVal;
-								break;
-							case setVolume:
-								setVal = NVData.config.volumeVal;
-								buzzerOn();
-								break;
-							case Stop:
-								NVData.totalSeconds = NVData.config.cntVal*60;
-								break;
-							default:
-								break;
-						}
-						
-					} else {										// button is memorized
-						
-						if (pressedButton == memorizedButton) {		// ignore buttons other than memorized
+						if (pressedButton != memorizedButton) {	// ON BUTTON CHANGE
 							
+							// ESTABLISH NEW STATE
 							switch(pressedButton)
 							{
 								case setCnt:
 								case setWarning:
-								case setBrightness:
 								case setVolume:
+								case Stop:
+									currentState = sSetting;
+									break;
 								case Play:
-									currentState = sIdle;
-									memorizedButton = BUTTON_NONE;
-									LEDDIGITS[1] &= ~DP;	// turn off dot
+									currentState = sRunning;
+									settingsLEDTurnOff();
 									break;
 								default:
 									break;
 							}
 							
-							switch(pressedButton)
+							// SAVE SETTINGS
+							switch(memorizedButton)
 							{
 								case setCnt:
 									NVData.config.cntVal = setVal;
@@ -203,9 +197,7 @@ int main()
 									break;
 								case setWarning:
 									NVData.config.warnVal = setVal;
-									break;
-								case setBrightness:
-									NVData.config.brightVal = setVal;
+									settingsLEDToggle(LED_SET_WARN);
 									break;
 								case setVolume:
 									NVData.config.volumeVal = setVal;
@@ -214,14 +206,62 @@ int main()
 								default:
 									break;
 							}
-						} else if ((memorizedButton == Play) && (pressedButton == Stop)) { // handle special case
-							currentState = sIdle;
-							memorizedButton = BUTTON_NONE;
-							NVData.totalSeconds = NVData.config.cntVal*60;
-							buzzerOff();
-							LEDDIGITS[0] &= ~DP;	// Turn off dots
-							LEDDIGITS[1] &= ~DP;
-						}	
+							
+							// MEMORIZE BUTTON PRESS
+							memorizedButton = pressedButton;
+							
+							// PREPARE INTERACTION WITH USER
+							switch(pressedButton)
+							{
+								case setCnt:
+									setVal = NVData.config.cntVal;
+									settingsLEDToggle(LED_SET_CNT);
+									break;
+								case setWarning:
+									setVal = NVData.config.warnVal;
+									settingsLEDToggle(LED_SET_WARN);
+									break;
+								case setVolume:
+									setVal = NVData.config.volumeVal;
+									settingsLEDToggle(LED_SET_VOL);
+									buzzerOn();
+									break;
+								case Stop:
+									NVData.totalSeconds = NVData.config.cntVal*60;
+									setVal = NVData.config.cntVal;
+									settingsLEDToggle(LED_SET_CNT);
+									buzzerOff();
+									break;
+								default:
+									break;
+							}
+							
+						}
+						
+					} else { // (currentState == sRunning || currentState == sIdle)
+						
+						// ESTABLISH NEW STATE
+						switch(pressedButton)
+						{
+							case Stop:
+								memorizedButton = Stop;
+								currentState = sSetting;
+								NVData.totalSeconds = NVData.config.cntVal*60;
+								setVal = NVData.config.cntVal;
+								settingsLEDToggle(LED_SET_CNT);
+								buzzerOff();
+								break;
+							case Play:
+								if (currentState == sRunning) {
+									currentState = sPause;
+								} else { // currentState == sIdle
+									currentState = sRunning;
+								}
+								break;
+							default:
+								break;
+						}
+						
 					}
 					
 				}
@@ -259,29 +299,17 @@ int main()
 				PCF8574_INT = false;	// clear internal INT flag
 			};
 		}
-		
+
 		// DISPLAY UPDATE
 		switch(currentState)
-		{
-			case sIdle:
-				if (NVData.totalSeconds >= 60) {
-					ATOMIC_BLOCK (ATOMIC_FORCEON) {
-						LEDDIGITS[0]= (uint8_t)((NVData.totalSeconds/60)/10);
-						LEDDIGITS[1]= (uint8_t)((NVData.totalSeconds/60)%10);
-					};
-					} else {
-					ATOMIC_BLOCK (ATOMIC_FORCEON) {
-						LEDDIGITS[0]= (uint8_t)((NVData.totalSeconds)/10);
-						LEDDIGITS[1]= (uint8_t)((NVData.totalSeconds)%10);
-					};
-				}
-				break;
+		{		
 			case sSetting:
 				ATOMIC_BLOCK (ATOMIC_FORCEON) {
 					LEDDIGITS[0]= (uint8_t)(setVal/10);
-					LEDDIGITS[1]= (uint8_t)((setVal%10) | DP);	// turn on dot
+					LEDDIGITS[1]= (uint8_t)((setVal%10));
+					LEDDIGITS[2]= BLANK_DISPLAY;
+					LEDDIGITS[3]= BLANK_DISPLAY;
 				};
-				
 				switch (memorizedButton) {
 					case setBrightness:
 						ATOMIC_BLOCK (ATOMIC_FORCEON) { displaySetBrightness(10*setVal); };
@@ -293,35 +321,40 @@ int main()
 						break;
 				}
 				break;
+				
 			case sRunning:
-				if (NVData.totalSeconds >= 60) {									// display minutes when >= 60 sec
+				if (NVData.totalSeconds > 0) {
 					ATOMIC_BLOCK (ATOMIC_FORCEON) {
 						LEDDIGITS[0]= (uint8_t)((NVData.totalSeconds/60)/10);
 						LEDDIGITS[1]= (uint8_t)((NVData.totalSeconds/60)%10);
-						if (toggle_500ms) LEDDIGITS[1] |= DP;						// dot blink
-						else LEDDIGITS[1] &= ~DP;
+						LEDDIGITS[2]= (uint8_t)((NVData.totalSeconds%60)/10);
+						LEDDIGITS[3]= (uint8_t)((NVData.totalSeconds%60)%10);
+						if (toggle_500ms) {
+							LEDDIGITS[1] |= DP;				// colon blink
+							LEDDIGITS[2] |= DP;
+						}
+						else {
+							LEDDIGITS[1] &= ~DP;
+							LEDDIGITS[2] &= ~DP;
+						}
 					};
-				} else if (NVData.totalSeconds == 0) {
-					if (toggle_500ms) {												// digits blink
+				} else {	// NVData.totalSeconds == 0
+					if (toggle_500ms) {						// digits blink
 						ATOMIC_BLOCK (ATOMIC_FORCEON) {
 							LEDDIGITS[0]= BLANK_DISPLAY;
 							LEDDIGITS[1]= BLANK_DISPLAY;
-							LEDDIGITS[1] &= ~DP;
+							LEDDIGITS[2]= BLANK_DISPLAY;
+							LEDDIGITS[3]= BLANK_DISPLAY;
 						};
 					}
 					else {
 						ATOMIC_BLOCK (ATOMIC_FORCEON) {
 							LEDDIGITS[0]= 0;
 							LEDDIGITS[1]= DP;
+							LEDDIGITS[2]= DP;
+							LEDDIGITS[3]= 0;
 						};
 					}
-				} else {															// display seconds when < 60 sec
-					ATOMIC_BLOCK (ATOMIC_FORCEON) {
-						LEDDIGITS[0]= (uint8_t)((NVData.totalSeconds)/10);
-						LEDDIGITS[1]= (uint8_t)((NVData.totalSeconds)%10);
-						if (toggle_500ms) LEDDIGITS[1] |= DP;						// dot blink
-						else LEDDIGITS[1] &= ~DP;
-					};
 				}
 				
 				if (NVData.totalSeconds == 0) {
@@ -333,35 +366,70 @@ int main()
 				}
 				
 				break;
+				
 			default:
 				break;
 				
+		}
+		
+		// ADJUST BRIGHTNESS
+		uint8_t brightness = 0;
+		memcpy_P(&brightness,brightnessTable+(lightsensorRead()/ADC_READING_DIVISOR),1);
+		NVData.config.brightVal = brightness;
+		ATOMIC_BLOCK (ATOMIC_FORCEON) {
+			displaySetBrightness(NVData.config.brightVal);
 		}
 		
 		// SLEEP MODE CHECK
 		if ((ticks - lastActivityTime > MAX_NO_ACTIVITY_TICKS) && (currentState != sRunning)) {
 			ATOMIC_BLOCK (ATOMIC_FORCEON) {		// turn off all interrupt sources except INT0
 				displayOff();
-				LEDDIGITS[1] &= ~DP;			// turn off dot
-				sysTickOff();
-				displaySetBrightness(10*NVData.config.brightVal);	// ignore temporary config (sSettings)
-				buzzerSetVolume(10*NVData.config.volumeVal);
 				buzzerOff();
+				settingsLEDTurnOff();
+				lightsensorSuspend();
+				TPIC6C596Suspend();
 				wdtDeinit();
+				LEDDIGITS[1] &= ~DP;			// turn off colon
+				LEDDIGITS[2] &= ~DP;
+				sysTickOff();
+				switch(memorizedButton)			// save temporary config
+				{
+					case setCnt:
+						NVData.config.cntVal = setVal;
+						break;
+					case setWarning:
+						NVData.config.warnVal = setVal;
+						break;
+					case setVolume:
+						NVData.config.volumeVal = setVal;
+						break;
+					default:
+						break;
+				}
 				EEPROMupdate();	// only writes to EEPROM when config changed in relation to last record
 			};
 			sleep_mode();
 			ATOMIC_BLOCK (ATOMIC_FORCEON) {		// restore all turned off interrupt sources
-				displayOn();
 				sysTickOn();
 				wdtInit();
-				currentState = sIdle;			// enforce idle state
-				memorizedButton = BUTTON_NONE;	// no memorized button
+				currentState = sSetting;		// enforce setting state
+				memorizedButton = setCnt;		// memorized button
+				setVal = NVData.config.cntVal;	// prepare user interaction
+				ATOMIC_BLOCK (ATOMIC_FORCEON) {
+					LEDDIGITS[0]= (uint8_t)(setVal/10);
+					LEDDIGITS[1]= (uint8_t)((setVal%10));
+					LEDDIGITS[2]= BLANK_DISPLAY;
+					LEDDIGITS[3]= BLANK_DISPLAY;
+				};
+				TPIC6C596Resume();
+				lightsensorResume();
+				settingsLEDToggle(LED_SET_CNT);
+				displayOn();
 				lastActivityTime = ticks;		// activity timestamp
 				PCF8574_INT = false;			// ignore wake-up cause (button press / encoder movement)
 			};
 		}
-		
+
 		wdt_reset();	// reset watchdog
 	}
 

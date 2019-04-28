@@ -6,24 +6,28 @@
  */ 
 
 #include <avr/io.h>
-#include "display.h"
+
+void Timer0Init() {
+	TCCR0A |= _BV(WGM01) | _BV(WGM00);				// fast PWM mode 8-bit (TOP = OCR0A)
+	OCR0A = 128;
+	TCCR0B = _BV(WGM02) | _BV(CS01) | _BV(CS00);	// TOP = OCR0A, prescaler 64 (16 MHz / 128 / 64 = 2 kHz)
+}
 
 void buzzerInit() {
-	DDRB &= ~_BV(PB1);		// pin OC1A set as input
-	Timer1Init();
-	TCCR1A |= _BV(COM1A1);	// low output state at compare match
-	//OCR1A = 0x3FF;		// by default: 100% duty cycle
-	OCR1A = 0x000;			// by default: 0% duty cycle
+	DDRD &= ~_BV(PD5);		// pin OC0B set as input
+	Timer0Init();
+	TCCR0A |= _BV(COM0B1);	// low output state at compare match
+	OCR0B = 0x00;			// by default: 100% duty cycle (display turned off)
 }
 
 void buzzerOn() {
-	DDRB |= _BV(PB1);								// pin OC1A set as output
+	DDRD |= _BV(PB5);								// pin OC0B set as output
 }
 
 void buzzerOff() {
-	DDRB &= ~_BV(PB1);								// pin OC1A set as input
+	DDRD &= ~_BV(PB5);								// pin OC0B set as input
 }
 
 void buzzerSetVolume(uint8_t percentage) {
-	OCR1A = 10*percentage;							// OCR1A max is 1024
+	OCR0B = 6*(percentage/10);						// OCR0B max is OCR0A = 128, duty cycle in range 0-50%
 }
