@@ -382,7 +382,7 @@ int main()
 		}
 		
 		// SLEEP MODE CHECK
-		if ((ticks - lastActivityTime > MAX_NO_ACTIVITY_TICKS) && (currentState != sRunning)) {
+		if ((ticks - lastActivityTime > MAX_NO_ACTIVITY_TICKS) && (currentState == sSetting)) {
 			ATOMIC_BLOCK (ATOMIC_FORCEON) {		// turn off all interrupt sources except INT0
 				displayOff();
 				buzzerOff();
