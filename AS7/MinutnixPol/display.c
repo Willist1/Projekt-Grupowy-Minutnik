@@ -13,30 +13,29 @@
 
 void Timer1Init() {
 	TCCR1A |= _BV(WGM11) | _BV(WGM10);	// fast PWM mode 10-bit (max 0x3FF = 1024)
-	TCCR1B = _BV(WGM12) | _BV(CS11);	// prescaler 8 (16 MHz / 1024 / 8 = 2 kHz
+	TCCR1B = _BV(WGM12) | _BV(CS11);	// prescaler 8 (16 MHz / 1024 / 8 = 2 kHz)
 }
 
 void displayInit()
 {
-	DDRB &= ~_BV(PB2);		// pin OC1A set as input
+	DDRB &= ~_BV(PB1);		// pin OC1A set as input
 	Timer1Init();
-	TCCR1A |= _BV(COM1B1);	// low output state at compare match
-	OCR1B = 0x3FF;			// by default: 100% duty cycle
-	//OCR1B = 0x000;		// by default: 0% duty cycle
+	//TCCR1A |= _BV(COM1A1);	// low output state at compare match
+	OCR1A = 0x3FF;			// by default: 100% duty cycle (display turned off)
 }
 
 void displayOff()
 {
-	OCR1B = 0x000;			// by default: 0% duty cycle
-	// TRY TPIC DEINIT
+	TCCR1A &= ~_BV(COM1A1);	// low output state at compare match disable
+	DDRB |= _BV(PB1);		// pin OC0B set as output
+	TPIC6C596_Set_OE();		// Disable output
 }
 
 void displayOn()
 {
-	OCR1B = 1000;
-	// TRY TPIC INIT
+	TCCR1A |= _BV(COM1A1);	// low output state at compare match
 }
 
 void displaySetBrightness(uint8_t percentage) {
-	OCR1B = 1024-10*percentage;		// OE pin of shift register is inverted
+	OCR1A = (uint16_t)1023-10*percentage;		// OE pin of shift register is inverted
 }

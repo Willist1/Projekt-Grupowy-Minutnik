@@ -31,10 +31,10 @@ inline void TPIC6C596_Reset_OE()
 }
 
 #define MAX_INDEX LEDDISPNO-1
+volatile uint8_t SeqNum = 0;
 
 ISR(SPI_STC_vect)
 {
-	static uint8_t SeqNum = 0;
 	static uint8_t value = 0;
 	static uint8_t output = 0;
 
@@ -44,8 +44,8 @@ ISR(SPI_STC_vect)
 		TPIC6C596_Reset_SS();		// allowing input of new data
 	}
 	value = LEDDIGITS[MAX_INDEX-SeqNum];						// Displayed value
-	if((value & 0x7F) <= 0xF) output = DIGITS[value & 0x7F];	// Read symbol code
-	if(value & DP) output &= ~(DP);								// DP control
+	if((value & 0x7F) < NUM_OF_DIGITS) output = DIGITS[value & 0x7F];	// Read symbol code
+	if(value & DP) output |= DP;								// DP control
 	SPDR = output;												// Sending output data to shift regs
 	
 	SeqNum=(SeqNum+1)%LEDDISPNO;	// incrementing sequence number
@@ -54,10 +54,22 @@ ISR(SPI_STC_vect)
 void TPIC6C596Init()
 {
 	TPIC6C596_Set_SS();							// Disable data transmission
-	TPIC6C596_Reset_OE();						// Enable output
-	DDRB |= (_BV(SHIFT_REG_G) | _BV(SHIFT_REG_DI) | _BV(SHIFT_REG_RCK) | _BV(SHIFT_REG_SCK));	// Pins OE, MOSI, SS, SCK set as output
+	DDRB |= (_BV(SHIFT_REG_DI) | _BV(SHIFT_REG_RCK) | _BV(SHIFT_REG_SCK));	// Pins MOSI, SS, SCK set as output
 	SPCR = _BV(SPIE) | _BV(SPE) | _BV(MSTR);	// Interrupt Enabled, SPI Enabled, Master mode
 	SPCR |= _BV(SPR1) | _BV(SPR0);				// Prescaler CLK/128
 	SPSR;										// Reading the SPI status register...
 	SPDR;										// And than accessing the SPI data register to clear SPI Interrupt flag
+}
+
+void TPIC6C596Suspend()
+{
+	SPCR &= ~_BV(SPIE);		// Interrupt Disabled
+}
+
+void TPIC6C596Resume()
+{
+	SPCR |= _BV(SPIE);		// Interrupt Enabled
+	SPSR;					// Reading the SPI status register...
+	SPDR;					// And than accessing the SPI data register to clear SPI Interrupt flag
+	SPDR = 0;				// Initialize SPI interrupts by writing to SPI data register
 }

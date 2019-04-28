@@ -30,6 +30,22 @@ ISR(ANALOG_COMP_vect)//, ISR_NAKED)
 		DDRB = 0x00;
 		DDRC = 0x00;
 		DDRD = 0x00;
+		
+		// Save temporary config
+		switch(memorizedButton)
+		{
+			case setCnt:
+			NVData.config.cntVal = setVal;
+			break;
+			case setWarning:
+			NVData.config.warnVal = setVal;
+			break;
+			case setVolume:
+			NVData.config.volumeVal = setVal;
+			break;
+			default:
+			break;
+		}
 
 		// Write non-volatile data to EEPROM
 		eeprom_update_block((void*)&NVData, (void*)&EEPROMData, sizeof(tNVData)); // Copy data to EEPROM
