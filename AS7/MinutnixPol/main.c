@@ -238,7 +238,7 @@ int main()
 							
 						}
 						
-					} else { // (currentState == sRunning || currentState == sIdle)
+					} else { // (currentState == sRunning || currentState == sPause)
 						
 						// ESTABLISH NEW STATE
 						switch(pressedButton)
@@ -255,7 +255,7 @@ int main()
 							case Play:
 								if (currentState == sRunning) {
 									currentState = sPause;
-								} else { // currentState == sIdle
+								} else { // currentState == sPause
 									currentState = sRunning;
 								}
 								break;

@@ -23,9 +23,9 @@
 #define WARN_BEEP_DURATION_SECONDS 2
 
 typedef enum {
-	sPause = 0,
-	sSetting,
-	sRunning
+	sSetting = 0,
+	sRunning,
+	sPause
 } tSTATE;
 
 typedef struct {
