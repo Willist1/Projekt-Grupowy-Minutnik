@@ -197,7 +197,6 @@ int main()
 									break;
 								case setWarning:
 									NVData.config.warnVal = setVal;
-									settingsLEDToggle(LED_SET_WARN);
 									break;
 								case setVolume:
 									NVData.config.volumeVal = setVal;
@@ -230,6 +229,7 @@ int main()
 									NVData.totalSeconds = NVData.config.cntVal*60;
 									setVal = NVData.config.cntVal;
 									settingsLEDToggle(LED_SET_CNT);
+									memorizedButton = setCnt;
 									buzzerOff();
 									break;
 								default:
@@ -249,6 +249,7 @@ int main()
 								NVData.totalSeconds = NVData.config.cntVal*60;
 								setVal = NVData.config.cntVal;
 								settingsLEDToggle(LED_SET_CNT);
+								memorizedButton = setCnt;
 								buzzerOff();
 								break;
 							case Play:
