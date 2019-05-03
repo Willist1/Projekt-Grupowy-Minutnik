@@ -5699,27 +5699,21 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <instances>
 <instance part="S5" gate="G$1" x="35.56" y="144.78" smashed="yes" rot="MR90">
 <attribute name="NAME" x="40.894" y="144.78" size="1.778" layer="95" font="vector" rot="MR90" align="bottom-center"/>
-<attribute name="VALUE" x="30.226" y="144.78" size="1.778" layer="96" font="vector" rot="MR90" align="top-center"/>
 </instance>
 <instance part="S6" gate="G$1" x="50.8" y="144.78" smashed="yes" rot="MR90">
 <attribute name="NAME" x="56.134" y="144.78" size="1.778" layer="95" font="vector" rot="MR90" align="bottom-center"/>
-<attribute name="VALUE" x="45.466" y="144.78" size="1.778" layer="96" font="vector" rot="MR90" align="top-center"/>
 </instance>
 <instance part="S7" gate="G$1" x="66.04" y="144.78" smashed="yes" rot="MR90">
 <attribute name="NAME" x="71.374" y="144.78" size="1.778" layer="95" font="vector" rot="MR90" align="bottom-center"/>
-<attribute name="VALUE" x="60.706" y="144.78" size="1.778" layer="96" font="vector" rot="MR90" align="top-center"/>
 </instance>
 <instance part="S8" gate="G$1" x="81.28" y="144.78" smashed="yes" rot="MR90">
 <attribute name="NAME" x="86.614" y="144.78" size="1.778" layer="95" font="vector" rot="MR90" align="bottom-center"/>
-<attribute name="VALUE" x="75.946" y="144.78" size="1.778" layer="96" font="vector" rot="MR90" align="top-center"/>
 </instance>
 <instance part="S9" gate="G$1" x="96.52" y="144.78" smashed="yes" rot="MR90">
 <attribute name="NAME" x="101.854" y="144.78" size="1.778" layer="95" font="vector" rot="MR90" align="bottom-center"/>
-<attribute name="VALUE" x="91.186" y="144.78" size="1.778" layer="96" font="vector" rot="MR90" align="top-center"/>
 </instance>
 <instance part="S10" gate="G$1" x="111.76" y="144.78" smashed="yes" rot="MR90">
 <attribute name="NAME" x="117.094" y="144.78" size="1.778" layer="95" font="vector" rot="MR90" align="bottom-center"/>
-<attribute name="VALUE" x="106.426" y="144.78" size="1.778" layer="96" font="vector" rot="MR90" align="top-center"/>
 </instance>
 <instance part="S11" gate="G$1" x="15.24" y="147.32" smashed="yes" rot="MR270">
 <attribute name="NAME" x="7.366" y="154.94" size="1.778" layer="95" font="vector" rot="MR270"/>
@@ -5751,59 +5745,45 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 </instance>
 <instance part="PAD1" gate="G$1" x="114.3" y="101.6" smashed="yes" rot="R90">
 <attribute name="NAME" x="112.4458" y="100.457" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="117.602" y="100.457" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="PAD2" gate="G$1" x="99.06" y="101.6" smashed="yes" rot="R90">
 <attribute name="NAME" x="97.2058" y="100.457" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="102.362" y="100.457" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="PAD3" gate="G$1" x="83.82" y="101.6" smashed="yes" rot="R90">
 <attribute name="NAME" x="81.9658" y="100.457" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="87.122" y="100.457" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="PAD4" gate="G$1" x="68.58" y="101.6" smashed="yes" rot="R90">
 <attribute name="NAME" x="66.7258" y="100.457" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="71.882" y="100.457" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="PAD5" gate="G$1" x="53.34" y="101.6" smashed="yes" rot="R90">
 <attribute name="NAME" x="51.4858" y="100.457" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="56.642" y="100.457" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="PAD6" gate="G$1" x="38.1" y="101.6" smashed="yes" rot="R90">
 <attribute name="NAME" x="36.2458" y="100.457" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="41.402" y="100.457" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="PAD7" gate="G$1" x="20.32" y="101.6" smashed="yes" rot="R90">
 <attribute name="NAME" x="18.4658" y="100.457" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="23.622" y="100.457" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="PAD8" gate="G$1" x="10.16" y="101.6" smashed="yes" rot="R90">
 <attribute name="NAME" x="8.3058" y="100.457" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="13.462" y="100.457" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="PAD9" gate="G$1" x="109.22" y="124.46" smashed="yes" rot="R90">
-<attribute name="NAME" x="107.3658" y="123.317" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="112.522" y="123.317" size="1.778" layer="96" rot="R90"/>
+<attribute name="NAME" x="112.4458" y="123.317" size="1.778" layer="95" rot="R90"/>
 </instance>
 <instance part="PAD10" gate="G$1" x="93.98" y="124.46" smashed="yes" rot="R90">
-<attribute name="NAME" x="92.1258" y="123.317" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="97.282" y="123.317" size="1.778" layer="96" rot="R90"/>
+<attribute name="NAME" x="97.2058" y="123.317" size="1.778" layer="95" rot="R90"/>
 </instance>
 <instance part="PAD11" gate="G$1" x="78.74" y="124.46" smashed="yes" rot="R90">
-<attribute name="NAME" x="76.8858" y="123.317" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="82.042" y="123.317" size="1.778" layer="96" rot="R90"/>
+<attribute name="NAME" x="81.9658" y="123.317" size="1.778" layer="95" rot="R90"/>
 </instance>
 <instance part="PAD12" gate="G$1" x="63.5" y="124.46" smashed="yes" rot="R90">
-<attribute name="NAME" x="61.6458" y="123.317" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="66.802" y="123.317" size="1.778" layer="96" rot="R90"/>
+<attribute name="NAME" x="66.7258" y="123.317" size="1.778" layer="95" rot="R90"/>
 </instance>
 <instance part="PAD13" gate="G$1" x="48.26" y="124.46" smashed="yes" rot="R90">
-<attribute name="NAME" x="46.4058" y="123.317" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="51.562" y="123.317" size="1.778" layer="96" rot="R90"/>
+<attribute name="NAME" x="51.4858" y="123.317" size="1.778" layer="95" rot="R90"/>
 </instance>
 <instance part="PAD14" gate="G$1" x="33.02" y="124.46" smashed="yes" rot="R90">
-<attribute name="NAME" x="31.1658" y="123.317" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="36.322" y="123.317" size="1.778" layer="96" rot="R90"/>
+<attribute name="NAME" x="36.2458" y="123.317" size="1.778" layer="95" rot="R90"/>
 </instance>
 <instance part="R1" gate="G$1" x="43.18" y="116.84" smashed="yes" rot="R180">
 <attribute name="NAME" x="44.45" y="112.8014" size="1.778" layer="95" rot="R180"/>
@@ -5843,7 +5823,6 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 </instance>
 <instance part="VCC" gate="G$1" x="132.08" y="121.92" smashed="yes" rot="R180">
 <attribute name="NAME" x="133.223" y="120.0658" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="133.223" y="125.222" size="1.778" layer="96" rot="R180"/>
 </instance>
 </instances>
 <busses>
