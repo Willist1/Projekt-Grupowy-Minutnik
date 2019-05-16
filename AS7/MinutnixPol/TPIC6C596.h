@@ -11,9 +11,9 @@
 
 #define SHIFT_REG_PORT PORTB
 
-#define SHIFT_REG_G 1		// (not)OE (output enable) - low unblocks the buffers
+#define SHIFT_REG_G 2		// (not)OE (output enable) - low unblocks the buffers
 #define SHIFT_REG_DI 3		// SER (data in) - connected to uC's MOSI
-#define SHIFT_REG_RCK 2		// RCLK (latch) - low activates SCK input / high causes transfer of reg content to output buffers - connected to uC's SS
+#define SHIFT_REG_RCK 1		// RCLK (latch) - low activates SCK input / high causes transfer of reg content to output buffers - connected to uC's SS
 #define SHIFT_REG_SCK 5		// SRCLK (clock) - connected to uC's SCK
 							// SCL - constant high - zeroing reg
 

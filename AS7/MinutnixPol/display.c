@@ -18,25 +18,25 @@ void Timer1Init() {
 
 void displayInit()
 {
-	//DDRB &= ~_BV(PB1);		// pin OC1A set as input
+	//DDRB &= ~_BV(SHIFT_REG_G);		// pin OC1B set as input
 	Timer1Init();
-	//TCCR1A |= _BV(COM1A1);	// low output state at compare match
-	OCR1A = 0x3FF;			// by default: 100% duty cycle (display turned off)
+	//TCCR1A |= _BV(COM1B1);	// low output state at compare match
+	OCR1B = 0x3FF;			// by default: 100% duty cycle (display turned off)
 }
 
 void displayOff()
 {
-	TCCR1A &= ~_BV(COM1A1);	// low output state at compare match disable
-	DDRB |= _BV(PB1);		// pin OC0B set as output
+	TCCR1A &= ~_BV(COM1B1);	// low output state at compare match disable
+	DDRB |= _BV(SHIFT_REG_G);		// pin OC0A set as output
 	TPIC6C596_Set_OE();		// Disable output
 }
 
 void displayOn()
 {
-	DDRB |= _BV(PB1);		// pin OC0B set as output
-	TCCR1A |= _BV(COM1A1);	// low output state at compare match
+	DDRB |= _BV(SHIFT_REG_G);		// pin OC0A set as output
+	TCCR1A |= _BV(COM1B1);	// low output state at compare match
 }
 
 void displaySetBrightness(uint8_t percentage) {
-	OCR1A = (uint16_t)1023-10*percentage;		// OE pin of shift register is inverted
+	OCR1B = (uint16_t)1023-10*percentage;		// OE pin of shift register is inverted
 }
