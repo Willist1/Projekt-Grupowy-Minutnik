@@ -12,8 +12,8 @@
 #include <stdint.h>
 
 void Timer1Init() {
-	TCCR1A |= _BV(WGM11) | _BV(WGM10);	// fast PWM mode 10-bit (max 0x3FF = 1024)
-	TCCR1B = _BV(WGM12) | _BV(CS11);	// prescaler 8 (16 MHz / 1024 / 8 = 2 kHz)
+	TCCR1A |= _BV(WGM11) | _BV(WGM10);	// fast PWM mode 10-bit (max 0x3FF = 1023)
+	TCCR1B = _BV(WGM12) | _BV(CS11);	// prescaler 8 (16 MHz / 1024 / 8 = 2 kHz) (8 MHz / 1024 / 8 ~= 1 kHz)
 }
 
 void displayInit()

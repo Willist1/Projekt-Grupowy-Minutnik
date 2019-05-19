@@ -4,7 +4,7 @@
  *  Created: 2019-03-09 15:34
  *  Authors: Kluczek, Wegrzyn, Jopek
  */ 
-
+//#define F_CPU 8000000L
 
 #include <avr/io.h>
 #include <avr/interrupt.h>
@@ -38,7 +38,8 @@ void sysTickInit()
 	//ASSR |= _BV(AS2);		// TIM2 tacted asynchronously
 	TCNT2 = 0x00;			// counter set to 0
 	//TCCR2B = _BV(CS22) | _BV(CS20); // Prescaler 128 (interrupt every 1s)
-	TCCR2B = _BV(CS22);		// Preskaler CLKIO/64  (16 MHz / 256 / 64 = 1 kHz)
+	//TCCR2B = _BV(CS22);		// Preskaler CLKIO/64  (16 MHz / 256 / 64 = 1 kHz)
+	TCCR2B = _BV(CS21) | _BV(CS20);		// Preskaler CLKIO/32  (8 MHz / 256 / 32 ~= 1 kHz)
 	while(ASSR & 0x1F);		// Wait for TIM2 update (busy flags must be cleared)
 	TIMSK2 |= _BV(TOIE2);	// Unblock TIM2 overflow interrupt
 }
@@ -120,11 +121,11 @@ int main()
 	sysTickInit();
 	PCF8574_Init();
 	TPIC6C596Init();
-	buzzerInit ();
 	pwrFailInit();
 	settingsLEDInit();
 	lightsensorInit();
 	displayInit();
+	buzzerInit ();
 	
 	//USART_init();
 	//static FILE usartout = FDEV_SETUP_STREAM (put, get, _FDEV_SETUP_RW);
@@ -324,50 +325,71 @@ int main()
 				break;
 				
 			case sRunning:
-				if (NVData.totalSeconds > 0) {
-					ATOMIC_BLOCK (ATOMIC_FORCEON) {
-						LEDDIGITS[0]= (uint8_t)((NVData.totalSeconds/60)/10);
-						LEDDIGITS[1]= (uint8_t)((NVData.totalSeconds/60)%10);
-						LEDDIGITS[2]= (uint8_t)((NVData.totalSeconds%60)/10);
-						LEDDIGITS[3]= (uint8_t)((NVData.totalSeconds%60)%10);
-						if (toggle_500ms) {
-							LEDDIGITS[1] |= DP;				// colon blink
-							LEDDIGITS[2] |= DP;
-						}
-						else {
-							LEDDIGITS[1] &= ~DP;
-							LEDDIGITS[2] &= ~DP;
-						}
-					};
+			if (NVData.totalSeconds > 0) {
+				ATOMIC_BLOCK (ATOMIC_FORCEON) {
+					LEDDIGITS[0]= (uint8_t)((NVData.totalSeconds/60)/10);
+					LEDDIGITS[1]= (uint8_t)((NVData.totalSeconds/60)%10);
+					LEDDIGITS[2]= (uint8_t)((NVData.totalSeconds%60)/10);
+					LEDDIGITS[3]= (uint8_t)((NVData.totalSeconds%60)%10);
+					LEDDIGITS[1] |= DP;				// colon 
+					LEDDIGITS[2] |= DP;
+				};
 				} else {	// NVData.totalSeconds == 0
-					if (toggle_500ms) {						// digits blink
-						ATOMIC_BLOCK (ATOMIC_FORCEON) {
-							LEDDIGITS[0]= BLANK_DISPLAY;
-							LEDDIGITS[1]= BLANK_DISPLAY;
-							LEDDIGITS[2]= BLANK_DISPLAY;
-							LEDDIGITS[3]= BLANK_DISPLAY;
-						};
+				if (toggle_500ms) {						// digits blink
+					ATOMIC_BLOCK (ATOMIC_FORCEON) {
+						LEDDIGITS[0]= BLANK_DISPLAY;
+						LEDDIGITS[1]= BLANK_DISPLAY;
+						LEDDIGITS[2]= BLANK_DISPLAY;
+						LEDDIGITS[3]= BLANK_DISPLAY;
+					};
+				}
+				else {
+					ATOMIC_BLOCK (ATOMIC_FORCEON) {
+						LEDDIGITS[0]= 0;
+						LEDDIGITS[1]= DP;
+						LEDDIGITS[2]= DP;
+						LEDDIGITS[3]= 0;
+					};
+				}
+			}
+			
+			if (NVData.totalSeconds == 0) {
+				buzzerOn();	// Perform continuous end beep
+				} else if (NVData.totalSeconds == NVData.config.warnVal*60) {								// Start warn beep
+				ATOMIC_BLOCK (ATOMIC_FORCEON) { buzzerOn(); };
+				} else if (NVData.totalSeconds == NVData.config.warnVal*60 - WARN_BEEP_DURATION_SECONDS) {	// End warn beep
+				ATOMIC_BLOCK (ATOMIC_FORCEON) { buzzerOff(); };
+			}
+			
+			break;
+			
+			case sPause: //copy of old sRunning
+			if (NVData.totalSeconds > 0) {
+				ATOMIC_BLOCK (ATOMIC_FORCEON) 
+					LEDDIGITS[0]= (uint8_t)((NVData.totalSeconds/60)/10);
+					LEDDIGITS[1]= (uint8_t)((NVData.totalSeconds/60)%10);
+					LEDDIGITS[2]= (uint8_t)((NVData.totalSeconds%60)/10);
+					LEDDIGITS[3]= (uint8_t)((NVData.totalSeconds%60)%10);
+					if (toggle_500ms) {
+						LEDDIGITS[1] |= DP;				// colon blink
+						LEDDIGITS[2] |= DP;
 					}
 					else {
-						ATOMIC_BLOCK (ATOMIC_FORCEON) {
-							LEDDIGITS[0]= 0;
-							LEDDIGITS[1]= DP;
-							LEDDIGITS[2]= DP;
-							LEDDIGITS[3]= 0;
-						};
+						LEDDIGITS[1] &= ~DP;
+						LEDDIGITS[2] &= ~DP;
 					}
-				}
-				
-				if (NVData.totalSeconds == 0) {
-					buzzerOn();	// Perform continuous end beep
+				};
+			
+			if (NVData.totalSeconds == 0) {
+				buzzerOn();	// Perform continuous end beep
 				} else if (NVData.totalSeconds == NVData.config.warnVal*60) {								// Start warn beep
-					ATOMIC_BLOCK (ATOMIC_FORCEON) { buzzerOn(); };
+				ATOMIC_BLOCK (ATOMIC_FORCEON) { buzzerOn(); };
 				} else if (NVData.totalSeconds == NVData.config.warnVal*60 - WARN_BEEP_DURATION_SECONDS) {	// End warn beep
-					ATOMIC_BLOCK (ATOMIC_FORCEON) { buzzerOff(); };
-				}
-				
-				break;
-				
+				ATOMIC_BLOCK (ATOMIC_FORCEON) { buzzerOff(); };
+			}
+			
+			break;
+			
 			default:
 				break;
 				
