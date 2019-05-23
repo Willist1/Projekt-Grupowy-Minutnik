@@ -26,7 +26,14 @@
 #include "TPIC6C596.h"
 #include "lightsensor.h"
 
+
+#define EXTERNAL_CLOCK
+
+#ifdef EXTERNAL_CLOCK
+#define MAX_NO_ACTIVITY_TICKS 600	// 5 min
+#else
 #define MAX_NO_ACTIVITY_TICKS 300000	// 5 min
+#endif
 
 tSTATE currentState = sSetting;
 volatile uint32_t ticks = 0;
@@ -35,11 +42,15 @@ uint32_t lastActivityTime = 0;
 
 void sysTickInit()
 {
-	//ASSR |= _BV(AS2);		// TIM2 tacted asynchronously
-	TCNT2 = 0x00;			// counter set to 0
-	//TCCR2B = _BV(CS22) | _BV(CS20); // Prescaler 128 (interrupt every 1s)
-	//TCCR2B = _BV(CS22);		// Preskaler CLKIO/64  (16 MHz / 256 / 64 = 1 kHz)
-	TCCR2B = _BV(CS21) | _BV(CS20);		// Preskaler CLKIO/32  (8 MHz / 256 / 32 ~= 1 kHz)
+	#ifdef EXTERNAL_CLOCK
+	ASSR |= _BV(AS2);		// TIM2 tacted asynchronously
+	TCCR2B = _BV(CS22);		// Preskaler CLKIO/64  (32.768 kHz / 256 / 64 = 2 Hz)
+	#else //internal
+	TCCR2A = _BV(WGM20);	//PWM, Phase Correct TOP = OCRA, OVint at BOTTOM
+	OCR2A = 124;
+	TCCR2B = _BV(WGM22) | _BV(CS21) | _BV(CS20);	// Preskaler CLKIO/32  (8 MHz / (124+1) / 32 /2 = 1 kHz)
+	#endif
+	
 	while(ASSR & 0x1F);		// Wait for TIM2 update (busy flags must be cleared)
 	TIMSK2 |= _BV(TOIE2);	// Unblock TIM2 overflow interrupt
 }
@@ -57,12 +68,20 @@ void sysTickOff()
 ISR(TIMER2_OVF_vect)	// System clock
 {
 	ticks++;
+	
+	#ifdef EXTERNAL_CLOCK
+	toggle_500ms ^= 0x01;
+	if (!(ticks % 2) && (currentState == sRunning)) {
+		if(NVData.totalSeconds > 0) NVData.totalSeconds--;
+	}
+	#else
 	if (!(ticks % 500)) {
 		toggle_500ms ^= 0x01;
 	}
 	if (!(ticks % 1000) && (currentState == sRunning)) {
 		if(NVData.totalSeconds > 0) NVData.totalSeconds--;
 	}
+	#endif
 }
 
 void wdtInit() {
@@ -255,7 +274,18 @@ int main()
 								break;
 							case Play:
 								if (currentState == sRunning) {
-									currentState = sPause;
+									if (NVData.totalSeconds > 0)
+										currentState = sPause;
+									else{
+										memorizedButton = Stop;
+										currentState = sSetting;
+										NVData.totalSeconds = NVData.config.cntVal*60;
+										setVal = NVData.config.cntVal;
+										settingsLEDToggle(LED_SET_CNT);
+										memorizedButton = setCnt;
+										buzzerOff();
+										}
+										
 								} else { // currentState == sPause
 									currentState = sRunning;
 								}
@@ -379,14 +409,6 @@ int main()
 						LEDDIGITS[2] &= ~DP;
 					}
 				};
-			
-			if (NVData.totalSeconds == 0) {
-				buzzerOn();	// Perform continuous end beep
-				} else if (NVData.totalSeconds == NVData.config.warnVal*60) {								// Start warn beep
-				ATOMIC_BLOCK (ATOMIC_FORCEON) { buzzerOn(); };
-				} else if (NVData.totalSeconds == NVData.config.warnVal*60 - WARN_BEEP_DURATION_SECONDS) {	// End warn beep
-				ATOMIC_BLOCK (ATOMIC_FORCEON) { buzzerOff(); };
-			}
 			
 			break;
 			
