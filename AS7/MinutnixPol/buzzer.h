@@ -12,6 +12,6 @@
 void buzzerInit();
 void buzzerOn();
 void buzzerOff();
-void buzzerSetVolume(uint8_t percentage);
+void buzzerSetVolume(uint8_t setting);
 
 #endif /* BUZZER_H_ */

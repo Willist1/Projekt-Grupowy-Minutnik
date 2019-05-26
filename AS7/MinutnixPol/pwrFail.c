@@ -12,7 +12,7 @@
 
 #include <stdio.h>
 
-#define DETECT_DELAY_TICKS 2000
+#define DETECT_DELAY_TICKS 4	// 2 sec
 
 // Data in EEPROM (declaration requires initialization)
 EEMEM tNVData EEPROMData = {.config.cntVal=0xaa, .config.warnVal=0xbb, .config.brightVal=0xcc, .config.volumeVal=0xdd, .totalSeconds=0xffff};

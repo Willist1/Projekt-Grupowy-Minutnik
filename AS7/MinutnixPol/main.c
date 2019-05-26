@@ -39,6 +39,7 @@ tSTATE currentState = sSetting;
 volatile uint32_t ticks = 0;
 volatile uint8_t toggle_500ms = 0;
 uint32_t lastActivityTime = 0;
+uint8_t WARN_MAX_VAL = 15;
 
 void sysTickInit()
 {
@@ -101,7 +102,7 @@ void wdtDeinit() {
 // results range: 0-19 (20 values)
 #define ADC_READING_DIVISOR 13
 const uint8_t __attribute__((__progmem__)) brightnessTable[] = {
-	5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100
+	100, 95, 90, 85, 80, 75, 70, 65, 60, 55, 50, 45, 40, 35, 30, 25, 20, 15, 10, 5
 };
 
 #define SETTINGS_LED_PORT PORTC
@@ -162,7 +163,7 @@ int main()
 	if (NVData.config.volumeVal > VOL_MAX_VAL) NVData.config.volumeVal = VOL_MAX_VAL;
 	if (NVData.totalSeconds > NVData.config.cntVal*60) NVData.totalSeconds = NVData.config.cntVal*60;
 	displaySetBrightness(10*NVData.config.brightVal);
-	buzzerSetVolume(10*NVData.config.volumeVal);
+	buzzerSetVolume(NVData.config.volumeVal);
 	settingsLEDToggle(LED_SET_CNT);
 	setVal = NVData.config.cntVal;	// prepare user interaction
 	
@@ -237,6 +238,9 @@ int main()
 									settingsLEDToggle(LED_SET_CNT);
 									break;
 								case setWarning:
+									// prevent warning time from being greater than total time
+									WARN_MAX_VAL = NVData.config.cntVal;
+									if (NVData.config.warnVal > NVData.config.cntVal) NVData.config.warnVal = NVData.config.cntVal;
 									setVal = NVData.config.warnVal;
 									settingsLEDToggle(LED_SET_WARN);
 									break;
@@ -347,7 +351,7 @@ int main()
 						ATOMIC_BLOCK (ATOMIC_FORCEON) { displaySetBrightness(10*setVal); };
 						break;
 					case setVolume:
-						ATOMIC_BLOCK (ATOMIC_FORCEON) { buzzerSetVolume(10*setVal); };
+						ATOMIC_BLOCK (ATOMIC_FORCEON) { buzzerSetVolume(setVal); };
 						break;
 					default:
 						break;
@@ -361,24 +365,30 @@ int main()
 					LEDDIGITS[1]= (uint8_t)((NVData.totalSeconds/60)%10);
 					LEDDIGITS[2]= (uint8_t)((NVData.totalSeconds%60)/10);
 					LEDDIGITS[3]= (uint8_t)((NVData.totalSeconds%60)%10);
-					LEDDIGITS[1] |= DP;				// colon 
-					LEDDIGITS[2] |= DP;
+					if (toggle_500ms) {
+						LEDDIGITS[1] |= DP;				// colon blink
+						LEDDIGITS[2] |= DP;
+					}
+					else {
+						LEDDIGITS[1] &= ~DP;
+						LEDDIGITS[2] &= ~DP;
+					}
 				};
-				} else {	// NVData.totalSeconds == 0
+			} else {	// NVData.totalSeconds == 0
 				if (toggle_500ms) {						// digits blink
-					ATOMIC_BLOCK (ATOMIC_FORCEON) {
-						LEDDIGITS[0]= BLANK_DISPLAY;
-						LEDDIGITS[1]= BLANK_DISPLAY;
-						LEDDIGITS[2]= BLANK_DISPLAY;
-						LEDDIGITS[3]= BLANK_DISPLAY;
-					};
-				}
-				else {
 					ATOMIC_BLOCK (ATOMIC_FORCEON) {
 						LEDDIGITS[0]= 0;
 						LEDDIGITS[1]= DP;
 						LEDDIGITS[2]= DP;
 						LEDDIGITS[3]= 0;
+					};
+				}
+				else {
+					ATOMIC_BLOCK (ATOMIC_FORCEON) {
+						LEDDIGITS[0]= BLANK_DISPLAY;
+						LEDDIGITS[1]= BLANK_DISPLAY;
+						LEDDIGITS[2]= BLANK_DISPLAY;
+						LEDDIGITS[3]= BLANK_DISPLAY;
 					};
 				}
 			}
@@ -396,17 +406,21 @@ int main()
 			case sPause: //copy of old sRunning
 			if (NVData.totalSeconds > 0) {
 				ATOMIC_BLOCK (ATOMIC_FORCEON) 
-					LEDDIGITS[0]= (uint8_t)((NVData.totalSeconds/60)/10);
-					LEDDIGITS[1]= (uint8_t)((NVData.totalSeconds/60)%10);
-					LEDDIGITS[2]= (uint8_t)((NVData.totalSeconds%60)/10);
-					LEDDIGITS[3]= (uint8_t)((NVData.totalSeconds%60)%10);
-					if (toggle_500ms) {
-						LEDDIGITS[1] |= DP;				// colon blink
-						LEDDIGITS[2] |= DP;
+					if (toggle_500ms) {						// digits blink
+						ATOMIC_BLOCK (ATOMIC_FORCEON) {
+							LEDDIGITS[0]= (uint8_t)((NVData.totalSeconds/60)/10);
+							LEDDIGITS[1]= (uint8_t)((NVData.totalSeconds/60)%10) | DP;
+							LEDDIGITS[2]= (uint8_t)((NVData.totalSeconds%60)/10) | DP;
+							LEDDIGITS[3]= (uint8_t)((NVData.totalSeconds%60)%10);
+						};
 					}
 					else {
-						LEDDIGITS[1] &= ~DP;
-						LEDDIGITS[2] &= ~DP;
+						ATOMIC_BLOCK (ATOMIC_FORCEON) {
+							LEDDIGITS[0]= BLANK_DISPLAY;
+							LEDDIGITS[1]= BLANK_DISPLAY;
+							LEDDIGITS[2]= BLANK_DISPLAY;
+							LEDDIGITS[3]= BLANK_DISPLAY;
+						};
 					}
 				};
 			

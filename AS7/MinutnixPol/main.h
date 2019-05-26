@@ -13,11 +13,11 @@
 
 #define CNT_MAX_VAL 99
 #define CNT_MIN_VAL 1
-#define WARN_MAX_VAL 15
+extern uint8_t WARN_MAX_VAL;
 #define WARN_MIN_VAL 0
 #define BRIGHT_MAX_VAL 10
 #define BRIGHT_MIN_VAL 1
-#define VOL_MAX_VAL 10
+#define VOL_MAX_VAL 3
 #define VOL_MIN_VAL 0
 
 #define WARN_BEEP_DURATION_SECONDS 2
