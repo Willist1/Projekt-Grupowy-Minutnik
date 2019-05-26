@@ -13,9 +13,33 @@
 #include <stdio.h>
 
 #define DETECT_DELAY_TICKS 4	// 2 sec
+#define MULTIPLICATION    10	// number of memory blocks written to
 
-// Data in EEPROM (declaration requires initialization)
-EEMEM tNVData EEPROMData = {.config.cntVal=0xaa, .config.warnVal=0xbb, .config.brightVal=0xcc, .config.volumeVal=0xdd, .totalSeconds=0xffff};
+// Data in EEPROM (?declaration requires initialization?)
+EEMEM tNVData EEPROMDataBuffer[MULTIPLICATION];
+EEMEM unsigned char pointers[MULTIPLICATION];
+
+void clearPointers()
+{
+	for(int i = 0; i < MULTIPLICATION; i++) eeprom_write_byte(&pointers[i], 0xFF);
+}
+
+void writeEEPROMDataBuffer()
+{
+	int i = 0;
+	while((i < MULTIPLICATION) && (eeprom_read_byte(&pointers[i]) != 0xFF)) i++;	// Search for first 0xFF pointer
+	if(i == MULTIPLICATION) clearPointers();
+	eeprom_write_byte(&pointers[i%MULTIPLICATION], 0);
+	eeprom_update_block((void*)&NVData, (void*)&EEPROMDataBuffer[i%MULTIPLICATION], sizeof(tNVData));	// Copy data to EEPROM
+}
+
+void readEEPROMDataBuffer()
+{
+	int i=0;
+	while((i < MULTIPLICATION) && (eeprom_read_byte(&pointers[i]) != 0xFF)) i++;	// Search for first 0xFF pointer
+	i--;																			// Move back to last zeroed pointer
+	eeprom_read_block((void*)&NVData, (void*)&EEPROMDataBuffer[i%MULTIPLICATION], sizeof(tNVData));		// Copy data from EEPROM to SRAM
+}
 
 ISR(ANALOG_COMP_vect)//, ISR_NAKED)
 {
@@ -48,14 +72,14 @@ ISR(ANALOG_COMP_vect)//, ISR_NAKED)
 		}
 
 		// Write non-volatile data to EEPROM
-		eeprom_update_block((void*)&NVData, (void*)&EEPROMData, sizeof(tNVData)); // Copy data to EEPROM
+		writeEEPROMDataBuffer();
 		
 		while(1); // Nothing left to do...
 	}
 }
 
 void EEPROMupdate() {
-	eeprom_update_block((void*)&NVData, (void*)&EEPROMData, sizeof(tNVData)); // Copy data to EEPROM
+	writeEEPROMDataBuffer();
 }
 
 void pwrFailInit()
@@ -66,26 +90,5 @@ void pwrFailInit()
 
 void NVDataInit()
 {
-	eeprom_read_block((void*)&NVData, (void*)&EEPROMData, sizeof(tNVData));  // Copy data from EEPROM to SRAM
+	readEEPROMDataBuffer();
 }
-
-/*
-int main(void)
-{
-	DDRB |=_BV(PB5);
-	PORTB |= _BV(PB5);
-
-	Data_init();
-	AC_init();
-	sei(); // Odblokuj przerwania
-	
-	DaneSRAM.Dane=0x4BCD;  // Modyfikujemy odtworzona kopie danych
-	DaneSRAM.PID_P=0x0211; // Zostana one automatycznie zapisane po odlaczeniu zasilania
-	DaneSRAM.Temperatura=0x1234;
-
-	while(1)
-	{
-		// IT WORKED!
-	}
-}
-*/
