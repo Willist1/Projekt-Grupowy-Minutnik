@@ -1,0 +1,19 @@
+USBasp:
+C:\Users\stefa\Downloads\avrdude-6.3-mingw32\avrdude.exe
+-p m328p -c usbasp -P usb -U flash:w:"$(ProjectDir)Debug\$(TargetName).hex":i
+
+NormalFuses:
+C:\Users\stefa\Downloads\avrdude-6.3-mingw32\avrdude.exe
+-p atmega328p -c usbasp -P usb -B 8 -V -u -U lfuse:w:0xE2:m -U hfuse:w:0xDA:m -U efuse:w:0xFF:m
+
+BurnBootloader:
+C:\Program Files (x86)\Arduino\hardware\tools\avr/bin/avrdude.exe
+-C"C:\Program Files (x86)\Arduino\hardware\tools\avr/etc/avrdude.conf" -v -patmega328p -cusbasp -Pusb -Uflash:w:"C:\Program Files (x86)\Arduino\hardware\breadboard\avr/bootloaders/atmega/ATmegaBOOT_168_atmega328_pro_8MHz.hex":i -Ulock:w:0x0F:m
+
+ArduinoBootloader:
+C:\Program Files (x86)\Arduino\hardware\tools\avr/bin/avrdude.exe
+-C"C:\Program Files (x86)\Arduino\hardware\tools\avr/etc/avrdude.conf" -v -patmega328p -carduino -PCOM3 -b57600 -D -Uflash:w:C:\Users\stefa\OneDrive\Desktop\Minutnik\Projekt-Grupowy-Minutnik\AS7\MinutnixPol\Debug\MinutnixPol.hex:i
+
+ReadFuses:
+C:\Users\stefa\Downloads\avrdude-6.3-mingw32\avrdude.exe
+-c usbasp -p m328p
