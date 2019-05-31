@@ -21530,8 +21530,8 @@ Marquardt, Siemens, C&amp;K, ITT, and others&lt;p&gt;
 <description>Control</description>
 <plain>
 <wire x1="92.07" y1="129.54" x2="92.07" y2="24.13" width="0.1" layer="94"/>
-<text x="38.28" y="127.4" size="1.778" layer="94">Atmega8 version</text>
-<text x="130.27" y="127.14" size="1.778" layer="94">Atmega328p version</text>
+<text x="20.5" y="122.32" size="5.08" layer="94">Atmega8 version</text>
+<text x="107.41" y="122.06" size="5.08" layer="94">Atmega328p version</text>
 <text x="140.7" y="20.4" size="2.54" layer="94">CONTROL</text>
 </plain>
 <instances>
@@ -21638,26 +21638,26 @@ Marquardt, Siemens, C&amp;K, ITT, and others&lt;p&gt;
 </net>
 <net name="D_RCK" class="0">
 <segment>
-<wire x1="106.68" y1="78.74" x2="121.92" y2="78.74" width="0.1524" layer="91"/>
-<label x="106.68" y="78.74" size="1.778" layer="95"/>
-<pinref part="ATMEGA328P" gate="A" pin="PB1"/>
+<wire x1="106.68" y1="81.28" x2="121.92" y2="81.28" width="0.1524" layer="91"/>
+<label x="106.68" y="81.28" size="1.778" layer="95"/>
+<pinref part="ATMEGA328P" gate="A" pin="PB0"/>
 </segment>
 <segment>
-<wire x1="69.52" y1="71.12" x2="84.76" y2="71.12" width="0.1524" layer="91"/>
-<label x="84.76" y="71.12" size="1.778" layer="95" rot="MR0"/>
-<pinref part="IC1" gate="G$1" pin="PD5(T1)"/>
+<wire x1="69.52" y1="60.96" x2="84.76" y2="60.96" width="0.1524" layer="91"/>
+<label x="84.76" y="60.96" size="1.778" layer="95" rot="MR0"/>
+<pinref part="IC1" gate="G$1" pin="PB0(ICP)"/>
 </segment>
 </net>
 <net name="BUZZ" class="0">
 <segment>
-<wire x1="172.72" y1="71.12" x2="157.48" y2="71.12" width="0.1524" layer="91"/>
-<pinref part="ATMEGA328P" gate="A" pin="PD5"/>
-<label x="172.72" y="71.12" size="1.778" layer="95" rot="MR0"/>
-</segment>
-<segment>
 <wire x1="84.76" y1="58.42" x2="69.52" y2="58.42" width="0.1524" layer="91"/>
 <label x="84.76" y="58.42" size="1.778" layer="95" rot="MR0"/>
 <pinref part="IC1" gate="G$1" pin="PB1(OC1A)"/>
+</segment>
+<segment>
+<wire x1="121.92" y1="78.74" x2="106.68" y2="78.74" width="0.1524" layer="91"/>
+<label x="106.68" y="78.74" size="1.778" layer="95"/>
+<pinref part="ATMEGA328P" gate="A" pin="PB1"/>
 </segment>
 </net>
 <net name="EXP_SDA" class="0">
@@ -21715,69 +21715,21 @@ Marquardt, Siemens, C&amp;K, ITT, and others&lt;p&gt;
 <label x="84.76" y="99.06" size="1.778" layer="255" rot="MR0"/>
 </segment>
 <segment>
-<wire x1="157.48" y1="96.52" x2="172.72" y2="96.52" width="0.1524" layer="91"/>
-<label x="172.72" y="96.52" size="1.778" layer="255" rot="MR0"/>
-<pinref part="ATMEGA328P" gate="A" pin="PC3"/>
+<wire x1="157.48" y1="99.06" x2="172.72" y2="99.06" width="0.1524" layer="91"/>
+<label x="172.72" y="99.06" size="1.778" layer="255" rot="MR0"/>
+<pinref part="ATMEGA328P" gate="A" pin="PC2"/>
 </segment>
-</net>
-<net name="L4" class="0">
 <segment>
 <pinref part="IC1" gate="G$1" pin="PC2(ADC2)"/>
 <wire x1="69.52" y1="101.6" x2="84.76" y2="101.6" width="0.1524" layer="91"/>
 <label x="84.76" y="101.6" size="1.778" layer="255" rot="MR0"/>
 </segment>
-<segment>
-<wire x1="157.48" y1="99.06" x2="172.72" y2="99.06" width="0.1524" layer="91"/>
-<label x="172.72" y="99.06" size="1.778" layer="255" rot="MR0"/>
-<pinref part="ATMEGA328P" gate="A" pin="PC2"/>
-</segment>
 </net>
-<net name="L5" class="0">
+<net name="L4" class="0">
 <segment>
-<pinref part="IC1" gate="G$1" pin="PC1(ADC1)"/>
-<wire x1="69.52" y1="104.14" x2="84.76" y2="104.14" width="0.1524" layer="91"/>
-<label x="84.76" y="104.14" size="1.778" layer="255" rot="MR0"/>
-</segment>
-<segment>
-<wire x1="157.48" y1="101.6" x2="172.72" y2="101.6" width="0.1524" layer="91"/>
-<label x="172.72" y="101.6" size="1.778" layer="255" rot="MR0"/>
-<pinref part="ATMEGA328P" gate="A" pin="PC1"/>
-</segment>
-</net>
-<net name="L6" class="0">
-<segment>
-<pinref part="IC1" gate="G$1" pin="PC0(ADC0)"/>
-<wire x1="69.52" y1="106.68" x2="84.76" y2="106.68" width="0.1524" layer="91"/>
-<label x="84.76" y="106.68" size="1.778" layer="255" rot="MR0"/>
-</segment>
-<segment>
-<wire x1="157.48" y1="104.14" x2="172.72" y2="104.14" width="0.1524" layer="91"/>
-<label x="172.72" y="104.14" size="1.778" layer="255" rot="MR0"/>
-<pinref part="ATMEGA328P" gate="A" pin="PC0"/>
-</segment>
-</net>
-<net name="L1" class="0">
-<segment>
-<wire x1="157.48" y1="73.66" x2="172.72" y2="73.66" width="0.1524" layer="91"/>
-<label x="172.72" y="73.66" size="1.778" layer="255" rot="MR0"/>
-<pinref part="ATMEGA328P" gate="A" pin="PD4"/>
-</segment>
-<segment>
-<wire x1="69.52" y1="73.66" x2="84.76" y2="73.66" width="0.1524" layer="91"/>
-<label x="84.76" y="73.66" size="1.778" layer="255" rot="MR0"/>
-<pinref part="IC1" gate="G$1" pin="PD4(XCK/T0)"/>
-</segment>
-</net>
-<net name="L2" class="0">
-<segment>
-<wire x1="157.48" y1="76.2" x2="172.72" y2="76.2" width="0.1524" layer="91"/>
-<label x="172.72" y="76.2" size="1.778" layer="255" rot="MR0"/>
-<pinref part="ATMEGA328P" gate="A" pin="PD3"/>
-</segment>
-<segment>
-<wire x1="69.52" y1="76.2" x2="84.76" y2="76.2" width="0.1524" layer="91"/>
-<label x="84.76" y="76.2" size="1.778" layer="255" rot="MR0"/>
-<pinref part="IC1" gate="G$1" pin="PD3(INT1)"/>
+<wire x1="157.48" y1="96.52" x2="172.72" y2="96.52" width="0.1524" layer="91"/>
+<label x="172.72" y="96.52" size="1.778" layer="255" rot="MR0"/>
+<pinref part="ATMEGA328P" gate="A" pin="PC3"/>
 </segment>
 </net>
 <net name="RESET" class="0">
@@ -21896,6 +21848,30 @@ Marquardt, Siemens, C&amp;K, ITT, and others&lt;p&gt;
 <pinref part="ATMEGA328P" gate="A" pin="GND"/>
 <wire x1="121.92" y1="53.34" x2="119.38" y2="53.34" width="0.1524" layer="91"/>
 <wire x1="119.38" y1="53.34" x2="119.38" y2="55.88" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="L1" class="0">
+<segment>
+<wire x1="157.48" y1="104.14" x2="172.72" y2="104.14" width="0.1524" layer="91"/>
+<label x="172.72" y="104.14" size="1.778" layer="255" rot="MR0"/>
+<pinref part="ATMEGA328P" gate="A" pin="PC0"/>
+</segment>
+<segment>
+<pinref part="IC1" gate="G$1" pin="PC0(ADC0)"/>
+<wire x1="69.52" y1="106.68" x2="84.76" y2="106.68" width="0.1524" layer="91"/>
+<label x="84.76" y="106.68" size="1.778" layer="255" rot="MR0"/>
+</segment>
+</net>
+<net name="L2" class="0">
+<segment>
+<wire x1="157.48" y1="101.6" x2="172.72" y2="101.6" width="0.1524" layer="91"/>
+<label x="172.72" y="101.6" size="1.778" layer="255" rot="MR0"/>
+<pinref part="ATMEGA328P" gate="A" pin="PC1"/>
+</segment>
+<segment>
+<pinref part="IC1" gate="G$1" pin="PC1(ADC1)"/>
+<wire x1="69.52" y1="104.14" x2="84.76" y2="104.14" width="0.1524" layer="91"/>
+<label x="84.76" y="104.14" size="1.778" layer="255" rot="MR0"/>
 </segment>
 </net>
 </nets>
@@ -22848,10 +22824,10 @@ Marquardt, Siemens, C&amp;K, ITT, and others&lt;p&gt;
 <attribute name="VALUE" x="39.225" y="51.285" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="C31" gate="G$1" x="29.7" y="64.62" smashed="yes">
-<attribute name="VALUE" x="30.843" y="60.0226" size="1.778" layer="96"/>
+<attribute name="VALUE" x="20.683" y="62.5626" size="1.778" layer="96"/>
 </instance>
 <instance part="SHOTTKYDIODE3" gate="G$1" x="37.32" y="62.08" smashed="yes" rot="R90">
-<attribute name="NAME" x="34.78" y="60.0226" size="1.778" layer="95" rot="MR0"/>
+<attribute name="NAME" x="60.18" y="62.5626" size="1.778" layer="95" rot="MR0"/>
 </instance>
 <instance part="FRAME3" gate="G$1" x="0" y="0" smashed="yes">
 <attribute name="DRAWING_NAME" x="217.17" y="15.24" size="2.54" layer="94"/>
