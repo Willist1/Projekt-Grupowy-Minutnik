@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.01" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="16" fill="1" visible="no" active="no"/>
@@ -10867,6 +10867,78 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <vertex x="-3.05" y="-2.475"/>
 </polygon>
 </package>
+<package name="PT-10" urn="urn:adsk.eagle:footprint:23297/1" library_version="10">
+<description>&lt;b&gt;Trimm Potentiometer&lt;/b&gt;</description>
+<wire x1="-3.175" y1="-4.064" x2="3.175" y2="-4.064" width="0.127" layer="21" curve="-288.924644"/>
+<wire x1="3.175" y1="-4.064" x2="3.175" y2="-5.715" width="0.127" layer="51"/>
+<wire x1="-3.175" y1="-5.715" x2="-3.175" y2="-4.064" width="0.127" layer="51"/>
+<wire x1="-2.794" y1="-5.715" x2="-2.794" y2="-3.175" width="0.127" layer="51"/>
+<wire x1="-2.794" y1="-3.175" x2="-1.905" y2="-2.54" width="0.127" layer="21"/>
+<wire x1="-1.905" y1="-2.54" x2="-0.635" y2="-3.175" width="0.127" layer="21"/>
+<wire x1="-0.635" y1="-3.175" x2="-0.635" y2="-4.445" width="0.127" layer="21"/>
+<wire x1="-0.635" y1="-4.445" x2="-1.27" y2="-4.445" width="0.127" layer="21"/>
+<wire x1="-1.27" y1="-4.445" x2="-1.27" y2="-5.715" width="0.127" layer="21"/>
+<wire x1="1.27" y1="-5.715" x2="1.27" y2="-4.445" width="0.127" layer="21"/>
+<wire x1="1.27" y1="-4.445" x2="0.635" y2="-4.445" width="0.127" layer="21"/>
+<wire x1="0.635" y1="-4.445" x2="0.635" y2="-3.175" width="0.127" layer="21"/>
+<wire x1="0.635" y1="-3.175" x2="1.905" y2="-2.54" width="0.127" layer="21"/>
+<wire x1="1.905" y1="-2.54" x2="2.794" y2="-3.175" width="0.127" layer="21"/>
+<wire x1="2.794" y1="-3.175" x2="2.794" y2="-5.715" width="0.127" layer="51"/>
+<wire x1="-3.175" y1="-5.715" x2="3.175" y2="-5.715" width="0.127" layer="51"/>
+<wire x1="0.889" y1="1.397" x2="-0.127" y2="0.381" width="0.127" layer="21"/>
+<wire x1="-0.127" y1="0.381" x2="-0.508" y2="0.762" width="0.127" layer="21"/>
+<wire x1="-0.508" y1="0.762" x2="-0.508" y2="0" width="0.127" layer="21"/>
+<wire x1="-0.508" y1="0" x2="-1.397" y2="-0.889" width="0.127" layer="21"/>
+<wire x1="1.397" y1="0.889" x2="0.381" y2="-0.127" width="0.127" layer="21"/>
+<wire x1="0.381" y1="-0.127" x2="0.762" y2="-0.508" width="0.127" layer="21"/>
+<wire x1="0.762" y1="-0.508" x2="0" y2="-0.508" width="0.127" layer="21"/>
+<wire x1="0" y1="-0.508" x2="-0.889" y2="-1.397" width="0.127" layer="21"/>
+<circle x="0" y="0" radius="1.8034" width="0.127" layer="21"/>
+<circle x="0" y="0" radius="2.794" width="0.0508" layer="21"/>
+<pad name="1" x="-2.54" y="-5.08" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="2" x="2.54" y="-5.08" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="3" x="0" y="5.08" drill="1.016" diameter="1.778" shape="octagon"/>
+<text x="-3.175" y="6.35" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="-3.048" y="-7.62" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
+</package>
+<package name="PT-10S" urn="urn:adsk.eagle:footprint:23298/1" library_version="10">
+<description>&lt;b&gt;Trimm Potentiometer&lt;/b&gt;</description>
+<wire x1="-1.905" y1="-1.27" x2="-1.27" y2="-1.905" width="0.127" layer="51"/>
+<wire x1="-1.27" y1="-1.905" x2="1.27" y2="-1.905" width="0.127" layer="21"/>
+<wire x1="1.27" y1="-1.905" x2="1.905" y2="-1.27" width="0.127" layer="51"/>
+<wire x1="-4.445" y1="-1.27" x2="4.445" y2="-1.27" width="0.127" layer="51"/>
+<wire x1="-0.635" y1="3.175" x2="-0.635" y2="2.54" width="0.127" layer="21"/>
+<wire x1="0.635" y1="2.54" x2="0.635" y2="3.175" width="0.127" layer="21"/>
+<wire x1="-4.445" y1="3.175" x2="4.445" y2="3.175" width="0.127" layer="21"/>
+<wire x1="5.08" y1="2.54" x2="4.445" y2="3.175" width="0.127" layer="21"/>
+<wire x1="5.08" y1="2.54" x2="5.08" y2="-0.635" width="0.127" layer="21"/>
+<wire x1="-4.445" y1="-1.27" x2="-5.08" y2="-0.635" width="0.127" layer="21"/>
+<wire x1="-4.445" y1="3.175" x2="-5.08" y2="2.54" width="0.127" layer="21"/>
+<wire x1="-5.08" y1="2.54" x2="5.08" y2="2.54" width="0.127" layer="21"/>
+<wire x1="-5.08" y1="-0.635" x2="5.08" y2="-0.635" width="0.127" layer="51"/>
+<wire x1="-5.08" y1="-0.635" x2="-5.08" y2="2.54" width="0.127" layer="21"/>
+<wire x1="5.08" y1="-0.635" x2="4.445" y2="-1.27" width="0.127" layer="21"/>
+<pad name="1" x="-2.54" y="-1.27" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="2" x="2.54" y="-1.27" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="3" x="0" y="1.27" drill="1.016" diameter="1.778" shape="octagon"/>
+<text x="-2.54" y="3.7846" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="-2.54" y="-4.2164" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
+</package>
+<package name="PT-SPIN" urn="urn:adsk.eagle:footprint:23299/1" library_version="10">
+<description>&lt;b&gt;Trimm Potentiometer&lt;/b&gt;</description>
+<wire x1="-8.89" y1="-2.54" x2="8.89" y2="-2.54" width="0.127" layer="21"/>
+<wire x1="8.89" y1="-2.54" x2="8.89" y2="2.54" width="0.127" layer="21"/>
+<wire x1="8.89" y1="2.54" x2="-8.89" y2="2.54" width="0.127" layer="21"/>
+<wire x1="-8.89" y1="2.54" x2="-8.89" y2="-2.54" width="0.127" layer="21"/>
+<pad name="3" x="-1.27" y="1.27" drill="0.8128" diameter="1.524" shape="octagon"/>
+<pad name="2" x="6.35" y="-1.27" drill="0.8128" diameter="1.524" shape="octagon"/>
+<pad name="1" x="-6.35" y="-1.27" drill="0.8128" diameter="1.524" shape="octagon"/>
+<text x="-3.175" y="3.175" size="1.778" layer="25" ratio="10">&gt;NAME</text>
+<text x="-5.08" y="-1.778" size="1.778" layer="27" ratio="10">&gt;VALUE</text>
+<rectangle x1="-9.525" y1="-1.27" x2="-8.89" y2="1.27" layer="21"/>
+<rectangle x1="-10.16" y1="0.381" x2="-9.525" y2="1.27" layer="21"/>
+<rectangle x1="-10.16" y1="-1.27" x2="-9.525" y2="-0.381" layer="21"/>
+</package>
 </packages>
 <packages3d>
 <package3d name="R0402" urn="urn:adsk.eagle:package:23547/2" type="box" library_version="5">
@@ -12696,6 +12768,24 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <packageinstance name="UD-8X10_NICHICON"/>
 </packageinstances>
 </package3d>
+<package3d name="PT-10" urn="urn:adsk.eagle:package:23786/1" type="box" library_version="10">
+<description>Trimm Potentiometer</description>
+<packageinstances>
+<packageinstance name="PT-10"/>
+</packageinstances>
+</package3d>
+<package3d name="PT-10S" urn="urn:adsk.eagle:package:23785/1" type="box" library_version="10">
+<description>Trimm Potentiometer</description>
+<packageinstances>
+<packageinstance name="PT-10S"/>
+</packageinstances>
+</package3d>
+<package3d name="PT-SPIN" urn="urn:adsk.eagle:package:23782/1" type="box" library_version="10">
+<description>Trimm Potentiometer</description>
+<packageinstances>
+<packageinstance name="PT-SPIN"/>
+</packageinstances>
+</package3d>
 </packages3d>
 <symbols>
 <symbol name="R-EU" urn="urn:adsk.eagle:symbol:23042/1" library_version="5">
@@ -12719,6 +12809,24 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <rectangle x1="-1.651" y1="-2.54" x2="1.651" y2="-1.651" layer="94"/>
 <pin name="-" x="0" y="-5.08" visible="off" length="short" direction="pas" rot="R90"/>
 <pin name="+" x="0" y="2.54" visible="off" length="short" direction="pas" rot="R270"/>
+</symbol>
+<symbol name="POTEURO" urn="urn:adsk.eagle:symbol:23296/3" library_version="10">
+<wire x1="-2.54" y1="1.27" x2="-2.54" y2="-1.27" width="0.254" layer="94"/>
+<wire x1="2.54" y1="-1.27" x2="2.54" y2="1.27" width="0.254" layer="94"/>
+<wire x1="2.54" y1="1.27" x2="-2.54" y2="1.27" width="0.254" layer="94"/>
+<wire x1="0" y1="-1.778" x2="2.667" y2="3.81" width="0.1524" layer="94"/>
+<wire x1="0" y1="-1.778" x2="0" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="-2.54" y1="-1.27" x2="2.54" y2="-1.27" width="0.254" layer="94"/>
+<text x="2.54" y="-5.08" size="1.778" layer="95">&gt;NAME</text>
+<text x="2.54" y="-7.62" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="1" x="-5.08" y="0" visible="pad" length="short" direction="pas"/>
+<pin name="2" x="5.08" y="0" visible="pad" length="short" direction="pas" rot="R180"/>
+<pin name="3" x="0" y="-5.08" visible="pad" length="short" direction="pas" rot="R90"/>
+<polygon width="0.1524" layer="94">
+<vertex x="2.54" y="2.54"/>
+<vertex x="2.667" y="3.81"/>
+<vertex x="1.778" y="2.921"/>
+</polygon>
 </symbol>
 </symbols>
 <devicesets>
@@ -16402,6 +16510,81 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <pinmap gate="G$1" pin="+" pinorder="1"/>
 <pinmap gate="G$1" pin="-" pinorder="2"/>
 </pinmapping>
+</spice>
+</deviceset>
+<deviceset name="POTENTIOMETER_" urn="urn:adsk.eagle:component:23800/2" prefix="R" uservalue="yes" library_version="10">
+<description>&lt;b&gt;Potentiometer&lt;/b&gt;</description>
+<gates>
+<gate name="1" symbol="POTEURO" x="5.08" y="0"/>
+</gates>
+<devices>
+<device name="PT-10" package="PT-10">
+<connects>
+<connect gate="1" pin="1" pad="1"/>
+<connect gate="1" pin="2" pad="2"/>
+<connect gate="1" pin="3" pad="3"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:23786/1"/>
+</package3dinstances>
+<technologies>
+<technology name="">
+<attribute name="SPICEMODEL" value="POT" constant="no"/>
+<attribute name="SPICEPREFIX" value="X" constant="no"/>
+</technology>
+</technologies>
+</device>
+<device name="PT-10S" package="PT-10S">
+<connects>
+<connect gate="1" pin="1" pad="1"/>
+<connect gate="1" pin="2" pad="2"/>
+<connect gate="1" pin="3" pad="3"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:23785/1"/>
+</package3dinstances>
+<technologies>
+<technology name="">
+<attribute name="SPICEMODEL" value="POT" constant="no"/>
+<attribute name="SPICEPREFIX" value="X" constant="no"/>
+</technology>
+</technologies>
+</device>
+<device name="PT_SPIN" package="PT-SPIN">
+<connects>
+<connect gate="1" pin="1" pad="1"/>
+<connect gate="1" pin="2" pad="2"/>
+<connect gate="1" pin="3" pad="3"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:23782/1"/>
+</package3dinstances>
+<technologies>
+<technology name="">
+<attribute name="SPICEMODEL" value="POT" constant="no"/>
+<attribute name="SPICEPREFIX" value="X" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+<spice>
+<pinmapping spiceprefix="X">
+<pinmap gate="1" pin="1" pinorder="1"/>
+<pinmap gate="1" pin="2" pinorder="2"/>
+<pinmap gate="1" pin="3" pinorder="3"/>
+</pinmapping>
+<model name="POT">
+********************************************
+* Autodesk Eagle - Spice Model File
+* Date: 9/25/17
+* Variable resistor PIN1 ---/\/\/\/\--- PIN2
+*                               |
+*                              PIN3
+********************************************
+.subckt POT 1 2 3
+R1 1 3 {val*var/100}
+R2 3 2 {val-val*var/100}
+.ends POT</model>
 </spice>
 </deviceset>
 </devicesets>
@@ -21370,7 +21553,7 @@ Marquardt, Siemens, C&amp;K, ITT, and others&lt;p&gt;
 <part name="C25" library="capacitor-wima" library_urn="urn:adsk.eagle:library:116" deviceset="C" device="2.5/2" package3d_urn="urn:adsk.eagle:package:5415/1" value="10 - 22uF"/>
 <part name="C26" library="capacitor-wima" library_urn="urn:adsk.eagle:library:116" deviceset="C" device="2.5/2" package3d_urn="urn:adsk.eagle:package:5415/1" value="56nF"/>
 <part name="C27" library="capacitor-wima" library_urn="urn:adsk.eagle:library:116" deviceset="C" device="2.5/2" package3d_urn="urn:adsk.eagle:package:5415/1" value="4.7u"/>
-<part name="R53" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R1206" value="15k4"/>
+<part name="R53" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R1206" value="15k"/>
 <part name="R54" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R1206" value="620k"/>
 <part name="R55" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R1206" value="100k"/>
 <part name="SHOTTKYDIODE2" library="s2x_10" deviceset="S2*" device="" technology="A"/>
@@ -21460,7 +21643,6 @@ Marquardt, Siemens, C&amp;K, ITT, and others&lt;p&gt;
 <part name="SUPPLY4" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY20" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="VCC" device=""/>
 <part name="PHOTORES" library="photo-elements" library_urn="urn:adsk.eagle:library:323" deviceset="A10" device="" package3d_urn="urn:adsk.eagle:package:22201/1" technology="50_09"/>
-<part name="R31" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R1206" package3d_urn="urn:adsk.eagle:package:23540/2" value="47k"/>
 <part name="SUPPLY21" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="VDD4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VDD" device=""/>
 <part name="IC8" library="ftdi" deviceset="FT230X" device="S"/>
@@ -21468,8 +21650,8 @@ Marquardt, Siemens, C&amp;K, ITT, and others&lt;p&gt;
 <part name="RXLED" library="led" library_urn="urn:adsk.eagle:library:259" deviceset="LED" device="5MM" package3d_urn="urn:adsk.eagle:package:15799/2"/>
 <part name="R48" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R1206" value="270"/>
 <part name="TXLED" library="led" library_urn="urn:adsk.eagle:library:259" deviceset="LED" device="5MM" package3d_urn="urn:adsk.eagle:package:15799/2"/>
-<part name="R45" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R1206" value="1k"/>
-<part name="R46" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R1206" value="1k"/>
+<part name="R45" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R1206" value="27R"/>
+<part name="R46" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R1206" value="27R"/>
 <part name="C23" library="capacitor-wima" library_urn="urn:adsk.eagle:library:116" deviceset="C" device="2.5/2" package3d_urn="urn:adsk.eagle:package:5415/1" value="100n"/>
 <part name="R51" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R1206" value="10k"/>
 <part name="R52" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R1206" value="10k"/>
@@ -21500,7 +21682,6 @@ Marquardt, Siemens, C&amp;K, ITT, and others&lt;p&gt;
 <part name="C30" library="capacitor-wima" library_urn="urn:adsk.eagle:library:116" deviceset="C" device="2.5/2" package3d_urn="urn:adsk.eagle:package:5415/1" value="22pF"/>
 <part name="R56" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R1206" value="4.7k"/>
 <part name="C32" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="CPOL-EU" device="140CLH-1010" package3d_urn="urn:adsk.eagle:package:23391/1" value="100uF"/>
-<part name="L5" library="inductors" library_urn="urn:adsk.eagle:library:243" deviceset="BLM15H" device="" package3d_urn="urn:adsk.eagle:package:15132/1" technology="B121SN1"/>
 <part name="SUPPLY39" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="VCC" device=""/>
 <part name="R57" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R1206" value="7.05k"/>
 <part name="R58" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R1206" value="4.7k"/>
@@ -21524,6 +21705,8 @@ Marquardt, Siemens, C&amp;K, ITT, and others&lt;p&gt;
 <part name="FRAME1" library="frames" library_urn="urn:adsk.eagle:library:229" deviceset="A5L-LOC" device=""/>
 <part name="SUPPLY24" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="VCC" device=""/>
 <part name="S1" library="switch" library_urn="urn:adsk.eagle:library:380" deviceset="MS243" device="" package3d_urn="urn:adsk.eagle:package:27683/1"/>
+<part name="R32" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="POTENTIOMETER_" device="PT-10" package3d_urn="urn:adsk.eagle:package:23786/1" value="47k"/>
+<part name="L1" library="inductor-neosid" library_urn="urn:adsk.eagle:library:241" deviceset="MS42" device="" package3d_urn="urn:adsk.eagle:package:14728/1" value="10uH"/>
 </parts>
 <sheets>
 <sheet>
@@ -21710,11 +21893,6 @@ Marquardt, Siemens, C&amp;K, ITT, and others&lt;p&gt;
 </net>
 <net name="L3" class="0">
 <segment>
-<pinref part="IC1" gate="G$1" pin="PC3(ADC3)"/>
-<wire x1="69.52" y1="99.06" x2="84.76" y2="99.06" width="0.1524" layer="91"/>
-<label x="84.76" y="99.06" size="1.778" layer="255" rot="MR0"/>
-</segment>
-<segment>
 <wire x1="157.48" y1="99.06" x2="172.72" y2="99.06" width="0.1524" layer="91"/>
 <label x="172.72" y="99.06" size="1.778" layer="255" rot="MR0"/>
 <pinref part="ATMEGA328P" gate="A" pin="PC2"/>
@@ -21730,6 +21908,11 @@ Marquardt, Siemens, C&amp;K, ITT, and others&lt;p&gt;
 <wire x1="157.48" y1="96.52" x2="172.72" y2="96.52" width="0.1524" layer="91"/>
 <label x="172.72" y="96.52" size="1.778" layer="255" rot="MR0"/>
 <pinref part="ATMEGA328P" gate="A" pin="PC3"/>
+</segment>
+<segment>
+<pinref part="IC1" gate="G$1" pin="PC3(ADC3)"/>
+<wire x1="69.52" y1="99.06" x2="84.76" y2="99.06" width="0.1524" layer="91"/>
+<label x="84.76" y="99.06" size="1.778" layer="255" rot="MR0"/>
 </segment>
 </net>
 <net name="RESET" class="0">
@@ -22623,6 +22806,7 @@ Marquardt, Siemens, C&amp;K, ITT, and others&lt;p&gt;
 <text x="99.06" y="22.86" size="1.778" layer="91">R54 i R55 muszą być w tej proporcji, tolerancja 1%</text>
 <text x="106.68" y="71.12" size="1.778" layer="91">3.04&lt;L&lt;5.2</text>
 <text x="111.76" y="76.2" size="1.778" layer="91">ID musi wytrzymać prąd obciążenia (0.6A)</text>
+<text x="42.926" y="87.63" size="1.778" layer="91">L ~ 10uH</text>
 </plain>
 <instances>
 <instance part="IC6" gate="G$1" x="118.88" y="119.56" smashed="yes" rot="R90">
@@ -22790,9 +22974,6 @@ Marquardt, Siemens, C&amp;K, ITT, and others&lt;p&gt;
 <instance part="C32" gate="G$1" x="34.1" y="77.88" smashed="yes" rot="R270">
 <attribute name="VALUE" x="35.497" y="82.4774" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="L5" gate="G$1" x="39.18" y="85.5" smashed="yes" rot="MR180">
-<attribute name="NAME" x="38.81" y="88.6084" size="1.778" layer="95" rot="MR180"/>
-</instance>
 <instance part="SUPPLY39" gate="G$1" x="27.96" y="102.16" smashed="yes" rot="R90">
 <attribute name="VALUE" x="24.785" y="100.255" size="1.778" layer="96" rot="R90"/>
 </instance>
@@ -22840,6 +23021,9 @@ Marquardt, Siemens, C&amp;K, ITT, and others&lt;p&gt;
 <instance part="S1" gate="1" x="175.26" y="149.86" smashed="yes">
 <attribute name="NAME" x="171.45" y="153.035" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="173.99" y="153.035" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="L1" gate="G$1" x="39.112" y="85.628" smashed="yes" rot="R180">
+<attribute name="NAME" x="40.382" y="88.93" size="1.778" layer="95" rot="R180"/>
 </instance>
 </instances>
 <busses>
@@ -23221,12 +23405,12 @@ Marquardt, Siemens, C&amp;K, ITT, and others&lt;p&gt;
 <net name="AVCC" class="0">
 <segment>
 <pinref part="C32" gate="G$1" pin="+"/>
-<pinref part="L5" gate="G$1" pin="2"/>
-<wire x1="44.26" y1="77.88" x2="36.64" y2="77.88" width="0.1524" layer="91"/>
-<wire x1="44.26" y1="85.5" x2="44.26" y2="77.88" width="0.1524" layer="91"/>
-<junction x="44.26" y="77.88"/>
 <label x="54.42" y="77.88" size="1.778" layer="255" rot="MR0"/>
-<wire x1="44.26" y1="77.88" x2="54.42" y2="77.88" width="0.1524" layer="91"/>
+<wire x1="36.64" y1="77.88" x2="54.42" y2="77.88" width="0.1524" layer="91"/>
+<pinref part="L1" gate="G$1" pin="1"/>
+<wire x1="44.192" y1="85.628" x2="44.192" y2="77.88" width="0.1524" layer="91"/>
+<wire x1="44.192" y1="77.88" x2="36.64" y2="77.88" width="0.1524" layer="91"/>
+<junction x="44.006" y="77.88"/>
 </segment>
 </net>
 <net name="AREF" class="0">
@@ -23244,11 +23428,6 @@ Marquardt, Siemens, C&amp;K, ITT, and others&lt;p&gt;
 </net>
 <net name="S_VCC" class="0">
 <segment>
-<pinref part="L5" gate="G$1" pin="1"/>
-<wire x1="34.1" y1="85.5" x2="23.94" y2="85.5" width="0.1524" layer="91"/>
-<label x="23.94" y="85.5" size="1.778" layer="255"/>
-</segment>
-<segment>
 <pinref part="SHOTTKYDIODE3" gate="G$1" pin="C"/>
 <wire x1="37.32" y1="64.62" x2="37.32" y2="67.16" width="0.1524" layer="91"/>
 <pinref part="C31" gate="G$1" pin="+"/>
@@ -23256,6 +23435,12 @@ Marquardt, Siemens, C&amp;K, ITT, and others&lt;p&gt;
 <wire x1="37.32" y1="67.16" x2="50.02" y2="67.16" width="0.1524" layer="91"/>
 <junction x="37.32" y="67.16"/>
 <label x="50.02" y="67.16" size="1.778" layer="255" rot="MR0"/>
+</segment>
+<segment>
+<pinref part="L1" gate="G$1" pin="2"/>
+<wire x1="34.032" y1="85.628" x2="22.86" y2="85.628" width="0.1524" layer="91"/>
+<wire x1="22.86" y1="85.628" x2="22.86" y2="85.598" width="0.1524" layer="91"/>
+<label x="24.892" y="86.36" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$1" class="0">
@@ -23293,6 +23478,7 @@ Marquardt, Siemens, C&amp;K, ITT, and others&lt;p&gt;
 <text x="86" y="126.7" size="1.778" layer="94">INTERFACE MAINBOARD - CONTROLS</text>
 <text x="45.9" y="63.2" size="1.778" layer="94">FTDI USB - UART INTERFACE</text>
 <text x="141" y="20.3" size="2.54" layer="94">INPUTS</text>
+<text x="44.45" y="96.266" size="1.778" layer="91" rot="R90">Ferrite bead</text>
 </plain>
 <instances>
 <instance part="SUPPLY1" gate="GND" x="85.82" y="82" smashed="yes" rot="MR90">
@@ -23374,14 +23560,11 @@ Marquardt, Siemens, C&amp;K, ITT, and others&lt;p&gt;
 <instance part="PHOTORES" gate="G$1" x="69.86" y="92.44" smashed="yes" rot="R180">
 <attribute name="NAME" x="64.78" y="94.98" size="1.778" layer="95" rot="R270"/>
 </instance>
-<instance part="R31" gate="G$1" x="69.86" y="102.6" smashed="yes" rot="R90">
-<attribute name="VALUE" x="73.162" y="101.33" size="1.778" layer="96" rot="R90"/>
-</instance>
 <instance part="SUPPLY21" gate="GND" x="69.86" y="84.82" smashed="yes">
 <attribute name="VALUE" x="71.765" y="82.915" size="1.778" layer="96" rot="MR90"/>
 </instance>
-<instance part="VDD4" gate="G$1" x="69.86" y="110.22" smashed="yes">
-<attribute name="VALUE" x="72.4" y="107.68" size="1.778" layer="96" rot="MR90"/>
+<instance part="VDD4" gate="G$1" x="63.51" y="120.38" smashed="yes">
+<attribute name="VALUE" x="66.05" y="117.84" size="1.778" layer="96" rot="MR90"/>
 </instance>
 <instance part="IC8" gate="G$1" x="59.74" y="43.96" smashed="yes">
 <attribute name="NAME" x="57.2" y="50.31" size="1.778" layer="95"/>
@@ -23392,30 +23575,30 @@ Marquardt, Siemens, C&amp;K, ITT, and others&lt;p&gt;
 <attribute name="VALUE" x="32.562" y="29.99" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="RXLED" gate="G$1" x="34.34" y="21.1" smashed="yes" rot="R180">
-<attribute name="NAME" x="39.928" y="22.624" size="1.778" layer="95"/>
+<attribute name="NAME" x="35.102" y="18.814" size="1.778" layer="95"/>
 <attribute name="VALUE" x="28.625" y="25.672" size="1.778" layer="96" rot="R270"/>
 </instance>
 <instance part="R48" gate="G$1" x="82.6" y="46.5" smashed="yes">
-<attribute name="NAME" x="81.33" y="50.0814" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="86.41" y="49.802" size="1.778" layer="96" rot="R180"/>
+<attribute name="NAME" x="81.584" y="49.5734" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="86.156" y="49.548" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="TXLED" gate="G$1" x="87.68" y="54.12" smashed="yes">
 <attribute name="NAME" x="90.728" y="53.104" size="1.778" layer="95"/>
 <attribute name="VALUE" x="93.395" y="49.548" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="R45" gate="G$1" x="74.98" y="28.72" smashed="yes" rot="R90">
-<attribute name="NAME" x="76.4786" y="29.99" size="1.778" layer="95" rot="R270"/>
-<attribute name="VALUE" x="76.758" y="35.07" size="1.778" layer="96" rot="R270"/>
+<attribute name="NAME" x="71.9066" y="30.752" size="1.778" layer="95" rot="R270"/>
+<attribute name="VALUE" x="76.25" y="30.752" size="1.778" layer="96" rot="R270"/>
 </instance>
 <instance part="R46" gate="G$1" x="44.5" y="28.72" smashed="yes" rot="R90">
-<attribute name="NAME" x="45.9986" y="29.99" size="1.778" layer="95" rot="R270"/>
-<attribute name="VALUE" x="46.278" y="35.07" size="1.778" layer="96" rot="R270"/>
+<attribute name="NAME" x="41.4266" y="30.752" size="1.778" layer="95" rot="R270"/>
+<attribute name="VALUE" x="45.77" y="30.752" size="1.778" layer="96" rot="R270"/>
 </instance>
 <instance part="C23" gate="G$1" x="31.8" y="43.96" smashed="yes" rot="R180">
-<attribute name="VALUE" x="23.164" y="46.881" size="1.778" layer="96"/>
+<attribute name="VALUE" x="25.45" y="46.119" size="1.778" layer="96"/>
 </instance>
 <instance part="R51" gate="G$1" x="39.42" y="49.04" smashed="yes">
-<attribute name="VALUE" x="40.69" y="54.882" size="1.778" layer="96" rot="R180"/>
+<attribute name="VALUE" x="40.944" y="51.58" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="R52" gate="G$1" x="29.26" y="31.26" smashed="yes" rot="R270">
 <attribute name="NAME" x="27.7614" y="24.91" size="1.778" layer="95" rot="R90"/>
@@ -23434,10 +23617,10 @@ Marquardt, Siemens, C&amp;K, ITT, and others&lt;p&gt;
 <attribute name="VALUE" x="41.685" y="81.045" size="1.778" layer="96" rot="MR0"/>
 </instance>
 <instance part="+3V1" gate="G$1" x="29.26" y="16.02" smashed="yes" rot="R180">
-<attribute name="VALUE" x="31.8" y="16.02" size="1.778" layer="96"/>
+<attribute name="VALUE" x="25.704" y="13.988" size="1.778" layer="96"/>
 </instance>
 <instance part="+3V2" gate="G$1" x="82.6" y="36.34" smashed="yes" rot="R270">
-<attribute name="VALUE" x="77.52" y="38.88" size="1.778" layer="96"/>
+<attribute name="VALUE" x="82.092" y="33.8" size="1.778" layer="96"/>
 </instance>
 <instance part="+3V3" gate="G$1" x="87.68" y="59.2" smashed="yes">
 <attribute name="VALUE" x="90.22" y="59.2" size="1.778" layer="96" rot="MR180"/>
@@ -23457,21 +23640,21 @@ Marquardt, Siemens, C&amp;K, ITT, and others&lt;p&gt;
 <attribute name="VALUE" x="39.42" y="59.2" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="C19" gate="G$1" x="72.44" y="23.64" smashed="yes" rot="R270">
-<attribute name="NAME" x="69.519" y="17.544" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="72.059" y="17.544" size="1.778" layer="96" rot="R90"/>
+<attribute name="NAME" x="72.567" y="20.846" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="72.567" y="18.56" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="C20" gate="G$1" x="49.58" y="23.64" smashed="yes" rot="R270">
-<attribute name="NAME" x="54.279" y="27.704" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="49.199" y="27.704" size="1.778" layer="96" rot="R90"/>
+<attribute name="NAME" x="50.469" y="21.1" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="50.782" y="18.973" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="SUPPLY16" gate="GND" x="59.74" y="21.1" smashed="yes" rot="MR0">
 <attribute name="VALUE" x="61.645" y="17.925" size="1.778" layer="96" rot="MR0"/>
 </instance>
 <instance part="C18" gate="G$1" x="95.3" y="41.42" smashed="yes" rot="MR0">
-<attribute name="VALUE" x="89.204" y="38.499" size="1.778" layer="96" rot="MR180"/>
+<attribute name="VALUE" x="87.68" y="41.039" size="1.778" layer="96" rot="MR180"/>
 </instance>
 <instance part="C21" gate="G$1" x="100.38" y="38.88" smashed="yes" rot="R180">
-<attribute name="VALUE" x="109.397" y="38.3974" size="1.778" layer="96" rot="R180"/>
+<attribute name="VALUE" x="107.873" y="41.1914" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="SUPPLY7" gate="GND" x="100.38" y="46.5" smashed="yes" rot="R180">
 <attribute name="VALUE" x="103.555" y="45.865" size="1.778" layer="96"/>
@@ -23486,6 +23669,10 @@ Marquardt, Siemens, C&amp;K, ITT, and others&lt;p&gt;
 <attribute name="DRAWING_NAME" x="140.97" y="15.24" size="2.54" layer="94"/>
 <attribute name="LAST_DATE_TIME" x="140.97" y="10.16" size="2.286" layer="94"/>
 <attribute name="SHEET" x="154.305" y="5.08" size="2.54" layer="94"/>
+</instance>
+<instance part="R32" gate="1" x="63.5" y="109.22" smashed="yes" rot="MR270">
+<attribute name="NAME" x="68.58" y="106.68" size="1.778" layer="95" rot="MR270"/>
+<attribute name="VALUE" x="71.12" y="106.68" size="1.778" layer="96" rot="MR270"/>
 </instance>
 </instances>
 <busses>
@@ -23675,17 +23862,13 @@ Marquardt, Siemens, C&amp;K, ITT, and others&lt;p&gt;
 </net>
 <net name="LIGHT_SENS" class="0">
 <segment>
-<pinref part="R31" gate="G$1" pin="1"/>
 <pinref part="PHOTORES" gate="G$1" pin="2"/>
 <wire x1="54.62" y1="97.52" x2="69.86" y2="97.52" width="0.1524" layer="91"/>
-<junction x="69.86" y="97.52"/>
 <label x="54.62" y="97.52" size="1.778" layer="255"/>
-</segment>
-</net>
-<net name="VDD" class="0">
-<segment>
-<pinref part="R31" gate="G$1" pin="2"/>
-<pinref part="VDD4" gate="G$1" pin="VDD"/>
+<pinref part="R32" gate="1" pin="3"/>
+<wire x1="68.58" y1="109.22" x2="69.86" y2="109.22" width="0.1524" layer="91"/>
+<wire x1="69.86" y1="109.22" x2="69.86" y2="97.52" width="0.1524" layer="91"/>
+<junction x="69.86" y="97.52"/>
 </segment>
 </net>
 <net name="L6" class="0">
@@ -23867,6 +24050,14 @@ Marquardt, Siemens, C&amp;K, ITT, and others&lt;p&gt;
 <segment>
 <pinref part="L2" gate="G$1" pin="1"/>
 <pinref part="SUPPLY18" gate="+5V" pin="+5V"/>
+</segment>
+</net>
+<net name="VDD" class="0">
+<segment>
+<pinref part="R32" gate="1" pin="1"/>
+<pinref part="VDD4" gate="G$1" pin="VDD"/>
+<wire x1="63.5" y1="114.3" x2="63.51" y2="114.3" width="0.1524" layer="91"/>
+<wire x1="63.51" y1="114.3" x2="63.51" y2="117.84" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
