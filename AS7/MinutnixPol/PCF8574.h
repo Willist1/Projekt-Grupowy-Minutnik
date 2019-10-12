@@ -19,8 +19,8 @@
 
 //#define SigAPin 5
 //#define SigBPin 4
-#define SigAPin 6
-#define SigBPin 5
+#define SigAPin 5
+#define SigBPin 6
 #define SigAMask (uint8_t)(1 << SigAPin)
 #define SigBMask (uint8_t)(1 << SigBPin)
 #define encoderSigMask (uint8_t)(SigAMask | SigBMask)
@@ -40,8 +40,8 @@ typedef enum {
 	setCnt = 0,
 	setWarning,
 	setVolume,
-	Stop,
 	Play,
+	Stop,
 	setBrightness = 7,	// to be removed
 	BUTTON_CNT,
 	BUTTON_NONE

@@ -78,7 +78,8 @@ ISR(ANALOG_COMP_vect)//, ISR_NAKED)
 	}
 }
 
-void EEPROMupdate() {
+void EEPROMupdate()
+{
 	writeEEPROMDataBuffer();
 }
 
