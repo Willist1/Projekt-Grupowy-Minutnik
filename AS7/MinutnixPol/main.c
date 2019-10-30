@@ -135,22 +135,23 @@ int main()
 {
 	displayOff();
 	set_sleep_mode(SLEEP_MODE_IDLE);	// CPU clock turned off, peripherals operating normally
+
+	//USART_init();
+	//static FILE usartout = FDEV_SETUP_STREAM (put, get, _FDEV_SETUP_RW);
+	//stdout = &usartout;
+	
+	PCF8574_Init();
 	
 	wdtInit();
 	
 	sysTickInit();
-	PCF8574_Init();
 	TPIC6C596Init();
 	pwrFailInit();
 	settingsLEDInit();
 	lightsensorInit();
 	displayInit();
 	buzzerInit ();
-	
-	//USART_init();
-	//static FILE usartout = FDEV_SETUP_STREAM (put, get, _FDEV_SETUP_RW);
-	//stdout = &usartout;
-	
+
 	LEDDIGITS[0]= 0;
 	LEDDIGITS[1]= 0;
 	LEDDIGITS[2]= 0;
@@ -178,7 +179,7 @@ int main()
 		// HANDLE EXPANDER INTERRUPT
 		if (PCF8574_INT) {
 			_delay_ms(1);			// debouncing
-			PCF8574_ReadState();
+			//PCF8574_ReadState();
 			ATOMIC_BLOCK (ATOMIC_FORCEON) {
 				
 				lastActivityTime = ticks;							// set last activity timestamp
