@@ -20727,31 +20727,12 @@ Source: www.kingbright.com</description>
 <text x="-2.54" y="-2.54" size="1.778" layer="96" rot="R90">&gt;VALUE</text>
 <pin name="VDD" x="0" y="-2.54" visible="off" length="short" direction="sup" rot="R90"/>
 </symbol>
-<symbol name="GNDA" urn="urn:adsk.eagle:symbol:26926/1" library_version="1">
-<wire x1="-1.905" y1="0" x2="1.905" y2="0" width="0.254" layer="94"/>
-<wire x1="-1.0922" y1="-0.508" x2="1.0922" y2="-0.508" width="0.254" layer="94"/>
-<text x="-2.54" y="-2.54" size="1.778" layer="96" rot="R90">&gt;VALUE</text>
-<pin name="GNDA" x="0" y="2.54" visible="off" length="short" direction="sup" rot="R270"/>
-</symbol>
 </symbols>
 <devicesets>
 <deviceset name="VDD" urn="urn:adsk.eagle:component:26970/1" prefix="VDD" library_version="1">
 <description>&lt;b&gt;SUPPLY SYMBOL&lt;/b&gt;</description>
 <gates>
 <gate name="G$1" symbol="VDD" x="0" y="0"/>
-</gates>
-<devices>
-<device name="">
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="GNDA" urn="urn:adsk.eagle:component:26955/1" prefix="GND" library_version="1">
-<description>&lt;b&gt;SUPPLY SYMBOL&lt;/b&gt;</description>
-<gates>
-<gate name="1" symbol="GNDA" x="0" y="0"/>
 </gates>
 <devices>
 <device name="">
@@ -23516,7 +23497,6 @@ DIN A3, landscape with location and doc. field</description>
 <part name="R64" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="620R-1k"/>
 <part name="R47" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="620R-1k"/>
 <part name="R52" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="620R-1k"/>
-<part name="GND2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GNDA" device=""/>
 <part name="C4" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="100n"/>
 <part name="R56" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="4.7k"/>
 <part name="SUPPLY39" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="VCC" device=""/>
@@ -23553,8 +23533,8 @@ DIN A3, landscape with location and doc. field</description>
 <part name="SUPPLY38" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY16" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="FRAME1" library="frames" library_urn="urn:adsk.eagle:library:229" deviceset="A3L-LOC" device=""/>
-<part name="GND1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GNDA" device=""/>
 <part name="C5SPRAWDZGOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C3216" package3d_urn="urn:adsk.eagle:package:23628/2" value="10u"/>
+<part name="SUPPLY3" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -23592,9 +23572,6 @@ DIN A3, landscape with location and doc. field</description>
 <instance part="ATMEGA328P" gate="A" x="58.42" y="17.78" smashed="yes"/>
 <instance part="SUPPLY31" gate="G$1" x="91.44" y="5.08" smashed="yes" rot="R270">
 <attribute name="VALUE" x="90.805" y="5.715" size="1.778" layer="96" rot="MR0"/>
-</instance>
-<instance part="GND2" gate="1" x="5.08" y="-15.24" smashed="yes">
-<attribute name="VALUE" x="5.08" y="-17.78" size="1.778" layer="96"/>
 </instance>
 <instance part="LSDIGIT_SECONDS" gate="G$1" x="246.38" y="91.44" smashed="yes" rot="R270">
 <attribute name="NAME" x="241.3" y="100.965" size="1.778" layer="95"/>
@@ -24061,12 +24038,12 @@ DIN A3, landscape with location and doc. field</description>
 </instance>
 <instance part="U$2" gate="CASE1" x="-17.78" y="142.24" smashed="yes" rot="R90"/>
 <instance part="U$2" gate="CASE2" x="-12.7" y="142.24" smashed="yes" rot="R90"/>
-<instance part="GND1" gate="1" x="104.14" y="25.4" smashed="yes">
-<attribute name="VALUE" x="104.14" y="22.86" size="1.778" layer="96"/>
-</instance>
 <instance part="C5SPRAWDZGOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO1" gate="G$1" x="-27.94" y="190.5" smashed="yes">
 <attribute name="NAME" x="-34.036" y="142.621" size="1.778" layer="95"/>
 <attribute name="VALUE" x="-34.036" y="188.341" size="1.778" layer="96"/>
+</instance>
+<instance part="SUPPLY3" gate="GND" x="104.14" y="25.4" smashed="yes" rot="MR0">
+<attribute name="VALUE" x="104.14" y="22.86" size="1.778" layer="96" rot="MR0"/>
 </instance>
 </instances>
 <busses>
@@ -24637,11 +24614,15 @@ DIN A3, landscape with location and doc. field</description>
 <wire x1="0" y1="-2.54" x2="0" y2="-7.62" width="0.1524" layer="91"/>
 <junction x="0" y="-2.54"/>
 <pinref part="SUPPLY38" gate="GND" pin="GND"/>
-<wire x1="0" y1="-12.7" x2="0" y2="-7.62" width="0.1524" layer="91"/>
+<wire x1="0" y1="-12.7" x2="0" y2="-10.16" width="0.1524" layer="91"/>
 <junction x="0" y="-7.62"/>
 <pinref part="Q4" gate="G$1" pin="GND"/>
+<wire x1="0" y1="-10.16" x2="0" y2="-7.62" width="0.1524" layer="91"/>
 <wire x1="7.62" y1="0" x2="0" y2="0" width="0.1524" layer="91"/>
 <junction x="0" y="0"/>
+<pinref part="ATMEGA328P" gate="A" pin="GND"/>
+<wire x1="40.64" y1="-10.16" x2="0" y2="-10.16" width="0.1524" layer="91"/>
+<junction x="0" y="-10.16"/>
 </segment>
 <segment>
 <pinref part="J_REG_9V_1" gate="J_REG_9V" pin="GND"/>
@@ -24670,6 +24651,10 @@ DIN A3, landscape with location and doc. field</description>
 <wire x1="-15.24" y1="142.24" x2="-15.24" y2="137.16" width="0.1524" layer="91"/>
 <junction x="-15.24" y="142.24"/>
 <junction x="-15.24" y="137.16"/>
+</segment>
+<segment>
+<pinref part="SUPPLY3" gate="GND" pin="GND"/>
+<pinref part="PHOTORES" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="L_COUNTER" class="0">
@@ -24766,18 +24751,6 @@ DIN A3, landscape with location and doc. field</description>
 <pinref part="JP5" gate="G$1" pin="1"/>
 <wire x1="-43.18" y1="101.6" x2="-53.34" y2="101.6" width="0.1524" layer="91"/>
 <label x="-53.34" y="101.6" size="1.778" layer="255"/>
-</segment>
-</net>
-<net name="GNDA" class="0">
-<segment>
-<pinref part="ATMEGA328P" gate="A" pin="GND"/>
-<wire x1="40.64" y1="-10.16" x2="5.08" y2="-10.16" width="0.1524" layer="91"/>
-<wire x1="5.08" y1="-10.16" x2="5.08" y2="-12.7" width="0.1524" layer="91"/>
-<pinref part="GND2" gate="1" pin="GNDA"/>
-</segment>
-<segment>
-<pinref part="GND1" gate="1" pin="GNDA"/>
-<pinref part="PHOTORES" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="N$5" class="0">
