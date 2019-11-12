@@ -162,29 +162,24 @@
 <pin name="P$2" x="0" y="-7.62" visible="off" length="point"/>
 <pin name="P$3" x="2.54" y="7.62" visible="off" length="point"/>
 </symbol>
+<symbol name="CASE">
+<pin name="P$1" x="0" y="0" length="middle"/>
+<wire x1="5.08" y1="2.54" x2="5.08" y2="-2.54" width="0.1524" layer="94"/>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="X2">
 <gates>
 <gate name="G$1" symbol="X2" x="10.16" y="0"/>
 <gate name="G$2" symbol="X2" x="-10.16" y="0"/>
+<gate name="CASE1" symbol="CASE" x="-25.4" y="5.08"/>
+<gate name="CASE2" symbol="CASE" x="-25.4" y="-2.54"/>
 </gates>
 <devices>
-<device name="X2" package="X2">
-<connects>
-<connect gate="G$1" pin="P$1" pad="P$1"/>
-<connect gate="G$1" pin="P$2" pad="P$2"/>
-<connect gate="G$1" pin="P$3" pad="P$3"/>
-<connect gate="G$2" pin="P$1" pad="P$4"/>
-<connect gate="G$2" pin="P$2" pad="P$5"/>
-<connect gate="G$2" pin="P$3" pad="P$6"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
 <device name="" package="MINI">
 <connects>
+<connect gate="CASE1" pin="P$1" pad="CASE1"/>
+<connect gate="CASE2" pin="P$1" pad="CASE2"/>
 <connect gate="G$1" pin="P$1" pad="1"/>
 <connect gate="G$1" pin="P$2" pad="2"/>
 <connect gate="G$1" pin="P$3" pad="3"/>
