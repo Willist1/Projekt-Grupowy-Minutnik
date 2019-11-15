@@ -21009,13 +21009,13 @@ Source: www.kingbright.com</description>
 <smd name="1" x="-2.75" y="1.905" dx="1.3" dy="0.7" layer="1"/>
 <smd name="3" x="-2.75" y="-0.635" dx="1.3" dy="0.7" layer="1"/>
 <smd name="4" x="-2.75" y="-1.905" dx="1.3" dy="0.7" layer="1"/>
-<rectangle x1="-1.2" y1="-1.7" x2="1.2" y2="1.7" layer="1"/>
 <wire x1="-2.1" y1="2.2" x2="-2.1" y2="-2.2" width="0.127" layer="21"/>
 <wire x1="-2.1" y1="-2.2" x2="2.1" y2="-2.2" width="0.127" layer="21"/>
 <wire x1="2.1" y1="-2.2" x2="2.1" y2="2.2" width="0.127" layer="21"/>
 <wire x1="2.1" y1="2.2" x2="-2.1" y2="2.2" width="0.127" layer="21"/>
 <circle x="-1.6" y="1.7" radius="0.22360625" width="0" layer="21"/>
 <text x="-3.81" y="2.54" size="1.27" layer="25">&gt;NAME</text>
+<smd name="ETP" x="0" y="0" dx="2.4" dy="3.4" layer="1"/>
 </package>
 </packages>
 <symbols>
@@ -21047,7 +21047,7 @@ Source: www.kingbright.com</description>
 <connect gate="G$1" pin="BAT" pad="5"/>
 <connect gate="G$1" pin="CE" pad="8"/>
 <connect gate="G$1" pin="CHRG" pad="7"/>
-<connect gate="G$1" pin="GND" pad="3"/>
+<connect gate="G$1" pin="GND" pad="3 ETP"/>
 <connect gate="G$1" pin="PROG" pad="2"/>
 <connect gate="G$1" pin="STDBY" pad="6"/>
 <connect gate="G$1" pin="TEMP" pad="1"/>
