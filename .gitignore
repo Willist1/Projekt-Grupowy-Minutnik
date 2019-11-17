@@ -1,4 +1,5 @@
 Minutnix/3d/*
+Minutnix/Gerbery/*
 Minutnix/Libs/v-reg-3.l#2
 Minutnix/Libs/v-reg-3.l#1
 Minutnix/Libs/v-reg-3.l#3
@@ -60,3 +61,4 @@ Minutnix/MainBoard.s#6
 *.s#5
 *.csv
 *.log
+*.pdf
