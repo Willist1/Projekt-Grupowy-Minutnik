@@ -23242,15 +23242,15 @@ Number of pins: &lt;b&gt;3&lt;/b&gt;&lt;b&gt;&lt;P&gt;
 <pad name="2" x="0" y="-1.27" drill="0.6" shape="offset" rot="R270"/>
 <pad name="1" x="-2.54" y="-1.27" drill="0.6" shape="offset" rot="R270"/>
 <pad name="4" x="-2.54" y="1.27" drill="0.6" shape="offset" rot="R90"/>
-<pad name="CASE1" x="-5.08" y="-1.845" drill="1.2" diameter="1.6764" shape="offset" rot="R180"/>
-<pad name="CASE2" x="5.6" y="2.2" drill="1.2" diameter="1.6764" shape="offset"/>
-<wire x1="6" y1="3.25" x2="-6" y2="3.25" width="0.1524" layer="21"/>
-<wire x1="-6" y1="3.25" x2="-6" y2="-3.25" width="0.1524" layer="21"/>
-<wire x1="-6" y1="-3.25" x2="6" y2="-3.25" width="0.1524" layer="21"/>
-<wire x1="6" y1="-3.25" x2="6" y2="-1.425" width="0.1524" layer="21"/>
-<wire x1="6" y1="1.425" x2="6" y2="3.25" width="0.1524" layer="21"/>
-<wire x1="6" y1="1.425" x2="6" y2="-1.425" width="0.1524" layer="21"/>
-<wire x1="6" y1="-1.425" x2="8" y2="-1.425" width="0.1524" layer="21"/>
+<pad name="CASE1" x="-5.08" y="-1.845" drill="1.3" diameter="2.54" rot="R180"/>
+<pad name="CASE2" x="6" y="2.2" drill="1.3" diameter="2.54"/>
+<wire x1="6.92" y1="3.25" x2="-5.08" y2="3.25" width="0.1524" layer="21"/>
+<wire x1="-5.08" y1="3.25" x2="-5.08" y2="-3.25" width="0.1524" layer="21"/>
+<wire x1="-5.08" y1="-3.25" x2="6.92" y2="-3.25" width="0.1524" layer="21"/>
+<wire x1="6.92" y1="-3.25" x2="6.92" y2="-1.425" width="0.1524" layer="21"/>
+<wire x1="6.92" y1="1.425" x2="6.92" y2="3.25" width="0.1524" layer="21"/>
+<wire x1="6.92" y1="1.425" x2="6.92" y2="-1.425" width="0.1524" layer="21"/>
+<wire x1="6.92" y1="-1.425" x2="8" y2="-1.425" width="0.1524" layer="21"/>
 <wire x1="8" y1="-1.425" x2="10" y2="-1.425" width="0.1524" layer="21"/>
 <wire x1="10" y1="-1.425" x2="12" y2="-1.425" width="0.1524" layer="21"/>
 <wire x1="12" y1="-1.425" x2="16" y2="-1.425" width="0.1524" layer="21"/>
@@ -23258,11 +23258,11 @@ Number of pins: &lt;b&gt;3&lt;/b&gt;&lt;b&gt;&lt;P&gt;
 <wire x1="16" y1="1.425" x2="12" y2="1.425" width="0.1524" layer="21"/>
 <wire x1="12" y1="1.425" x2="10" y2="1.425" width="0.1524" layer="21"/>
 <wire x1="10" y1="1.425" x2="8" y2="1.425" width="0.1524" layer="21"/>
-<wire x1="8" y1="1.425" x2="6" y2="1.425" width="0.1524" layer="21"/>
+<wire x1="8" y1="1.425" x2="6.92" y2="1.425" width="0.1524" layer="21"/>
 <wire x1="12" y1="1.425" x2="12" y2="-1.425" width="0.1524" layer="21"/>
 <wire x1="12" y1="-1.425" x2="10" y2="1.425" width="0.1524" layer="21"/>
 <wire x1="10" y1="-1.425" x2="8" y2="1.425" width="0.1524" layer="21"/>
-<wire x1="8" y1="-1.425" x2="6" y2="1.425" width="0.1524" layer="21"/>
+<wire x1="8" y1="-1.425" x2="6.92" y2="1.425" width="0.1524" layer="21"/>
 </package>
 </packages>
 <symbols>
@@ -23361,7 +23361,7 @@ Source: &lt;a href= "http://www.hirose.co.jp/cataloge_hp/e58605370.pdf"&gt;Data 
 <smd name="11" x="2.25" y="3.25" dx="0.29" dy="1.3" layer="1" stop="no" cream="no"/>
 <smd name="12" x="2.75" y="3.25" dx="0.29" dy="1.3" layer="1" stop="no" cream="no"/>
 <text x="-4.4476" y="4.095" size="1.27" layer="25">&gt;NAME</text>
-<text x="-4.5176" y="-0.3258" size="1.27" layer="27">&gt;VALUE</text>
+<text x="-3.2476" y="-0.3258" size="1.27" layer="27">&gt;VALUE</text>
 <rectangle x1="-2.95" y1="2.55" x2="-2.55" y2="3.95" layer="29"/>
 <rectangle x1="-2.875" y1="2.625" x2="-2.625" y2="3.875" layer="31"/>
 <rectangle x1="-2.45" y1="2.55" x2="-2.05" y2="3.95" layer="29"/>
@@ -23386,8 +23386,10 @@ Source: &lt;a href= "http://www.hirose.co.jp/cataloge_hp/e58605370.pdf"&gt;Data 
 <rectangle x1="2.125" y1="2.625" x2="2.375" y2="3.875" layer="31"/>
 <rectangle x1="2.55" y1="2.55" x2="2.95" y2="3.95" layer="29"/>
 <rectangle x1="2.625" y1="2.625" x2="2.875" y2="3.875" layer="31"/>
+<rectangle x1="3.75" y1="-1.1" x2="5.55" y2="1.1" layer="1" rot="R180"/>
 <rectangle x1="3.7" y1="-1.175" x2="5.6" y2="1.175" layer="29" rot="R180"/>
 <rectangle x1="3.825" y1="-1.025" x2="5.475" y2="1.025" layer="31" rot="R180"/>
+<rectangle x1="-5.55" y1="-1.1" x2="-3.75" y2="1.1" layer="1" rot="R180"/>
 <rectangle x1="-5.6" y1="-1.175" x2="-3.7" y2="1.175" layer="29" rot="R180"/>
 <rectangle x1="-5.475" y1="-1.025" x2="-3.825" y2="1.025" layer="31" rot="R180"/>
 <rectangle x1="-2.85" y1="2.55" x2="-2.65" y2="3.4" layer="51"/>
@@ -23407,8 +23409,6 @@ Source: &lt;a href= "http://www.hirose.co.jp/cataloge_hp/e58605370.pdf"&gt;Data 
 <vertex x="-2.75" y="-2.6"/>
 <vertex x="-2.55" y="-2.2"/>
 </polygon>
-<smd name="CASE1" x="-4.65" y="0" dx="1.8" dy="2.2" layer="1" stop="no"/>
-<smd name="CASE2" x="4.65" y="0" dx="1.8" dy="2.2" layer="1" stop="no"/>
 </package>
 </packages>
 <symbols>
@@ -23447,7 +23447,6 @@ Source: &lt;a href= "http://www.hirose.co.jp/cataloge_hp/e58605370.pdf"&gt;Data 
 <gate name="-10" symbol="PIN" x="0" y="-10.16" addlevel="always"/>
 <gate name="-11" symbol="PIN" x="0" y="-12.7" addlevel="always"/>
 <gate name="-12" symbol="PIN" x="0" y="-15.24" addlevel="always"/>
-<gate name="CASE12" symbol="PIN" x="0" y="-17.78"/>
 </gates>
 <devices>
 <device name="" package="FH12-12S-0.5SH_THINER">
@@ -23464,7 +23463,6 @@ Source: &lt;a href= "http://www.hirose.co.jp/cataloge_hp/e58605370.pdf"&gt;Data 
 <connect gate="-7" pin="1" pad="7"/>
 <connect gate="-8" pin="1" pad="8"/>
 <connect gate="-9" pin="1" pad="9"/>
-<connect gate="CASE12" pin="1" pad="CASE1 CASE2"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -23792,7 +23790,6 @@ DIN A3, landscape with location and doc. field</description>
 <part name="C8" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="10u"/>
 <part name="SUPPLY3" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="C6" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="100n"/>
-<part name="SUPPLY5" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -24306,12 +24303,6 @@ DIN A3, landscape with location and doc. field</description>
 <instance part="C6" gate="G$1" x="-53.34" y="147.32" smashed="yes" rot="R180">
 <attribute name="NAME" x="-49.784" y="152.019" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="-49.784" y="146.939" size="1.778" layer="96" rot="R180"/>
-</instance>
-<instance part="X1" gate="CASE12" x="264.16" y="175.26" smashed="yes">
-<attribute name="NAME" x="266.192" y="174.498" size="1.778" layer="95"/>
-</instance>
-<instance part="SUPPLY5" gate="GND" x="256.54" y="175.26" smashed="yes" rot="R270">
-<attribute name="VALUE" x="253.365" y="174.625" size="1.778" layer="96" rot="MR0"/>
 </instance>
 </instances>
 <busses>
@@ -24927,11 +24918,6 @@ DIN A3, landscape with location and doc. field</description>
 <segment>
 <pinref part="SUPPLY3" gate="GND" pin="GND"/>
 <pinref part="PHOTORES" gate="G$1" pin="1"/>
-</segment>
-<segment>
-<pinref part="SUPPLY5" gate="GND" pin="GND"/>
-<pinref part="X1" gate="CASE12" pin="1"/>
-<wire x1="259.08" y1="175.26" x2="261.62" y2="175.26" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="L_COUNTER" class="0">
