@@ -7,7 +7,7 @@
 <setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="50" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="yes" active="yes"/>
@@ -6213,7 +6213,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <text x="0" y="2.667" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center">&gt;Name</text>
 <text x="0" y="-2.667" size="0.6096" layer="27" font="vector" ratio="20" align="top-center">&gt;Value</text>
 </package>
-<package name="TACTILE_SWITCH_PTH_12MM" urn="urn:adsk.eagle:footprint:40105/1">
+<package name="TACTILE_SWITCH_PTH_12MM" urn="urn:adsk.eagle:footprint:40105/1" locally_modified="yes">
 <description>&lt;h3&gt;Momentary Switch (Pushbutton) - SPST - PTH, 12mm Square&lt;/h3&gt;
 &lt;p&gt;Normally-open (NO) SPST momentary switches (buttons, pushbuttons).&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://www.omron.com/ecb/products/pdf/en-b3f.pdf"&gt;Datasheet&lt;/a&gt; (B3F-5050)&lt;/p&gt;</description>
@@ -6237,10 +6237,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <circle x="4.5" y="4.5" radius="0.3" width="0.7" layer="21"/>
 <circle x="4.5" y="-4.5" radius="0.3" width="0.7" layer="21"/>
 <circle x="-4.5" y="-4.5" radius="0.3" width="0.7" layer="21"/>
-<pad name="4" x="-6.25" y="2.5" drill="1.2" diameter="2.159"/>
-<pad name="2" x="-6.25" y="-2.5" drill="1.2" diameter="2.159"/>
-<pad name="1" x="6.25" y="-2.5" drill="1.2" diameter="2.159"/>
-<pad name="3" x="6.25" y="2.5" drill="1.2" diameter="2.159"/>
+<pad name="4" x="-6.25" y="2.5" drill="1.2" diameter="3.81"/>
+<pad name="2" x="-6.25" y="-2.5" drill="1.2" diameter="3.81"/>
+<pad name="1" x="6.25" y="-2.5" drill="1.2" diameter="3.81"/>
+<pad name="3" x="6.25" y="2.5" drill="1.2" diameter="3.81"/>
 <text x="0" y="6.223" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center">&gt;Name</text>
 <text x="0" y="-6.223" size="0.6096" layer="27" font="vector" ratio="20" align="top-center">&gt;Value</text>
 </package>
@@ -7330,18 +7330,18 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <text x="-1.524" y="0" size="0.6096" layer="25" font="vector" ratio="20" rot="R90" align="bottom-center">&gt;Name</text>
 <text x="2.794" y="0" size="0.6096" layer="27" font="vector" ratio="20" rot="R90" align="top-center">&gt;Value</text>
 </package>
-<package name="ROTARY_ENC_PLAIN" urn="urn:adsk.eagle:footprint:40096/1">
+<package name="ROTARY_ENC_PLAIN" urn="urn:adsk.eagle:footprint:40096/1" locally_modified="yes">
 <description>&lt;h3&gt;Rotary Encoder w/ Select Switch&lt;/h3&gt;
 &lt;p&gt;Encoders rotate similarly to potentiometers, but they’re different from potentiometers in that an encoder has full rotation without limits. They output gray code so that you can tell how much and in which direction the encoder has been turned.&lt;/p&gt;
 &lt;p&gt;This encoder includes a push-down select switch built into the shaft.&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://www.sparkfun.com/datasheets/Components/TW-700198.pdf"&gt;Datasheet&lt;/a&gt;&lt;/p&gt;</description>
-<pad name="C" x="7.493" y="0" drill="1.016"/>
-<pad name="SW+" x="-6.985" y="2.54" drill="1.016"/>
-<pad name="P$3" x="0" y="6.604" drill="2.286"/>
-<pad name="P$4" x="0" y="-6.604" drill="2.286"/>
-<pad name="SW-" x="-6.985" y="-2.54" drill="1.016"/>
-<pad name="B" x="7.493" y="2.54" drill="1.016"/>
-<pad name="A" x="7.493" y="-2.54" drill="1.016"/>
+<pad name="C" x="7.493" y="0" drill="1.016" diameter="2.032" shape="long"/>
+<pad name="SW+" x="-6.985" y="2.54" drill="1.016" diameter="3.048" shape="long"/>
+<pad name="P$3" x="0" y="4.826" drill="2.286" diameter="6.4516"/>
+<pad name="P$4" x="0" y="-4.826" drill="2.286" diameter="6.4516"/>
+<pad name="SW-" x="-6.985" y="-2.54" drill="1.016" diameter="3.048" shape="long"/>
+<pad name="B" x="7.493" y="2.54" drill="1.016" diameter="2.032" shape="long"/>
+<pad name="A" x="7.493" y="-2.54" drill="1.016" diameter="2.032" shape="long"/>
 <wire x1="-6.35" y1="6.35" x2="-2.54" y2="6.35" width="0.2032" layer="21"/>
 <wire x1="2.54" y1="6.35" x2="6.35" y2="6.35" width="0.2032" layer="21"/>
 <wire x1="6.35" y1="6.35" x2="6.35" y2="-6.35" width="0.2032" layer="21"/>
@@ -7835,7 +7835,7 @@ Datasheet (B3F-1000)</description>
 <packageinstance name="TACTILE_SWITCH_PTH_6.0MM_KIT"/>
 </packageinstances>
 </package3d>
-<package3d name="TACTILE_SWITCH_PTH_12MM" urn="urn:adsk.eagle:package:40164/1" type="box">
+<package3d name="TACTILE_SWITCH_PTH_12MM" urn="urn:adsk.eagle:package:40164/1" locally_modified="yes" type="box">
 <description>Momentary Switch (Pushbutton) - SPST - PTH, 12mm Square
 Normally-open (NO) SPST momentary switches (buttons, pushbuttons).
 Datasheet (B3F-5050)</description>
@@ -8010,7 +8010,7 @@ Datasheet</description>
 <packageinstance name="DIPSWITCH-02-CHS-02A"/>
 </packageinstances>
 </package3d>
-<package3d name="ROTARY_ENC_PLAIN" urn="urn:adsk.eagle:package:40158/1" type="box">
+<package3d name="ROTARY_ENC_PLAIN" urn="urn:adsk.eagle:package:40158/1" locally_modified="yes" type="box">
 <description>Rotary Encoder w/ Select Switch
 Encoders rotate similarly to potentiometers, but they’re different from potentiometers in that an encoder has full rotation without limits. They output gray code so that you can tell how much and in which direction the encoder has been turned.
 This encoder includes a push-down select switch built into the shaft.

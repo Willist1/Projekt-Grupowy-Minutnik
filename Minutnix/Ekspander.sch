@@ -8,34 +8,34 @@
 </settings>
 <grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
-<layer number="1" name="Top" color="4" fill="1" visible="yes" active="no"/>
-<layer number="2" name="Route2" color="16" fill="1" visible="yes" active="no"/>
-<layer number="3" name="Route3" color="17" fill="1" visible="yes" active="no"/>
-<layer number="4" name="Route4" color="18" fill="1" visible="yes" active="no"/>
-<layer number="5" name="Route5" color="19" fill="1" visible="yes" active="no"/>
-<layer number="6" name="Route6" color="25" fill="1" visible="yes" active="no"/>
-<layer number="7" name="Route7" color="26" fill="1" visible="yes" active="no"/>
-<layer number="8" name="Route8" color="27" fill="1" visible="yes" active="no"/>
-<layer number="9" name="Route9" color="28" fill="1" visible="yes" active="no"/>
-<layer number="10" name="Route10" color="29" fill="1" visible="yes" active="no"/>
-<layer number="11" name="Route11" color="30" fill="1" visible="yes" active="no"/>
-<layer number="12" name="Route12" color="20" fill="1" visible="yes" active="no"/>
-<layer number="13" name="Route13" color="21" fill="1" visible="yes" active="no"/>
-<layer number="14" name="Route14" color="22" fill="1" visible="yes" active="no"/>
-<layer number="15" name="Route15" color="23" fill="1" visible="yes" active="no"/>
-<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="no"/>
-<layer number="17" name="Pads" color="2" fill="1" visible="yes" active="no"/>
-<layer number="18" name="Vias" color="2" fill="1" visible="yes" active="no"/>
-<layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="no"/>
-<layer number="20" name="Dimension" color="24" fill="1" visible="yes" active="no"/>
-<layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="no"/>
-<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="no"/>
-<layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="no"/>
-<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="no"/>
-<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="no"/>
-<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="no"/>
-<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="no"/>
-<layer number="28" name="bValues" color="7" fill="1" visible="yes" active="no"/>
+<layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
+<layer number="2" name="Route2" color="16" fill="1" visible="no" active="no"/>
+<layer number="3" name="Route3" color="17" fill="1" visible="no" active="no"/>
+<layer number="4" name="Route4" color="18" fill="1" visible="no" active="no"/>
+<layer number="5" name="Route5" color="19" fill="1" visible="no" active="no"/>
+<layer number="6" name="Route6" color="25" fill="1" visible="no" active="no"/>
+<layer number="7" name="Route7" color="26" fill="1" visible="no" active="no"/>
+<layer number="8" name="Route8" color="27" fill="1" visible="no" active="no"/>
+<layer number="9" name="Route9" color="28" fill="1" visible="no" active="no"/>
+<layer number="10" name="Route10" color="29" fill="1" visible="no" active="no"/>
+<layer number="11" name="Route11" color="30" fill="1" visible="no" active="no"/>
+<layer number="12" name="Route12" color="20" fill="1" visible="no" active="no"/>
+<layer number="13" name="Route13" color="21" fill="1" visible="no" active="no"/>
+<layer number="14" name="Route14" color="22" fill="1" visible="no" active="no"/>
+<layer number="15" name="Route15" color="23" fill="1" visible="no" active="no"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="no" active="no"/>
+<layer number="17" name="Pads" color="2" fill="1" visible="no" active="no"/>
+<layer number="18" name="Vias" color="2" fill="1" visible="no" active="no"/>
+<layer number="19" name="Unrouted" color="6" fill="1" visible="no" active="no"/>
+<layer number="20" name="Dimension" color="24" fill="1" visible="no" active="no"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="no" active="no"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="no" active="no"/>
+<layer number="23" name="tOrigins" color="15" fill="1" visible="no" active="no"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="no"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="no" active="no"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="no" active="no"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="no" active="no"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="no" active="no"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="no"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="no" active="no"/>
 <layer number="31" name="tCream" color="7" fill="4" visible="no" active="no"/>
@@ -44,8 +44,8 @@
 <layer number="34" name="bFinish" color="6" fill="6" visible="no" active="no"/>
 <layer number="35" name="tGlue" color="7" fill="4" visible="no" active="no"/>
 <layer number="36" name="bGlue" color="7" fill="5" visible="no" active="no"/>
-<layer number="37" name="tTest" color="7" fill="1" visible="yes" active="no"/>
-<layer number="38" name="bTest" color="7" fill="1" visible="yes" active="no"/>
+<layer number="37" name="tTest" color="7" fill="1" visible="no" active="no"/>
+<layer number="38" name="bTest" color="7" fill="1" visible="no" active="no"/>
 <layer number="39" name="tKeepout" color="4" fill="11" visible="no" active="no"/>
 <layer number="40" name="bKeepout" color="1" fill="11" visible="no" active="no"/>
 <layer number="41" name="tRestrict" color="4" fill="10" visible="no" active="no"/>
@@ -53,19 +53,19 @@
 <layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="no"/>
 <layer number="44" name="Drills" color="7" fill="1" visible="no" active="no"/>
 <layer number="45" name="Holes" color="7" fill="1" visible="no" active="no"/>
-<layer number="46" name="Milling" color="3" fill="1" visible="yes" active="no"/>
-<layer number="47" name="Measures" color="7" fill="1" visible="yes" active="no"/>
-<layer number="48" name="Document" color="7" fill="1" visible="yes" active="no"/>
-<layer number="49" name="Reference" color="7" fill="1" visible="yes" active="no"/>
-<layer number="50" name="dxf" color="7" fill="1" visible="yes" active="no"/>
-<layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="no"/>
-<layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="no"/>
-<layer number="53" name="tGND_GNDA" color="7" fill="9" visible="yes" active="no"/>
-<layer number="54" name="bGND_GNDA" color="1" fill="9" visible="yes" active="no"/>
-<layer number="56" name="wert" color="7" fill="1" visible="yes" active="no"/>
-<layer number="57" name="tCAD" color="7" fill="1" visible="yes" active="no"/>
-<layer number="59" name="tCarbon" color="7" fill="1" visible="yes" active="no"/>
-<layer number="60" name="bCarbon" color="7" fill="1" visible="yes" active="no"/>
+<layer number="46" name="Milling" color="3" fill="1" visible="no" active="no"/>
+<layer number="47" name="Measures" color="7" fill="1" visible="no" active="no"/>
+<layer number="48" name="Document" color="7" fill="1" visible="no" active="no"/>
+<layer number="49" name="Reference" color="7" fill="1" visible="no" active="no"/>
+<layer number="50" name="dxf" color="7" fill="1" visible="no" active="no"/>
+<layer number="51" name="tDocu" color="7" fill="1" visible="no" active="no"/>
+<layer number="52" name="bDocu" color="7" fill="1" visible="no" active="no"/>
+<layer number="53" name="tGND_GNDA" color="7" fill="9" visible="no" active="no"/>
+<layer number="54" name="bGND_GNDA" color="1" fill="9" visible="no" active="no"/>
+<layer number="56" name="wert" color="7" fill="1" visible="no" active="no"/>
+<layer number="57" name="tCAD" color="7" fill="1" visible="no" active="no"/>
+<layer number="59" name="tCarbon" color="7" fill="1" visible="no" active="no"/>
+<layer number="60" name="bCarbon" color="7" fill="1" visible="no" active="no"/>
 <layer number="88" name="SimResults" color="9" fill="1" visible="yes" active="yes"/>
 <layer number="89" name="SimProbes" color="9" fill="1" visible="yes" active="yes"/>
 <layer number="90" name="Modules" color="5" fill="1" visible="yes" active="yes"/>
@@ -2155,24 +2155,15 @@ Micro-USB AB Receptacle, Bottom Mount, SMT, Lead-Free&lt;/a&gt; (&lt;a href="htt
 <wire x1="-2.75" y1="3.2" x2="-2.75" y2="-3.2" width="0.05" layer="51"/>
 <wire x1="-2.75" y1="-3.2" x2="-2.15" y2="-3.2" width="0.05" layer="51"/>
 <wire x1="-2.75" y1="3.2" x2="-2.15" y2="3.2" width="0.05" layer="51"/>
-<wire x1="-0.275" y1="2.575" x2="-0.275" y2="3.075" width="0" layer="46"/>
-<wire x1="-0.275" y1="3.075" x2="0.925" y2="3.075" width="0" layer="46"/>
-<wire x1="0.925" y1="3.075" x2="0.925" y2="2.575" width="0" layer="46"/>
-<wire x1="0.925" y1="2.575" x2="-0.275" y2="2.575" width="0" layer="46"/>
-<wire x1="3.425" y1="2.575" x2="2.575" y2="2.575" width="0" layer="46"/>
-<pad name="CASING1" x="0.325" y="2.825" drill="0.5" diameter="1" shape="long" thermals="no"/>
+<pad name="CASING1" x="0.325" y="2.825" drill="1.2" diameter="3.302" thermals="no"/>
 <smd name="5" x="2.8" y="-1.3" dx="1.35" dy="0.4" layer="1"/>
 <smd name="4" x="2.8" y="-0.65" dx="1.35" dy="0.4" layer="1"/>
 <smd name="3" x="2.8" y="0" dx="1.35" dy="0.4" layer="1"/>
 <smd name="2" x="2.8" y="0.65" dx="1.35" dy="0.4" layer="1"/>
 <smd name="1" x="2.8" y="1.3" dx="1.35" dy="0.4" layer="1"/>
-<smd name="CASING3" x="2.675" y="3.3" dx="1.6" dy="1.2" layer="1"/>
-<smd name="CASING4" x="2.675" y="-3.3" dx="1.6" dy="1.2" layer="1"/>
-<pad name="CASING2" x="0.325" y="-2.825" drill="0.5" diameter="1" shape="long" thermals="no"/>
-<wire x1="-0.275" y1="-3.075" x2="-0.275" y2="-2.575" width="0" layer="46"/>
-<wire x1="-0.275" y1="-2.575" x2="0.925" y2="-2.575" width="0" layer="46"/>
-<wire x1="0.925" y1="-2.575" x2="0.925" y2="-3.075" width="0" layer="46"/>
-<wire x1="0.925" y1="-3.075" x2="-0.275" y2="-3.075" width="0" layer="46"/>
+<smd name="CASING3" x="3.475" y="3.3" dx="1.6" dy="1.2" layer="1"/>
+<smd name="CASING4" x="3.475" y="-3.3" dx="1.6" dy="1.2" layer="1"/>
+<pad name="CASING2" x="0.325" y="-2.825" drill="1.2" diameter="3.302" thermals="no"/>
 <hole x="2.525" y="2" drill="0.45"/>
 <hole x="2.525" y="-2" drill="0.45"/>
 </package>
@@ -10024,9 +10015,9 @@ Number of pins: &lt;b&gt;3&lt;/b&gt;&lt;b&gt;&lt;P&gt;
 <wire x1="4.95" y1="3.3925" x2="-4.95" y2="3.3925" width="0.254" layer="21"/>
 <wire x1="-4.95" y1="3.3925" x2="-4.95" y2="-2.3575" width="0.254" layer="21"/>
 <wire x1="-4.95" y1="-2.3575" x2="4.95" y2="-2.3575" width="0.254" layer="21"/>
-<pad name="3" x="2.54" y="0" drill="1.016" shape="long" rot="R90"/>
-<pad name="2" x="0" y="0" drill="1.016" shape="long" rot="R90"/>
-<pad name="1" x="-2.54" y="0" drill="1.016" shape="long" rot="R90"/>
+<pad name="3" x="2.54" y="0" drill="1.016" diameter="2.032" shape="long" rot="R90"/>
+<pad name="2" x="0" y="0" drill="1.016" diameter="2.032" shape="long" rot="R90"/>
+<pad name="1" x="-2.54" y="0" drill="1.016" diameter="2.032" shape="long" rot="R90"/>
 <text x="-5.555" y="-2.04" size="1.016" layer="25" ratio="10" rot="R90">&gt;NAME</text>
 <text x="-4.6025" y="3.8925" size="1.016" layer="27" ratio="10">&gt;VALUE</text>
 <text x="-4.1675" y="-1.4875" size="1.016" layer="51" ratio="10">1</text>
@@ -10289,7 +10280,7 @@ We've spent an enormous amount of time creating and checking these footprints an
 &lt;br&gt;
 You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.</description>
 <packages>
-<package name="TACTILE_SWITCH_PTH_12MM" urn="urn:adsk.eagle:footprint:40105/1">
+<package name="TACTILE_SWITCH_PTH_12MM" urn="urn:adsk.eagle:footprint:40105/1" locally_modified="yes">
 <description>&lt;h3&gt;Momentary Switch (Pushbutton) - SPST - PTH, 12mm Square&lt;/h3&gt;
 &lt;p&gt;Normally-open (NO) SPST momentary switches (buttons, pushbuttons).&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://www.omron.com/ecb/products/pdf/en-b3f.pdf"&gt;Datasheet&lt;/a&gt; (B3F-5050)&lt;/p&gt;</description>
@@ -10313,10 +10304,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <circle x="4.5" y="4.5" radius="0.3" width="0.7" layer="21"/>
 <circle x="4.5" y="-4.5" radius="0.3" width="0.7" layer="21"/>
 <circle x="-4.5" y="-4.5" radius="0.3" width="0.7" layer="21"/>
-<pad name="4" x="-6.25" y="2.5" drill="1.2" diameter="2.159"/>
-<pad name="2" x="-6.25" y="-2.5" drill="1.2" diameter="2.159"/>
-<pad name="1" x="6.25" y="-2.5" drill="1.2" diameter="2.159"/>
-<pad name="3" x="6.25" y="2.5" drill="1.2" diameter="2.159"/>
+<pad name="4" x="-6.25" y="2.5" drill="1.2" diameter="3.81"/>
+<pad name="2" x="-6.25" y="-2.5" drill="1.2" diameter="3.81"/>
+<pad name="1" x="6.25" y="-2.5" drill="1.2" diameter="3.81"/>
+<pad name="3" x="6.25" y="2.5" drill="1.2" diameter="3.81"/>
 <text x="0" y="6.223" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center">&gt;Name</text>
 <text x="0" y="-6.223" size="0.6096" layer="27" font="vector" ratio="20" align="top-center">&gt;Value</text>
 </package>
@@ -10669,18 +10660,18 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <text x="0" y="1.524" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center">&gt;Name</text>
 <text x="0" y="-1.524" size="0.6096" layer="27" font="vector" ratio="20" align="top-center">&gt;Value</text>
 </package>
-<package name="ROTARY_ENC_PLAIN" urn="urn:adsk.eagle:footprint:40096/1">
+<package name="ROTARY_ENC_PLAIN" urn="urn:adsk.eagle:footprint:40096/1" locally_modified="yes">
 <description>&lt;h3&gt;Rotary Encoder w/ Select Switch&lt;/h3&gt;
 &lt;p&gt;Encoders rotate similarly to potentiometers, but they’re different from potentiometers in that an encoder has full rotation without limits. They output gray code so that you can tell how much and in which direction the encoder has been turned.&lt;/p&gt;
 &lt;p&gt;This encoder includes a push-down select switch built into the shaft.&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://www.sparkfun.com/datasheets/Components/TW-700198.pdf"&gt;Datasheet&lt;/a&gt;&lt;/p&gt;</description>
-<pad name="C" x="7.493" y="0" drill="1.016"/>
-<pad name="SW+" x="-6.985" y="2.54" drill="1.016"/>
-<pad name="P$3" x="0" y="6.604" drill="2.286"/>
-<pad name="P$4" x="0" y="-6.604" drill="2.286"/>
-<pad name="SW-" x="-6.985" y="-2.54" drill="1.016"/>
-<pad name="B" x="7.493" y="2.54" drill="1.016"/>
-<pad name="A" x="7.493" y="-2.54" drill="1.016"/>
+<pad name="C" x="7.493" y="0" drill="1.016" diameter="2.159" shape="long"/>
+<pad name="SW+" x="-6.985" y="2.54" drill="1.016" diameter="3.048" shape="long"/>
+<pad name="P$3" x="0" y="4.826" drill="2.286" diameter="6.4516"/>
+<pad name="P$4" x="0" y="-4.826" drill="2.286" diameter="6.4516"/>
+<pad name="SW-" x="-6.985" y="-2.54" drill="1.016" diameter="3.048" shape="long"/>
+<pad name="B" x="7.493" y="2.54" drill="1.016" diameter="2.159" shape="long"/>
+<pad name="A" x="7.493" y="-2.54" drill="1.016" diameter="2.159" shape="long"/>
 <wire x1="-6.35" y1="6.35" x2="-2.54" y2="6.35" width="0.2032" layer="21"/>
 <wire x1="2.54" y1="6.35" x2="6.35" y2="6.35" width="0.2032" layer="21"/>
 <wire x1="6.35" y1="6.35" x2="6.35" y2="-6.35" width="0.2032" layer="21"/>
@@ -10694,7 +10685,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </package>
 </packages>
 <packages3d>
-<package3d name="TACTILE_SWITCH_PTH_12MM" urn="urn:adsk.eagle:package:40164/1" type="box">
+<package3d name="TACTILE_SWITCH_PTH_12MM" urn="urn:adsk.eagle:package:40164/1" locally_modified="yes" type="box">
 <description>Momentary Switch (Pushbutton) - SPST - PTH, 12mm Square
 Normally-open (NO) SPST momentary switches (buttons, pushbuttons).
 Datasheet (B3F-5050)</description>
@@ -10782,7 +10773,7 @@ Datasheet</description>
 <packageinstance name="TACTILE_SWITCH_SMD_4.6X2.8MM"/>
 </packageinstances>
 </package3d>
-<package3d name="ROTARY_ENC_PLAIN" urn="urn:adsk.eagle:package:40158/1" type="box">
+<package3d name="ROTARY_ENC_PLAIN" urn="urn:adsk.eagle:package:40158/1" locally_modified="yes" type="box">
 <description>Rotary Encoder w/ Select Switch
 Encoders rotate similarly to potentiometers, but they’re different from potentiometers in that an encoder has full rotation without limits. They output gray code so that you can tell how much and in which direction the encoder has been turned.
 This encoder includes a push-down select switch built into the shaft.
@@ -11093,6 +11084,67 @@ SparkFun BigTime Watch Kit&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
 </deviceset>
 </devicesets>
 </library>
+<library name="pinhead" urn="urn:adsk.eagle:library:325">
+<description>&lt;b&gt;Pin Header Connectors&lt;/b&gt;&lt;p&gt;
+&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+<package name="1X01" urn="urn:adsk.eagle:footprint:22382/1" library_version="3">
+<description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
+<wire x1="-0.635" y1="1.27" x2="0.635" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="0.635" y1="1.27" x2="1.27" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="1.27" y1="0.635" x2="1.27" y2="-0.635" width="0.1524" layer="21"/>
+<wire x1="1.27" y1="-0.635" x2="0.635" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="-1.27" y1="0.635" x2="-1.27" y2="-0.635" width="0.1524" layer="21"/>
+<wire x1="-0.635" y1="1.27" x2="-1.27" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="-1.27" y1="-0.635" x2="-0.635" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="0.635" y1="-1.27" x2="-0.635" y2="-1.27" width="0.1524" layer="21"/>
+<pad name="1" x="0" y="0" drill="1.016" shape="octagon"/>
+<text x="-1.3462" y="1.8288" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="-1.27" y="-3.175" size="1.27" layer="27">&gt;VALUE</text>
+<rectangle x1="-0.254" y1="-0.254" x2="0.254" y2="0.254" layer="51"/>
+</package>
+</packages>
+<packages3d>
+<package3d name="1X01" urn="urn:adsk.eagle:package:22485/2" type="model" library_version="3">
+<description>PIN HEADER</description>
+<packageinstances>
+<packageinstance name="1X01"/>
+</packageinstances>
+</package3d>
+</packages3d>
+<symbols>
+<symbol name="PINHD1" urn="urn:adsk.eagle:symbol:22381/1" library_version="3">
+<wire x1="-6.35" y1="-2.54" x2="1.27" y2="-2.54" width="0.4064" layer="94"/>
+<wire x1="1.27" y1="-2.54" x2="1.27" y2="2.54" width="0.4064" layer="94"/>
+<wire x1="1.27" y1="2.54" x2="-6.35" y2="2.54" width="0.4064" layer="94"/>
+<wire x1="-6.35" y1="2.54" x2="-6.35" y2="-2.54" width="0.4064" layer="94"/>
+<text x="-6.35" y="3.175" size="1.778" layer="95">&gt;NAME</text>
+<text x="-6.35" y="-5.08" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="1" x="-2.54" y="0" visible="pad" length="short" direction="pas" function="dot"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="PINHD-1X1" urn="urn:adsk.eagle:component:22540/2" prefix="JP" uservalue="yes" library_version="3">
+<description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
+<gates>
+<gate name="G$1" symbol="PINHD1" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="1X01">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:22485/2"/>
+</package3dinstances>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -11103,9 +11155,9 @@ SparkFun BigTime Watch Kit&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
 </class>
 </classes>
 <parts>
-<part name="S11" library="MySparkFun-Switches" deviceset="ENCODER-SWITCH" device="" package3d_urn="urn:adsk.eagle:package:40158/1"/>
+<part name="ENCODER" library="MySparkFun-Switches" deviceset="ENCODER-SWITCH" device="" package3d_urn="urn:adsk.eagle:package:40158/1"/>
 <part name="L_WARNING" library="led" library_urn="urn:adsk.eagle:library:259" deviceset="LED" device="CHIPLED_0805" package3d_urn="urn:adsk.eagle:package:15821/2"/>
-<part name="X1" library="My_con-hirose" deviceset="FH12-12S-0.5S_THINNER" device=""/>
+<part name="FFC_CON" library="My_con-hirose" deviceset="FH12-12S-0.5S_THINNER" device=""/>
 <part name="SUPPLY1" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY7" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="+5V" device=""/>
 <part name="L1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="Bead"/>
@@ -11117,9 +11169,10 @@ SparkFun BigTime Watch Kit&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
 <part name="STOP/RESET" library="MySparkFun-Switches" deviceset="MOMENTARY-SWITCH-SPST" device="-PTH-12MM" package3d_urn="urn:adsk.eagle:package:40164/1"/>
 <part name="SUPPLY20" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="VCC" device=""/>
 <part name="U$1" library="con-molex-usb" deviceset="MICRO-USB-RECEPTACLE" device=""/>
-<part name="X6" library="Rembrandt Electronics - JST XH Connectors v1-0" deviceset="JST-XH-03-PIN" device="-LONG-PAD"/>
+<part name="POWER_CON" library="Rembrandt Electronics - JST XH Connectors v1-0" deviceset="JST-XH-03-PIN" device="-LONG-PAD"/>
 <part name="L_COUNTER" library="led" library_urn="urn:adsk.eagle:library:259" deviceset="LED" device="CHIPLED_0805" package3d_urn="urn:adsk.eagle:package:15821/2"/>
 <part name="L_VOLUME" library="led" library_urn="urn:adsk.eagle:library:259" deviceset="LED" device="CHIPLED_0805" package3d_urn="urn:adsk.eagle:package:15821/2"/>
+<part name="JP1" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X1" device="" package3d_urn="urn:adsk.eagle:package:22485/2"/>
 <part name="SUPPLY2" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="+5V" device=""/>
 </parts>
 <sheets>
@@ -11127,7 +11180,7 @@ SparkFun BigTime Watch Kit&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
 <plain>
 </plain>
 <instances>
-<instance part="S11" gate="G$1" x="81.28" y="101.6" smashed="yes" rot="R180">
+<instance part="ENCODER" gate="G$1" x="81.28" y="101.6" smashed="yes" rot="R180">
 <attribute name="NAME" x="88.9" y="93.726" size="1.778" layer="95" font="vector" rot="R180"/>
 <attribute name="VALUE" x="88.9" y="109.474" size="1.778" layer="96" font="vector" rot="R180" align="top-left"/>
 </instance>
@@ -11135,36 +11188,36 @@ SparkFun BigTime Watch Kit&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
 <attribute name="NAME" x="74.168" y="201.676" size="1.778" layer="95" rot="MR180"/>
 <attribute name="VALUE" x="74.168" y="203.835" size="1.778" layer="96" rot="MR180"/>
 </instance>
-<instance part="X1" gate="-1" x="78.74" y="160.02" smashed="yes" rot="MR0">
-<attribute name="NAME" x="76.708" y="159.258" size="1.778" layer="95" rot="MR0"/>
-<attribute name="VALUE" x="68.58" y="157.48" size="1.778" layer="96" rot="MR270"/>
+<instance part="FFC_CON" gate="-1" x="55.88" y="132.08" smashed="yes" rot="MR0">
+<attribute name="NAME" x="53.848" y="131.318" size="1.778" layer="95" rot="MR0"/>
+<attribute name="VALUE" x="45.72" y="129.54" size="1.778" layer="96" rot="MR270"/>
 </instance>
-<instance part="X1" gate="-2" x="78.74" y="165.1" smashed="yes" rot="MR0">
-<attribute name="NAME" x="76.708" y="164.338" size="1.778" layer="95" rot="MR0"/>
+<instance part="FFC_CON" gate="-2" x="55.88" y="137.16" smashed="yes" rot="MR0">
+<attribute name="NAME" x="53.848" y="136.398" size="1.778" layer="95" rot="MR0"/>
 </instance>
-<instance part="X1" gate="-3" x="63.5" y="190.5" smashed="yes" rot="MR0">
-<attribute name="NAME" x="61.468" y="189.738" size="1.778" layer="95" rot="MR0"/>
+<instance part="FFC_CON" gate="-3" x="55.88" y="116.84" smashed="yes" rot="MR0">
+<attribute name="NAME" x="53.848" y="116.078" size="1.778" layer="95" rot="MR0"/>
 </instance>
-<instance part="X1" gate="-4" x="63.5" y="198.12" smashed="yes" rot="MR0">
-<attribute name="NAME" x="61.468" y="197.358" size="1.778" layer="95" rot="MR0"/>
+<instance part="FFC_CON" gate="-4" x="55.88" y="121.92" smashed="yes" rot="MR0">
+<attribute name="NAME" x="53.848" y="121.158" size="1.778" layer="95" rot="MR0"/>
 </instance>
-<instance part="X1" gate="-5" x="63.5" y="205.74" smashed="yes" rot="MR0">
-<attribute name="NAME" x="61.468" y="204.978" size="1.778" layer="95" rot="MR0"/>
+<instance part="FFC_CON" gate="-5" x="55.88" y="127" smashed="yes" rot="MR0">
+<attribute name="NAME" x="53.848" y="126.238" size="1.778" layer="95" rot="MR0"/>
 </instance>
-<instance part="X1" gate="-6" x="66.04" y="96.52" smashed="yes" rot="MR0">
-<attribute name="NAME" x="64.008" y="95.758" size="1.778" layer="95" rot="MR0"/>
+<instance part="FFC_CON" gate="-6" x="55.88" y="106.68" smashed="yes" rot="MR0">
+<attribute name="NAME" x="53.848" y="105.918" size="1.778" layer="95" rot="MR0"/>
 </instance>
-<instance part="X1" gate="-7" x="66.04" y="106.68" smashed="yes" rot="MR0">
-<attribute name="NAME" x="64.008" y="105.918" size="1.778" layer="95" rot="MR0"/>
+<instance part="FFC_CON" gate="-7" x="55.88" y="96.52" smashed="yes" rot="MR0">
+<attribute name="NAME" x="53.848" y="95.758" size="1.778" layer="95" rot="MR0"/>
 </instance>
-<instance part="X1" gate="-8" x="66.04" y="116.84" smashed="yes" rot="MR0">
-<attribute name="NAME" x="64.008" y="116.078" size="1.778" layer="95" rot="MR0"/>
+<instance part="FFC_CON" gate="-8" x="55.88" y="205.74" smashed="yes" rot="MR0">
+<attribute name="NAME" x="53.848" y="204.978" size="1.778" layer="95" rot="MR0"/>
 </instance>
-<instance part="X1" gate="-9" x="66.04" y="121.92" smashed="yes" rot="MR0">
-<attribute name="NAME" x="64.008" y="121.158" size="1.778" layer="95" rot="MR0"/>
+<instance part="FFC_CON" gate="-9" x="55.88" y="198.12" smashed="yes" rot="MR0">
+<attribute name="NAME" x="53.848" y="197.358" size="1.778" layer="95" rot="MR0"/>
 </instance>
-<instance part="X1" gate="-10" x="66.04" y="127" smashed="yes" rot="MR0">
-<attribute name="NAME" x="64.008" y="126.238" size="1.778" layer="95" rot="MR0"/>
+<instance part="FFC_CON" gate="-10" x="55.88" y="190.5" smashed="yes" rot="MR0">
+<attribute name="NAME" x="53.848" y="189.738" size="1.778" layer="95" rot="MR0"/>
 </instance>
 <instance part="SUPPLY1" gate="GND" x="93.98" y="96.52" smashed="yes">
 <attribute name="VALUE" x="97.155" y="95.885" size="1.778" layer="96"/>
@@ -11202,21 +11255,21 @@ SparkFun BigTime Watch Kit&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
 <attribute name="NAME" x="86.36" y="173.99" size="1.778" layer="95" font="vector"/>
 <attribute name="VALUE" x="99.06" y="154.94" size="1.778" layer="96" font="vector" rot="R90"/>
 </instance>
-<instance part="X6" gate="-1" x="55.88" y="167.64" smashed="yes" rot="MR0">
+<instance part="POWER_CON" gate="-1" x="55.88" y="167.64" smashed="yes" rot="MR0">
 <attribute name="NAME" x="53.34" y="166.878" size="1.524" layer="95" rot="MR0"/>
 <attribute name="VALUE" x="46.863" y="176.022" size="1.778" layer="96" rot="MR270"/>
 </instance>
-<instance part="X6" gate="-2" x="55.88" y="149.86" smashed="yes" rot="MR0">
+<instance part="POWER_CON" gate="-2" x="55.88" y="149.86" smashed="yes" rot="MR0">
 <attribute name="NAME" x="53.34" y="149.098" size="1.524" layer="95" rot="MR0"/>
 </instance>
-<instance part="X6" gate="-3" x="55.88" y="182.88" smashed="yes" rot="MR0">
+<instance part="POWER_CON" gate="-3" x="55.88" y="182.88" smashed="yes" rot="MR0">
 <attribute name="NAME" x="53.34" y="182.118" size="1.524" layer="95" rot="MR0"/>
 </instance>
-<instance part="X1" gate="-11" x="66.04" y="132.08" smashed="yes" rot="MR0">
-<attribute name="NAME" x="64.008" y="131.318" size="1.778" layer="95" rot="MR0"/>
+<instance part="FFC_CON" gate="-11" x="78.74" y="165.1" smashed="yes" rot="MR0">
+<attribute name="NAME" x="76.708" y="164.338" size="1.778" layer="95" rot="MR0"/>
 </instance>
-<instance part="X1" gate="-12" x="66.04" y="137.16" smashed="yes" rot="MR0">
-<attribute name="NAME" x="64.008" y="136.398" size="1.778" layer="95" rot="MR0"/>
+<instance part="FFC_CON" gate="-12" x="78.74" y="162.56" smashed="yes" rot="MR0">
+<attribute name="NAME" x="76.708" y="161.798" size="1.778" layer="95" rot="MR0"/>
 </instance>
 <instance part="L_COUNTER" gate="G$1" x="78.74" y="205.74" smashed="yes" rot="MR90">
 <attribute name="NAME" x="74.168" y="209.296" size="1.778" layer="95" rot="MR180"/>
@@ -11226,58 +11279,121 @@ SparkFun BigTime Watch Kit&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
 <attribute name="NAME" x="74.168" y="194.056" size="1.778" layer="95" rot="MR180"/>
 <attribute name="VALUE" x="74.168" y="196.215" size="1.778" layer="96" rot="MR180"/>
 </instance>
-<instance part="SUPPLY2" gate="+5V" x="91.44" y="109.22" smashed="yes" rot="MR0">
-<attribute name="VALUE" x="90.805" y="116.205" size="1.778" layer="96" rot="MR270"/>
+<instance part="JP1" gate="G$1" x="106.68" y="160.02" smashed="yes">
+<attribute name="NAME" x="100.33" y="163.195" size="1.778" layer="95"/>
+<attribute name="VALUE" x="100.33" y="154.94" size="1.778" layer="96"/>
 </instance>
-<instance part="X1" gate="CASE12" x="96.52" y="101.6" smashed="yes">
-<attribute name="NAME" x="98.552" y="100.838" size="1.778" layer="95"/>
+<instance part="SUPPLY2" gate="+5V" x="71.12" y="114.3" smashed="yes" rot="MR270">
+<attribute name="VALUE" x="64.135" y="113.665" size="1.778" layer="96" rot="MR180"/>
 </instance>
 </instances>
 <busses>
 </busses>
 <nets>
-<net name="N$11" class="0">
-<segment>
-<pinref part="L_WARNING" gate="G$1" pin="C"/>
-<wire x1="73.66" y1="198.12" x2="71.12" y2="198.12" width="0.1524" layer="91"/>
-<pinref part="X1" gate="-4" pin="1"/>
-<wire x1="71.12" y1="198.12" x2="68.7324" y2="198.12" width="0.1524" layer="91"/>
-<wire x1="66.04" y1="198.12" x2="68.7324" y2="198.12" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="ENC_A" class="0">
 <segment>
 <label x="29.5656" y="148.3614" size="1.778" layer="255"/>
+</segment>
+<segment>
+<pinref part="ENCODER" gate="G$1" pin="A"/>
+<label x="58.42" y="106.68" size="1.778" layer="95"/>
+<wire x1="58.5724" y1="106.68" x2="66.04" y2="106.68" width="0.1524" layer="91"/>
+<pinref part="FFC_CON" gate="-6" pin="1"/>
+<wire x1="66.04" y1="106.68" x2="71.12" y2="106.68" width="0.1524" layer="91"/>
+<wire x1="58.42" y1="106.68" x2="58.5724" y2="106.68" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="ENC_B" class="0">
 <segment>
 <label x="29.5656" y="150.9014" size="1.778" layer="255"/>
 </segment>
+<segment>
+<pinref part="ENCODER" gate="G$1" pin="B"/>
+<label x="58.42" y="96.52" size="1.778" layer="95"/>
+<wire x1="58.5724" y1="96.52" x2="63.5" y2="96.52" width="0.1524" layer="91"/>
+<pinref part="FFC_CON" gate="-7" pin="1"/>
+<wire x1="63.5" y1="96.52" x2="71.12" y2="96.52" width="0.1524" layer="91"/>
+<wire x1="58.42" y1="96.52" x2="58.5724" y2="96.52" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="COUNTER" class="0">
 <segment>
 <label x="29.5656" y="135.6614" size="1.778" layer="255"/>
+</segment>
+<segment>
+<pinref part="COUNTER" gate="G$1" pin="1"/>
+<pinref part="COUNTER" gate="G$1" pin="3"/>
+<wire x1="76.2" y1="129.54" x2="76.2" y2="127" width="0.1524" layer="91"/>
+<junction x="76.2" y="127"/>
+<label x="58.42" y="127" size="1.778" layer="95"/>
+<pinref part="FFC_CON" gate="-5" pin="1"/>
+<wire x1="58.42" y1="127" x2="66.04" y2="127" width="0.1524" layer="91"/>
+<wire x1="73.66" y1="127" x2="76.2" y2="127" width="0.1524" layer="91"/>
+<wire x1="66.04" y1="127" x2="73.66" y2="127" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="WARNING" class="0">
 <segment>
 <label x="29.5656" y="138.2014" size="1.778" layer="255"/>
 </segment>
+<segment>
+<pinref part="FFC_CON" gate="-4" pin="1"/>
+<wire x1="58.42" y1="121.92" x2="76.2" y2="121.92" width="0.1524" layer="91"/>
+<pinref part="WARNING" gate="G$1" pin="1"/>
+<pinref part="WARNING" gate="G$1" pin="3"/>
+<wire x1="76.2" y1="124.46" x2="76.2" y2="121.92" width="0.1524" layer="91"/>
+<junction x="76.2" y="121.92"/>
+<label x="58.42" y="121.92" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="VOLUME" class="0">
 <segment>
 <label x="29.5656" y="140.7414" size="1.778" layer="255"/>
+</segment>
+<segment>
+<label x="58.42" y="116.84" size="1.778" layer="95"/>
+<pinref part="FFC_CON" gate="-3" pin="1"/>
+<wire x1="58.42" y1="116.84" x2="68.58" y2="116.84" width="0.1524" layer="91"/>
+<pinref part="VOLUME" gate="G$1" pin="1"/>
+<pinref part="VOLUME" gate="G$1" pin="3"/>
+<wire x1="68.58" y1="116.84" x2="71.12" y2="116.84" width="0.1524" layer="91"/>
+<wire x1="76.2" y1="119.38" x2="76.2" y2="116.84" width="0.1524" layer="91"/>
+<junction x="76.2" y="116.84"/>
+<wire x1="70.9676" y1="116.84" x2="71.12" y2="116.84" width="0.1524" layer="91"/>
+<wire x1="73.66" y1="116.84" x2="76.2" y2="116.84" width="0.1524" layer="91"/>
+<wire x1="71.12" y1="116.84" x2="73.66" y2="116.84" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="PLAY/PAUSE" class="0">
 <segment>
 <label x="29.5656" y="143.2814" size="1.778" layer="255"/>
 </segment>
+<segment>
+<pinref part="PLAY/PAUSE" gate="G$1" pin="1"/>
+<pinref part="PLAY/PAUSE" gate="G$1" pin="3"/>
+<wire x1="76.2" y1="134.62" x2="76.2" y2="132.08" width="0.1524" layer="91"/>
+<junction x="76.2" y="132.08"/>
+<label x="58.42" y="132.08" size="1.778" layer="95"/>
+<wire x1="58.5724" y1="132.08" x2="60.96" y2="132.08" width="0.1524" layer="91"/>
+<pinref part="FFC_CON" gate="-1" pin="1"/>
+<wire x1="60.96" y1="132.08" x2="76.2" y2="132.08" width="0.1524" layer="91"/>
+<wire x1="58.42" y1="132.08" x2="58.5724" y2="132.08" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="STOP/RESET" class="0">
 <segment>
 <label x="29.5656" y="145.8214" size="1.778" layer="255"/>
+</segment>
+<segment>
+<pinref part="STOP/RESET" gate="G$1" pin="1"/>
+<pinref part="STOP/RESET" gate="G$1" pin="3"/>
+<wire x1="76.2" y1="139.7" x2="76.2" y2="137.16" width="0.1524" layer="91"/>
+<junction x="76.2" y="137.16"/>
+<label x="58.42" y="137.16" size="1.778" layer="95"/>
+<wire x1="76.2" y1="137.16" x2="60.96" y2="137.16" width="0.1524" layer="91"/>
+<pinref part="FFC_CON" gate="-2" pin="1"/>
+<wire x1="60.96" y1="137.16" x2="58.5724" y2="137.16" width="0.1524" layer="91"/>
+<wire x1="58.42" y1="137.16" x2="58.5724" y2="137.16" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="+5V" class="0">
@@ -11286,12 +11402,13 @@ SparkFun BigTime Watch Kit&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
 <wire x1="58.42" y1="172.72" x2="58.42" y2="167.64" width="0.1524" layer="91"/>
 <pinref part="L1" gate="G$1" pin="1"/>
 <wire x1="60.96" y1="167.64" x2="58.42" y2="167.64" width="0.1524" layer="91"/>
-<pinref part="X6" gate="-1" pin="S"/>
+<pinref part="POWER_CON" gate="-1" pin="S"/>
 <junction x="58.42" y="167.64"/>
 </segment>
 <segment>
+<pinref part="ENCODER" gate="G$1" pin="GND1"/>
 <pinref part="SUPPLY2" gate="+5V" pin="+5V"/>
-<pinref part="S11" gate="G$1" pin="SW-"/>
+<wire x1="73.66" y1="114.3" x2="76.2" y2="114.3" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -11301,12 +11418,9 @@ SparkFun BigTime Watch Kit&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
 <wire x1="93.98" y1="132.08" x2="93.98" y2="127" width="0.1524" layer="91"/>
 <wire x1="93.98" y1="127" x2="93.98" y2="121.92" width="0.1524" layer="91"/>
 <wire x1="93.98" y1="121.92" x2="93.98" y2="116.84" width="0.1524" layer="91"/>
-<wire x1="93.98" y1="116.84" x2="93.98" y2="114.3" width="0.1524" layer="91"/>
-<wire x1="93.98" y1="114.3" x2="93.98" y2="101.6" width="0.1524" layer="91"/>
-<wire x1="93.98" y1="101.6" x2="93.98" y2="99.06" width="0.1524" layer="91"/>
-<wire x1="71.12" y1="99.06" x2="91.44" y2="99.06" width="0.1524" layer="91"/>
-<pinref part="S11" gate="G$1" pin="C"/>
-<wire x1="91.44" y1="99.06" x2="93.98" y2="99.06" width="0.1524" layer="91"/>
+<wire x1="93.98" y1="116.84" x2="93.98" y2="99.06" width="0.1524" layer="91"/>
+<wire x1="71.12" y1="99.06" x2="93.98" y2="99.06" width="0.1524" layer="91"/>
+<pinref part="ENCODER" gate="G$1" pin="C"/>
 <wire x1="71.12" y1="101.6" x2="71.12" y2="99.06" width="0.1524" layer="91"/>
 <pinref part="SUPPLY1" gate="GND" pin="GND"/>
 <junction x="93.98" y="99.06"/>
@@ -11330,7 +11444,7 @@ SparkFun BigTime Watch Kit&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
 <junction x="91.44" y="149.86"/>
 <pinref part="U$1" gate="G$1" pin="GND4"/>
 <junction x="93.98" y="149.86"/>
-<pinref part="X6" gate="-2" pin="S"/>
+<pinref part="POWER_CON" gate="-2" pin="S"/>
 <pinref part="COUNTER" gate="G$1" pin="2"/>
 <wire x1="86.36" y1="127" x2="93.98" y2="127" width="0.1524" layer="91"/>
 <junction x="93.98" y="127"/>
@@ -11346,12 +11460,6 @@ SparkFun BigTime Watch Kit&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
 <pinref part="PLAY/PAUSE" gate="G$1" pin="2"/>
 <wire x1="86.36" y1="132.08" x2="93.98" y2="132.08" width="0.1524" layer="91"/>
 <junction x="93.98" y="132.08"/>
-<pinref part="S11" gate="G$1" pin="GND1"/>
-<wire x1="76.2" y1="114.3" x2="78.74" y2="114.3" width="0.1524" layer="91"/>
-<junction x="93.98" y="114.3"/>
-<pinref part="S11" gate="G$1" pin="GND2"/>
-<wire x1="78.74" y1="114.3" x2="93.98" y2="114.3" width="0.1524" layer="91"/>
-<junction x="78.74" y="114.3"/>
 <pinref part="VOLUME" gate="G$1" pin="4"/>
 <wire x1="86.36" y1="119.38" x2="86.36" y2="116.84" width="0.1524" layer="91"/>
 <junction x="86.36" y="116.84"/>
@@ -11367,11 +11475,6 @@ SparkFun BigTime Watch Kit&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
 <pinref part="STOP/RESET" gate="G$1" pin="4"/>
 <wire x1="86.36" y1="139.7" x2="86.36" y2="137.16" width="0.1524" layer="91"/>
 <junction x="86.36" y="137.16"/>
-<pinref part="S11" gate="G$1" pin="SW+"/>
-<wire x1="91.44" y1="96.52" x2="91.44" y2="99.06" width="0.1524" layer="91"/>
-<junction x="91.44" y="99.06"/>
-<pinref part="X1" gate="CASE12" pin="1"/>
-<junction x="93.98" y="101.6"/>
 </segment>
 </net>
 <net name="N$14" class="0">
@@ -11388,7 +11491,7 @@ SparkFun BigTime Watch Kit&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
 <segment>
 <pinref part="SUPPLY20" gate="G$1" pin="VCC"/>
 <wire x1="58.42" y1="182.88" x2="81.28" y2="182.88" width="0.1524" layer="91"/>
-<pinref part="X6" gate="-3" pin="S"/>
+<pinref part="POWER_CON" gate="-3" pin="S"/>
 <pinref part="L_WARNING" gate="G$1" pin="A"/>
 <wire x1="81.28" y1="198.12" x2="81.28" y2="190.5" width="0.1524" layer="91"/>
 <junction x="81.28" y="182.88"/>
@@ -11400,120 +11503,70 @@ SparkFun BigTime Watch Kit&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
 <junction x="81.28" y="198.12"/>
 </segment>
 </net>
-<net name="N$9" class="0">
+<net name="N$8" class="0">
 <segment>
-<wire x1="81.4324" y1="162.56" x2="83.6676" y2="162.56" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$10" class="0">
-<segment>
-<pinref part="L_COUNTER" gate="G$1" pin="C"/>
-<wire x1="73.66" y1="205.74" x2="71.12" y2="205.74" width="0.1524" layer="91"/>
-<pinref part="X1" gate="-5" pin="1"/>
-<wire x1="71.12" y1="205.74" x2="68.7324" y2="205.74" width="0.1524" layer="91"/>
-<wire x1="66.04" y1="205.74" x2="68.7324" y2="205.74" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$12" class="0">
-<segment>
-<pinref part="L_VOLUME" gate="G$1" pin="C"/>
-<wire x1="73.66" y1="190.5" x2="71.12" y2="190.5" width="0.1524" layer="91"/>
-<pinref part="X1" gate="-3" pin="1"/>
-<wire x1="71.12" y1="190.5" x2="68.7324" y2="190.5" width="0.1524" layer="91"/>
-<wire x1="66.04" y1="190.5" x2="68.7324" y2="190.5" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$4" class="0">
-<segment>
-<pinref part="COUNTER" gate="G$1" pin="1"/>
-<pinref part="COUNTER" gate="G$1" pin="3"/>
-<wire x1="76.2" y1="129.54" x2="76.2" y2="127" width="0.1524" layer="91"/>
-<junction x="76.2" y="127"/>
-<pinref part="X1" gate="-10" pin="1"/>
-<wire x1="68.58" y1="127" x2="76.2" y2="127" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$5" class="0">
-<segment>
-<pinref part="WARNING" gate="G$1" pin="1"/>
-<pinref part="WARNING" gate="G$1" pin="3"/>
-<wire x1="76.2" y1="124.46" x2="76.2" y2="121.92" width="0.1524" layer="91"/>
-<junction x="76.2" y="121.92"/>
-<wire x1="68.7324" y1="121.92" x2="73.66" y2="121.92" width="0.1524" layer="91"/>
-<pinref part="X1" gate="-9" pin="1"/>
-<wire x1="73.66" y1="121.92" x2="76.2" y2="121.92" width="0.1524" layer="91"/>
-<wire x1="68.58" y1="121.92" x2="68.7324" y2="121.92" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$6" class="0">
-<segment>
-<pinref part="VOLUME" gate="G$1" pin="1"/>
-<pinref part="VOLUME" gate="G$1" pin="3"/>
-<wire x1="76.2" y1="119.38" x2="76.2" y2="116.84" width="0.1524" layer="91"/>
-<junction x="76.2" y="116.84"/>
-<wire x1="68.7324" y1="116.84" x2="73.66" y2="116.84" width="0.1524" layer="91"/>
-<pinref part="X1" gate="-8" pin="1"/>
-<wire x1="73.66" y1="116.84" x2="76.2" y2="116.84" width="0.1524" layer="91"/>
-<wire x1="68.58" y1="116.84" x2="68.7324" y2="116.84" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$2" class="0">
-<segment>
-<pinref part="STOP/RESET" gate="G$1" pin="1"/>
-<pinref part="STOP/RESET" gate="G$1" pin="3"/>
-<wire x1="76.2" y1="139.7" x2="76.2" y2="137.16" width="0.1524" layer="91"/>
-<junction x="76.2" y="137.16"/>
-<wire x1="68.7324" y1="137.16" x2="71.12" y2="137.16" width="0.1524" layer="91"/>
-<pinref part="X1" gate="-12" pin="1"/>
-<wire x1="71.12" y1="137.16" x2="76.2" y2="137.16" width="0.1524" layer="91"/>
-<wire x1="68.58" y1="137.16" x2="68.7324" y2="137.16" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$3" class="0">
-<segment>
-<pinref part="PLAY/PAUSE" gate="G$1" pin="1"/>
-<pinref part="PLAY/PAUSE" gate="G$1" pin="3"/>
-<wire x1="76.2" y1="134.62" x2="76.2" y2="132.08" width="0.1524" layer="91"/>
-<junction x="76.2" y="132.08"/>
-<wire x1="68.7324" y1="132.08" x2="71.12" y2="132.08" width="0.1524" layer="91"/>
-<pinref part="X1" gate="-11" pin="1"/>
-<wire x1="71.12" y1="132.08" x2="76.2" y2="132.08" width="0.1524" layer="91"/>
-<wire x1="68.58" y1="132.08" x2="68.7324" y2="132.08" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$17" class="0">
-<segment>
+<pinref part="JP1" gate="G$1" pin="1"/>
 <pinref part="U$1" gate="G$1" pin="4"/>
-<pinref part="X1" gate="-1" pin="1"/>
-<wire x1="81.28" y1="160.02" x2="83.82" y2="160.02" width="0.1524" layer="91"/>
+<wire x1="104.14" y1="160.02" x2="83.82" y2="160.02" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$18" class="0">
+<net name="L_VOLUME" class="0">
 <segment>
+<pinref part="FFC_CON" gate="-10" pin="1"/>
+<pinref part="L_VOLUME" gate="G$1" pin="C"/>
+<wire x1="58.42" y1="190.5" x2="73.66" y2="190.5" width="0.1524" layer="91"/>
+<label x="58.42" y="190.5" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="L_WARNING" class="0">
+<segment>
+<pinref part="FFC_CON" gate="-9" pin="1"/>
+<pinref part="L_WARNING" gate="G$1" pin="C"/>
+<wire x1="58.42" y1="198.12" x2="73.66" y2="198.12" width="0.1524" layer="91"/>
+<label x="58.42" y="198.12" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="L_COUNTER" class="0">
+<segment>
+<pinref part="FFC_CON" gate="-8" pin="1"/>
+<wire x1="58.42" y1="205.74" x2="73.66" y2="205.74" width="0.1524" layer="91"/>
+<pinref part="L_COUNTER" gate="G$1" pin="C"/>
+<label x="58.42" y="205.74" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="DP" class="0">
+<segment>
+<pinref part="FFC_CON" gate="-12" pin="1"/>
+<pinref part="U$1" gate="G$1" pin="3"/>
+<wire x1="81.28" y1="162.56" x2="83.6676" y2="162.56" width="0.1524" layer="91"/>
+<wire x1="83.82" y1="162.56" x2="83.6676" y2="162.56" width="0.1524" layer="91"/>
+<label x="81.28" y="162.56" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="DM" class="0">
+<segment>
+<pinref part="FFC_CON" gate="-11" pin="1"/>
 <pinref part="U$1" gate="G$1" pin="2"/>
-<pinref part="X1" gate="-2" pin="1"/>
-<wire x1="81.28" y1="165.1" x2="83.82" y2="165.1" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$1" class="0">
-<segment>
-<pinref part="X1" gate="-7" pin="1"/>
-<pinref part="S11" gate="G$1" pin="A"/>
-<wire x1="68.58" y1="106.68" x2="71.12" y2="106.68" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$7" class="0">
-<segment>
-<pinref part="X1" gate="-6" pin="1"/>
-<pinref part="S11" gate="G$1" pin="B"/>
-<wire x1="68.58" y1="96.52" x2="71.12" y2="96.52" width="0.1524" layer="91"/>
+<wire x1="81.28" y1="165.1" x2="83.6676" y2="165.1" width="0.1524" layer="91"/>
+<wire x1="83.82" y1="165.1" x2="83.6676" y2="165.1" width="0.1524" layer="91"/>
+<label x="81.28" y="165.1" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
 </sheet>
 </sheets>
 <errors>
-<approved hash="202,1,83.82,160.02,U$1,4,,,,"/>
+<approved hash="105,0,?,?,COUNTER,,,,,"/>
+<approved hash="105,0,?,?,ENC_A,,,,,"/>
+<approved hash="105,0,?,?,ENC_B,,,,,"/>
+<approved hash="105,0,?,?,PLAY/PAUSE,,,,,"/>
+<approved hash="105,0,?,?,STOP/RESET,,,,,"/>
+<approved hash="105,0,?,?,VOLUME,,,,,"/>
+<approved hash="105,0,?,?,WARNING,,,,,"/>
+<approved hash="113,1,79.5714,198.442,L_WARNING,,,,,"/>
+<approved hash="113,1,79.7633,206.062,L_COUNTER,,,,,"/>
+<approved hash="113,1,78.8439,190.822,L_VOLUME,,,,,"/>
+<approved hash="113,1,104.377,161.486,JP1,,,,,"/>
 </errors>
 </schematic>
 </drawing>
