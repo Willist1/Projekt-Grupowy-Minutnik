@@ -45,7 +45,7 @@ ISR(SPI_STC_vect)
 	}
 	value = LEDDIGITS[MAX_INDEX-SeqNum];						// Displayed value
 	if((value & 0x7F) < NUM_OF_DIGITS) output = DIGITS[value & 0x7F];	// Read symbol code
-	if(value & DP) output |= DP;								// DP control
+	if(value & DP) output |= DP_BIT_MASK;								// DP control
 	SPDR = output;												// Sending output data to shift regs
 	
 	SeqNum=(SeqNum+1)%LEDDISPNO;	// incrementing sequence number

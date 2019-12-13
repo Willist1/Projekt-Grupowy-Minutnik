@@ -152,10 +152,10 @@ int main()
 	displayInit();
 	buzzerInit ();
 
-	LEDDIGITS[0]= 0;
-	LEDDIGITS[1]= 0;
-	LEDDIGITS[2]= 0;
-	LEDDIGITS[3]= 0;
+	LEDDIGITS[0]= BLANK_DISPLAY;
+	LEDDIGITS[1]= BLANK_DISPLAY;
+	LEDDIGITS[2]= BLANK_DISPLAY;
+	LEDDIGITS[3]= BLANK_DISPLAY;
 	
 	NVDataInit();
 	if (NVData.config.cntVal > CNT_MAX_VAL) NVData.config.cntVal = CNT_MAX_VAL;
@@ -179,7 +179,7 @@ int main()
 		// HANDLE EXPANDER INTERRUPT
 		if (PCF8574_INT) {
 			_delay_ms(1);			// debouncing
-			//PCF8574_ReadState();
+			PCF8574_ReadState();
 			ATOMIC_BLOCK (ATOMIC_FORCEON) {
 				
 				lastActivityTime = ticks;							// set last activity timestamp
@@ -313,10 +313,6 @@ int main()
 						valMax = WARN_MAX_VAL;
 						valMin = WARN_MIN_VAL;
 						break;
-					case setBrightness:
-						valMax = BRIGHT_MAX_VAL;
-						valMin = BRIGHT_MIN_VAL;
-						break;
 					case setVolume:
 						valMax = VOL_MAX_VAL;
 						valMin = VOL_MIN_VAL;
@@ -348,9 +344,6 @@ int main()
 					LEDDIGITS[3]= BLANK_DISPLAY;
 				};
 				switch (memorizedButton) {
-					case setBrightness:
-						ATOMIC_BLOCK (ATOMIC_FORCEON) { displaySetBrightness(10*setVal); };
-						break;
 					case setVolume:
 						ATOMIC_BLOCK (ATOMIC_FORCEON) { buzzerSetVolume(setVal); };
 						break;
