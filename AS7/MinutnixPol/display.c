@@ -27,13 +27,13 @@ void displayInit()
 void displayOff()
 {
 	TCCR1A &= ~_BV(COM1B1);	// low output state at compare match disable
-	DDRB |= _BV(SHIFT_REG_G);		// pin OC0A set as output
+	DDRB |= _BV(SHIFT_REG_G);		// pin OC1B set as output
 	TPIC6C596_Set_OE();		// Disable output
 }
 
 void displayOn()
 {
-	DDRB |= _BV(SHIFT_REG_G);		// pin OC0A set as output
+	DDRB |= _BV(SHIFT_REG_G);		// pin OC1B set as output
 	TCCR1A |= _BV(COM1B1);	// low output state at compare match
 }
 

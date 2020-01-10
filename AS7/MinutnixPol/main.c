@@ -98,11 +98,12 @@ void wdtDeinit() {
 	wdt_disable();
 }
 
-// index of brightnessTable is ADC reading (max 255) divided by 13
-// results range: 0-19 (20 values)
-#define ADC_READING_DIVISOR 13
+// index of brightnessTable is ADC reading (max 255) divided by 9
+// results range: 0-28 (29 values)
+#define ADC_READING_DIVISOR 9
 const uint8_t __attribute__((__progmem__)) brightnessTable[] = {
-	100, 95, 90, 85, 80, 75, 70, 65, 60, 55, 50, 45, 40, 35, 30, 25, 20, 15, 10, 5
+	//100, 55, 35, 30, 26, 24, 22, 20, 19, 18, 17, 16, 15, 14, 9, 5, 2, 1, 1, 1
+	100, 70, 55, 42, 35, 33, 30, 28, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 8, 5, 2, 1, 1, 1, 1
 };
 
 #define SETTINGS_LED_PORT PORTC
@@ -142,15 +143,13 @@ int main()
 	
 	PCF8574_Init();
 	
-	wdtInit();
-	
 	sysTickInit();
 	TPIC6C596Init();
 	pwrFailInit();
 	settingsLEDInit();
 	lightsensorInit();
 	displayInit();
-	buzzerInit ();
+	buzzerInit();
 
 	LEDDIGITS[0]= BLANK_DISPLAY;
 	LEDDIGITS[1]= BLANK_DISPLAY;
@@ -173,6 +172,9 @@ int main()
 	while (SeqNum != 3);	// Wait for first SPI transfer to finish before enabling display
 	while (SeqNum != 0);
 	displayOn();
+	
+	wdtInit();
+	wdt_reset();	// reset watchdog
 	
 	while(1)
 	{
