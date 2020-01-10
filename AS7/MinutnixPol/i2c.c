@@ -12,8 +12,12 @@ uint8_t I2C_Error;
 
 void I2C_Init()
 {
-	TWCR =_BV(TWEA) | _BV(TWEN);		//Wlacz interfejs I2C
-	I2C_SetBusSpeed(I2CBUSCLOCK/100);
+	DDRC &= ~_BV(DDC4);					// set PC4 as input (SDA)
+	PORTC |= _BV(PORTC4);				// set pull-up on pin PC4
+	DDRC &= ~_BV(DDC5);					// set PC5 as input (SCL)
+	PORTC |= _BV(PORTC5);				// set pull-up on pin PC5
+	TWCR =_BV(TWEA) | _BV(TWEN);		// Wlacz interfejs I2C
+	I2C_SetBusSpeed(I2CBUSCLOCK/200);
 }
 
 void I2C_Start()
