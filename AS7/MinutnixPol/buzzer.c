@@ -40,7 +40,7 @@ void buzzerSetVolume(uint8_t setting) {
 			OCR1A = 10*4;
 			break;
 		case 3:
-			OCR1A = 10*36;
+			OCR1A = 10*25;
 			break;
 		default:
 			break;

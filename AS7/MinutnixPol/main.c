@@ -41,6 +41,18 @@ volatile uint8_t toggle_500ms = 0;
 uint32_t lastActivityTime = 0;
 uint8_t WARN_MAX_VAL = 15;
 
+#define ALARM_MAX_DURATION 20 // [s]
+volatile uint8_t alarmTick = 0;
+volatile bool endBeep = false;
+
+// index of brightnessTable is ADC reading (max 255) divided by 9
+// results range: 0-28 (29 values)
+#define ADC_READING_DIVISOR 9
+const uint8_t __attribute__((__progmem__)) brightnessTable[] = {
+	//100, 55, 35, 30, 26, 24, 22, 20, 19, 18, 17, 16, 15, 14, 9, 5, 2, 1, 1, 1
+	100, 70, 55, 42, 35, 33, 30, 28, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 8, 5, 2, 1, 1, 1, 1
+};
+
 void sysTickInit()
 {
 	#ifdef EXTERNAL_CLOCK
@@ -74,6 +86,7 @@ ISR(TIMER2_OVF_vect)	// System clock
 	toggle_500ms ^= 0x01;
 	if (!(ticks % 2) && (currentState == sRunning)) {
 		if(NVData.totalSeconds > 0) NVData.totalSeconds--;
+		if(endBeep && (alarmTick < ALARM_MAX_DURATION)) alarmTick++;
 	}
 	#else
 	if (!(ticks % 500)) {
@@ -81,8 +94,15 @@ ISR(TIMER2_OVF_vect)	// System clock
 	}
 	if (!(ticks % 1000) && (currentState == sRunning)) {
 		if(NVData.totalSeconds > 0) NVData.totalSeconds--;
+		if(endBeep && (alarmTick < ALARM_MAX_DURATION)) alarmTick++;
 	}
 	#endif
+	
+	// ADJUST BRIGHTNESS
+	uint8_t brightness = 0;
+	memcpy_P(&brightness,brightnessTable+(lightsensorRead()/ADC_READING_DIVISOR),1);
+	brightness = lightsensorFilter(brightness);
+	displaySetBrightness(brightness);
 }
 
 void wdtInit() {
@@ -97,14 +117,6 @@ void wdtDeinit() {
 	wdt_reset();
 	wdt_disable();
 }
-
-// index of brightnessTable is ADC reading (max 255) divided by 9
-// results range: 0-28 (29 values)
-#define ADC_READING_DIVISOR 9
-const uint8_t __attribute__((__progmem__)) brightnessTable[] = {
-	//100, 55, 35, 30, 26, 24, 22, 20, 19, 18, 17, 16, 15, 14, 9, 5, 2, 1, 1, 1
-	100, 70, 55, 42, 35, 33, 30, 28, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 8, 5, 2, 1, 1, 1, 1
-};
 
 #define SETTINGS_LED_PORT PORTC
 #define LED_SET_CNT 1
@@ -136,7 +148,7 @@ int main()
 {
 	displayOff();
 	set_sleep_mode(SLEEP_MODE_IDLE);	// CPU clock turned off, peripherals operating normally
-
+	
 	//USART_init();
 	//static FILE usartout = FDEV_SETUP_STREAM (put, get, _FDEV_SETUP_RW);
 	//stdout = &usartout;
@@ -158,11 +170,11 @@ int main()
 	
 	NVDataInit();
 	if (NVData.config.cntVal > CNT_MAX_VAL) NVData.config.cntVal = CNT_MAX_VAL;
+	WARN_MAX_VAL = NVData.config.cntVal;
 	if (NVData.config.warnVal > WARN_MAX_VAL) NVData.config.warnVal = WARN_MAX_VAL;
-	if (NVData.config.brightVal > BRIGHT_MAX_VAL) NVData.config.brightVal = BRIGHT_MAX_VAL;
 	if (NVData.config.volumeVal > VOL_MAX_VAL) NVData.config.volumeVal = VOL_MAX_VAL;
 	if (NVData.totalSeconds > NVData.config.cntVal*60) NVData.totalSeconds = NVData.config.cntVal*60;
-	displaySetBrightness(10*NVData.config.brightVal);
+	displaySetBrightness(DEFAULT_BRIGHTNESS);
 	buzzerSetVolume(NVData.config.volumeVal);
 	settingsLEDToggle(LED_SET_CNT);
 	setVal = NVData.config.cntVal;	// prepare user interaction
@@ -277,21 +289,25 @@ int main()
 								setVal = NVData.config.cntVal;
 								settingsLEDToggle(LED_SET_CNT);
 								memorizedButton = setCnt;
+								endBeep = false;
+								alarmTick = 0;
 								buzzerOff();
 								break;
 							case Play:
 								if (currentState == sRunning) {
 									if (NVData.totalSeconds > 0)
 										currentState = sPause;
-									else{
+									else {
 										memorizedButton = Stop;
 										currentState = sSetting;
 										NVData.totalSeconds = NVData.config.cntVal*60;
 										setVal = NVData.config.cntVal;
 										settingsLEDToggle(LED_SET_CNT);
 										memorizedButton = setCnt;
+										endBeep = false;
+										alarmTick = 0;
 										buzzerOff();
-										}
+									}
 										
 								} else { // currentState == sPause
 									currentState = sRunning;
@@ -390,10 +406,18 @@ int main()
 			}
 			
 			if (NVData.totalSeconds == 0) {
-				buzzerOn();	// Perform continuous end beep
-				} else if (NVData.totalSeconds == NVData.config.warnVal*60) {								// Start warn beep
+				if (alarmTick < ALARM_MAX_DURATION)
+				{
+					buzzerOn();	// Perform continuous end beep
+					endBeep = true;
+				}
+				else
+				{
+					buzzerOff();
+				}
+			} else if (NVData.totalSeconds == NVData.config.warnVal*60) {								// Start warn beep
 				ATOMIC_BLOCK (ATOMIC_FORCEON) { buzzerOn(); };
-				} else if (NVData.totalSeconds == NVData.config.warnVal*60 - WARN_BEEP_DURATION_SECONDS) {	// End warn beep
+			} else if (NVData.totalSeconds == NVData.config.warnVal*60 - WARN_BEEP_DURATION_SECONDS) {	// End warn beep
 				ATOMIC_BLOCK (ATOMIC_FORCEON) { buzzerOff(); };
 			}
 			
@@ -425,14 +449,6 @@ int main()
 			default:
 				break;
 				
-		}
-		
-		// ADJUST BRIGHTNESS
-		uint8_t brightness = 0;
-		memcpy_P(&brightness,brightnessTable+(lightsensorRead()/ADC_READING_DIVISOR),1);
-		NVData.config.brightVal = brightness;
-		ATOMIC_BLOCK (ATOMIC_FORCEON) {
-			displaySetBrightness(NVData.config.brightVal);
 		}
 		
 		// SLEEP MODE CHECK

@@ -9,6 +9,7 @@
 #include <avr/interrupt.h>
 #include <avr/eeprom.h>
 #include "main.h"
+#include "uart.h"
 
 #include <stdio.h>
 
@@ -47,8 +48,8 @@ ISR(ANALOG_COMP_vect)//, ISR_NAKED)
 		// Turn off redundant generators and reduce FCLK
 		// (NOT POSSIBLE)
 		
-		// set PD4-5 low (turn off displays)
-		PORTD &= 0xCF;
+		// Turn off settings LED
+		settingsLEDTurnOff();
 		
 		// Set all pins as inputs
 		DDRB = 0x00;

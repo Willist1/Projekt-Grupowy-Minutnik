@@ -28,11 +28,10 @@ typedef enum {
 	sPause
 } tSTATE;
 
-typedef struct {
-	uint8_t cntVal;
-	uint8_t warnVal;
-	uint8_t brightVal;
-	uint8_t volumeVal;
+typedef struct __attribute__ ((packed)) {
+	uint16_t cntVal    : 7;
+	uint16_t warnVal   : 7;
+	uint16_t volumeVal : 2;
 } tCONFIG;
 
 typedef struct
@@ -46,5 +45,9 @@ extern volatile uint32_t ticks;
 
 extern BUTTON memorizedButton;
 extern uint8_t setVal;
+
+void settingsLEDInit();
+void settingsLEDTurnOff();
+void settingsLEDToggle(uint8_t LEDId);
 
 #endif /* MAIN_H_ */

@@ -37,8 +37,8 @@ typedef enum {
 } BUTTON;
 */
 typedef enum {
-	Play = 0,
-	Stop,
+	Stop = 0,
+	Play,
 	setVolume,
 	setWarning,
 	setCnt,
